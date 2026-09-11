@@ -13,3 +13,8 @@ paper/*.synctex.gz
 paper/*.bbl
 paper/*.blg
 paper/*.toc
+paper/arxiv/*.aux
+paper/arxiv/*.log
+paper/arxiv/*.out
+paper/arxiv/*.fls
+paper/arxiv/*.fdb_latexmk

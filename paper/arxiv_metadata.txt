@@ -1,0 +1,32 @@
+TITLE
+When Is a Reconciliation Break Real? A Temporal Correctness Contract for Streaming Financial Reconciliation
+
+AUTHORS
+Abhishek Sharma
+
+PRIMARY CLASS
+cs.DB
+
+CROSS-LIST
+cs.SE, cs.DC
+
+COMMENTS
+8 pages, 4 figures, 6 tables, 2 propositions. Artifact (code, workload
+generator, Docker configuration, all raw results) is archived at
+DOI 10.5281/zenodo.PLACEHOLDER and builds every figure and table from the raw
+results with `make reproduce`.
+
+REPORT NUMBER
+(leave blank)
+
+JOURNAL REFERENCE
+(leave blank -- not yet published)
+
+EXTERNAL DOI
+(leave blank until the Zenodo DOI is minted; then add it here)
+
+ACM CLASS
+H.2.4; D.2.4; H.2.8
+
+MSC CLASS
+(leave blank -- not a mathematics paper)
