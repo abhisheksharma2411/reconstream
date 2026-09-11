@@ -55,19 +55,38 @@ def test_faults_do_break_the_declared_bound():
     assert sum(model_respected(w.arrivals, SourceModel()).values()) > 0
 
 
-def test_true_breaks_exist_and_are_regime_independent():
-    """A positive class is needed, and it must not move with the fault profile.
-
-    If the number of genuine breaks changed between regimes, a rise in the
-    break rate could be the workload rather than the reconciler, and E3 would
-    be uninterpretable.
-    """
+def test_injected_breaks_are_regime_independent():
+    """The *injected* positive class does not move with the fault profile."""
     calm = build_workload(n_cases=200, seed=5, profile=FaultProfile.none())
     faulty = build_workload(n_cases=200, seed=5, profile=FaultProfile())
     calm_breaks = {c["task_id"] for c in calm.cases if c["truly_broken"]}
     faulty_breaks = {c["task_id"] for c in faulty.cases if c["truly_broken"]}
     assert calm_breaks == faulty_breaks
     assert calm_breaks
+
+
+def test_delivery_loss_creates_further_genuine_breaks():
+    """The *graded* positive class does move, and only the loss family moves it.
+
+    Injection guarantees a positive class exists in every regime; it does not
+    hold the class constant, because dropping a bank delivery is itself a
+    genuine break. Any comparison of break rates across regimes therefore has
+    to divide by the negatives rather than by every obligation, which is what
+    ``false_break_fpr`` does. This test exists so that the distinction cannot
+    be quietly lost again.
+    """
+    from reconstream.checker import bank_truth, obligations_from
+
+    def graded_breaks(profile):
+        w = build_workload(n_cases=200, seed=5, profile=profile)
+        obs, truth = obligations_from(w.arrivals), bank_truth(w.arrivals)
+        return sum(1 for o in obs if o not in truth)
+
+    calm = graded_breaks(FaultProfile.none())
+    loss_only = graded_breaks(FaultProfile(families=frozenset({"loss"}), intensity=0.30))
+    delay_only = graded_breaks(FaultProfile(families=frozenset({"delay"}), intensity=0.30))
+    assert loss_only > calm
+    assert delay_only == calm
 
 
 def test_a_true_break_has_no_bank_evidence():

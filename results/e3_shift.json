@@ -58,21 +58,27 @@
     ]
   },
   "provenance": {
-    "git": "unversioned",
+    "git": "32fd81bd128079bf7f404d92a2495b7aa5c6a85f-dirty",
     "p1": {
       "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
-      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "source": "../finalitybench/src (sibling checkout)",
       "version": "1.0.0"
     },
     "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-11T19:42:06Z"
+    "utc": "2026-09-11T20:18:16Z"
   },
   "sweep": [
     {
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 0,
+          "false_break_fpr": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.0,
             "lo": 0.0,
@@ -86,10 +92,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 856,
+          "param": 80,
+          "true_breaks": 29
         },
         "global_watermark": {
           "attributable_to_model": 0,
+          "false_break_fpr": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.0,
             "lo": 0.0,
@@ -103,10 +117,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 856,
+          "param": 60,
+          "true_breaks": 29
         },
         "idle_watermark": {
           "attributable_to_model": 0,
+          "false_break_fpr": {
+            "hi": 0.005889281507656066,
+            "lo": 0.0,
+            "point": 0.002336448598130841,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.005688282138794084,
             "lo": 0.0,
@@ -120,10 +142,18 @@
             "point": 0.0022598870056497176,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 856,
+          "param": 60,
+          "true_breaks": 29
         },
         "typed_horizon": {
           "attributable_to_model": 0,
+          "false_break_fpr": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.0,
             "lo": 0.0,
@@ -137,7 +167,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 856,
+          "param": 80,
+          "true_breaks": 29
         }
       },
       "intensity": 0.0,
@@ -151,6 +183,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 41,
+          "false_break_fpr": {
+            "hi": 0.07012987012987013,
+            "lo": 0.03816793893129771,
+            "point": 0.053246753246753244,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.06347305389221557,
             "lo": 0.034482758620689655,
@@ -164,10 +202,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 770,
+          "param": 80,
+          "true_breaks": 72
         },
         "global_watermark": {
           "attributable_to_model": 36,
+          "false_break_fpr": {
+            "hi": 0.06274509803921569,
+            "lo": 0.03238341968911917,
+            "point": 0.046753246753246755,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.057177615571776155,
             "lo": 0.029585798816568046,
@@ -181,10 +227,18 @@
             "point": 0.0023752969121140144,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 770,
+          "param": 60,
+          "true_breaks": 72
         },
         "idle_watermark": {
           "attributable_to_model": 37,
+          "false_break_fpr": {
+            "hi": 0.06657963446475196,
+            "lo": 0.03557312252964427,
+            "point": 0.05064935064935065,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.06183115338882283,
             "lo": 0.032846715328467155,
@@ -198,10 +252,18 @@
             "point": 0.004750593824228029,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 770,
+          "param": 60,
+          "true_breaks": 72
         },
         "typed_horizon": {
           "attributable_to_model": 43,
+          "false_break_fpr": {
+            "hi": 0.07317073170731707,
+            "lo": 0.04015544041450777,
+            "point": 0.05584415584415584,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.06618531889290012,
             "lo": 0.03663003663003663,
@@ -215,7 +277,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 770,
+          "param": 80,
+          "true_breaks": 72
         }
       },
       "intensity": 0.05,
@@ -229,6 +293,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 66,
+          "false_break_fpr": {
+            "hi": 0.11731044349070101,
+            "lo": 0.07536231884057971,
+            "point": 0.0953757225433526,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.10234278668310727,
             "lo": 0.06480304955527319,
@@ -242,10 +312,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 692,
+          "param": 80,
+          "true_breaks": 104
         },
         "global_watermark": {
           "attributable_to_model": 62,
+          "false_break_fpr": {
+            "hi": 0.11094890510948906,
+            "lo": 0.07040229885057471,
+            "point": 0.08959537572254335,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.09653465346534654,
             "lo": 0.060196560196560195,
@@ -259,10 +337,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 692,
+          "param": 60,
+          "true_breaks": 104
         },
         "idle_watermark": {
           "attributable_to_model": 64,
+          "false_break_fpr": {
+            "hi": 0.11504424778761062,
+            "lo": 0.0746705710102489,
+            "point": 0.09393063583815028,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.1011378002528445,
             "lo": 0.06415094339622641,
@@ -276,10 +362,18 @@
             "point": 0.0037688442211055275,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 692,
+          "param": 60,
+          "true_breaks": 104
         },
         "typed_horizon": {
           "attributable_to_model": 69,
+          "false_break_fpr": {
+            "hi": 0.12209302325581395,
+            "lo": 0.07902298850574713,
+            "point": 0.09971098265895954,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.10656753407682776,
             "lo": 0.0684931506849315,
@@ -293,7 +387,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 692,
+          "param": 80,
+          "true_breaks": 104
         }
       },
       "intensity": 0.1,
@@ -307,6 +403,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 73,
+          "false_break_fpr": {
+            "hi": 0.1414790996784566,
+            "lo": 0.0910569105691057,
+            "point": 0.11605723370429252,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.11811023622047244,
             "lo": 0.0764163372859025,
@@ -320,10 +422,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 629,
+          "param": 80,
+          "true_breaks": 127
         },
         "global_watermark": {
           "attributable_to_model": 70,
+          "false_break_fpr": {
+            "hi": 0.13551401869158877,
+            "lo": 0.08647798742138364,
+            "point": 0.11128775834658187,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.11275167785234899,
             "lo": 0.0726552179656539,
@@ -337,10 +447,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 629,
+          "param": 60,
+          "true_breaks": 127
         },
         "idle_watermark": {
           "attributable_to_model": 71,
+          "false_break_fpr": {
+            "hi": 0.1408,
+            "lo": 0.09105180533751962,
+            "point": 0.11605723370429252,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.11725955204216074,
             "lo": 0.07640750670241286,
@@ -354,10 +472,18 @@
             "point": 0.007936507936507936,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 629,
+          "param": 60,
+          "true_breaks": 127
         },
         "typed_horizon": {
           "attributable_to_model": 79,
+          "false_break_fpr": {
+            "hi": 0.15179968701095461,
+            "lo": 0.09968354430379747,
+            "point": 0.12559618441971382,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.1270053475935829,
             "lo": 0.08344549125168237,
@@ -371,7 +497,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 629,
+          "param": 80,
+          "true_breaks": 127
         }
       },
       "intensity": 0.15,
@@ -385,6 +513,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 78,
+          "false_break_fpr": {
+            "hi": 0.1649122807017544,
+            "lo": 0.10825688073394496,
+            "point": 0.13612565445026178,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.13055555555555556,
             "lo": 0.08591549295774648,
@@ -398,10 +532,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 573,
+          "param": 80,
+          "true_breaks": 147
         },
         "global_watermark": {
           "attributable_to_model": 75,
+          "false_break_fpr": {
+            "hi": 0.15789473684210525,
+            "lo": 0.1048951048951049,
+            "point": 0.13089005235602094,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.12638888888888888,
             "lo": 0.08228730822873083,
@@ -415,10 +557,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 573,
+          "param": 60,
+          "true_breaks": 147
         },
         "idle_watermark": {
           "attributable_to_model": 77,
+          "false_break_fpr": {
+            "hi": 0.1637323943661972,
+            "lo": 0.11013986013986014,
+            "point": 0.13612565445026178,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.1311706629055007,
             "lo": 0.08599167822468794,
@@ -432,10 +582,18 @@
             "point": 0.009722222222222222,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 573,
+          "param": 60,
+          "true_breaks": 147
         },
         "typed_horizon": {
           "attributable_to_model": 89,
+          "false_break_fpr": {
+            "hi": 0.18491921005385997,
+            "lo": 0.1269296740994854,
+            "point": 0.15532286212914484,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.14754098360655737,
             "lo": 0.09986130374479889,
@@ -449,7 +607,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 573,
+          "param": 80,
+          "true_breaks": 147
         }
       },
       "intensity": 0.2,
@@ -463,6 +623,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 82,
+          "false_break_fpr": {
+            "hi": 0.19215686274509805,
+            "lo": 0.13026052104208416,
+            "point": 0.16046966731898238,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.14820359281437126,
             "lo": 0.09846153846153846,
@@ -476,10 +642,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 511,
+          "param": 80,
+          "true_breaks": 160
         },
         "global_watermark": {
           "attributable_to_model": 75,
+          "false_break_fpr": {
+            "hi": 0.17578125,
+            "lo": 0.11693548387096774,
+            "point": 0.14677103718199608,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.13636363636363635,
             "lo": 0.08858858858858859,
@@ -493,10 +667,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 511,
+          "param": 60,
+          "true_breaks": 160
         },
         "idle_watermark": {
           "attributable_to_model": 78,
+          "false_break_fpr": {
+            "hi": 0.1844106463878327,
+            "lo": 0.1232876712328767,
+            "point": 0.15459882583170254,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.14349112426035504,
             "lo": 0.09298780487804878,
@@ -510,10 +692,18 @@
             "point": 0.007451564828614009,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 511,
+          "param": 60,
+          "true_breaks": 160
         },
         "typed_horizon": {
           "attributable_to_model": 95,
+          "false_break_fpr": {
+            "hi": 0.21936758893280633,
+            "lo": 0.15415821501014199,
+            "point": 0.18590998043052837,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.16840536512667661,
             "lo": 0.11572700296735905,
@@ -527,7 +717,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 511,
+          "param": 80,
+          "true_breaks": 160
         }
       },
       "intensity": 0.25,
@@ -541,6 +733,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 83,
+          "false_break_fpr": {
+            "hi": 0.2247191011235955,
+            "lo": 0.14965986394557823,
+            "point": 0.18693693693693694,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.15838509316770186,
             "lo": 0.10702875399361023,
@@ -554,10 +752,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 444,
+          "param": 80,
+          "true_breaks": 184
         },
         "global_watermark": {
           "attributable_to_model": 77,
+          "false_break_fpr": {
+            "hi": 0.2099056603773585,
+            "lo": 0.13876651982378854,
+            "point": 0.17342342342342343,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.14862681744749595,
             "lo": 0.09763779527559055,
@@ -571,10 +777,18 @@
             "point": 0.0015923566878980893,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 444,
+          "param": 60,
+          "true_breaks": 184
         },
         "idle_watermark": {
           "attributable_to_model": 80,
+          "false_break_fpr": {
+            "hi": 0.21788990825688073,
+            "lo": 0.14655172413793102,
+            "point": 0.18243243243243243,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.15544871794871795,
             "lo": 0.10333863275039745,
@@ -588,10 +802,18 @@
             "point": 0.011146496815286623,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 444,
+          "param": 60,
+          "true_breaks": 184
         },
         "typed_horizon": {
           "attributable_to_model": 94,
+          "false_break_fpr": {
+            "hi": 0.2494331065759637,
+            "lo": 0.17400881057268722,
+            "point": 0.21171171171171171,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.17713365539452497,
             "lo": 0.12238325281803543,
@@ -605,7 +827,9 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 444,
+          "param": 80,
+          "true_breaks": 184
         }
       },
       "intensity": 0.3,
@@ -619,6 +843,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 79,
+          "false_break_fpr": {
+            "hi": 0.2819767441860465,
+            "lo": 0.18902439024390244,
+            "point": 0.23511904761904762,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.17679558011049723,
             "lo": 0.11948529411764706,
@@ -632,10 +862,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 336,
+          "param": 80,
+          "true_breaks": 204
         },
         "global_watermark": {
           "attributable_to_model": 74,
+          "false_break_fpr": {
+            "hi": 0.26586102719033233,
+            "lo": 0.1761006289308176,
+            "point": 0.22023809523809523,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.16758747697974216,
             "lo": 0.11090573012939002,
@@ -649,10 +887,18 @@
             "point": 0.003703703703703704,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 336,
+          "param": 60,
+          "true_breaks": 204
         },
         "idle_watermark": {
           "attributable_to_model": 76,
+          "false_break_fpr": {
+            "hi": 0.2724252491694352,
+            "lo": 0.18208092485549132,
+            "point": 0.2261904761904762,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.17164179104477612,
             "lo": 0.11481481481481481,
@@ -666,10 +912,18 @@
             "point": 0.005555555555555556,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 336,
+          "param": 60,
+          "true_breaks": 204
         },
         "typed_horizon": {
           "attributable_to_model": 89,
+          "false_break_fpr": {
+            "hi": 0.3122923588039867,
+            "lo": 0.21818181818181817,
+            "point": 0.2648809523809524,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.1958955223880597,
             "lo": 0.13562386980108498,
@@ -683,7 +937,9 @@
             "point": 0.003703703703703704,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 336,
+          "param": 80,
+          "true_breaks": 204
         }
       },
       "intensity": 0.4,
@@ -697,6 +953,12 @@
       "arms": {
         "fixed_timeout": {
           "attributable_to_model": 60,
+          "false_break_fpr": {
+            "hi": 0.31601731601731603,
+            "lo": 0.1991869918699187,
+            "point": 0.2564102564102564,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.16114790286975716,
             "lo": 0.09978308026030369,
@@ -710,10 +972,18 @@
             "point": 0.0,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 234,
+          "param": 80,
+          "true_breaks": 229
         },
         "global_watermark": {
           "attributable_to_model": 57,
+          "false_break_fpr": {
+            "hi": 0.3013698630136986,
+            "lo": 0.18777292576419213,
+            "point": 0.24358974358974358,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.15367965367965367,
             "lo": 0.09327548806941431,
@@ -727,10 +997,18 @@
             "point": 0.004319654427645789,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 234,
+          "param": 60,
+          "true_breaks": 229
         },
         "idle_watermark": {
           "attributable_to_model": 60,
+          "false_break_fpr": {
+            "hi": 0.314410480349345,
+            "lo": 0.20087336244541484,
+            "point": 0.2564102564102564,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.1615720524017467,
             "lo": 0.09850107066381156,
@@ -744,10 +1022,18 @@
             "point": 0.0064794816414686825,
             "replicates": 2000
           },
-          "param": 60
+          "negatives": 234,
+          "param": 60,
+          "true_breaks": 229
         },
         "typed_horizon": {
           "attributable_to_model": 72,
+          "false_break_fpr": {
+            "hi": 0.36936936936936937,
+            "lo": 0.24568965517241378,
+            "point": 0.3076923076923077,
+            "replicates": 2000
+          },
           "false_break_rate": {
             "hi": 0.18872017353579176,
             "lo": 0.12173913043478261,
@@ -761,7 +1047,9 @@
             "point": 0.004319654427645789,
             "replicates": 2000
           },
-          "param": 80
+          "negatives": 234,
+          "param": 80,
+          "true_breaks": 229
         }
       },
       "intensity": 0.5,

@@ -65,4 +65,6 @@ LEFT JOIN bank b
   ON  l.case_id = b.case_id
   AND l.opref     = b.opref
   AND l.kind    = b.kind
-  AND b.ts BETWEEN l.ts - INTERVAL '1' SECOND AND l.ts + INTERVAL '__WINDOW__' SECOND;
+  -- SECOND(3) rather than the default SECOND(2): the default caps the
+  -- literal at 99, which silently rejects any window of 100 ticks or more.
+  AND b.ts BETWEEN l.ts - INTERVAL '1' SECOND AND l.ts + INTERVAL '__WINDOW__' SECOND(3);

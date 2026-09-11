@@ -44,6 +44,11 @@ finding.
   mispairing 22.8% of verdicts on calm traffic.
 - **The contract runs as SQL.** The query and the reference implementation
   agree on all 4,395 verdicts compared.
+- **A real Flink interval join violates S1** on 14.5–20.2% of obligations in
+  its ordinary configuration, reproducibly across two independent runs of the
+  whole experiment. Our simulated watermark arm agrees with the engine on only
+  77–79% of obligations, so the model's timing results are *not* Flink
+  measurements, and we say so.
 
 ## Reproducing
 

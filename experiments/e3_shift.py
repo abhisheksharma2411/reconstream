@@ -17,7 +17,12 @@ from __future__ import annotations
 
 from _common import write
 
-from reconstream.bootstrap import bootstrap, false_break_rate, inadmissible_rate
+from reconstream.bootstrap import (
+    bootstrap,
+    false_break_fpr,
+    false_break_rate,
+    inadmissible_rate,
+)
 from reconstream.calibrate import calibrate
 from reconstream.checker import grade, model_respected, run, summarise
 from reconstream.contract import SourceModel
@@ -80,6 +85,9 @@ def main() -> None:
             row["arms"][name] = {
                 "param": param,
                 "false_break_rate": bootstrap(pooled, false_break_rate, seed=21).as_dict(),
+                "false_break_fpr": bootstrap(pooled, false_break_fpr, seed=23).as_dict(),
+                "negatives": sum(s["negatives"] for s in summaries),
+                "true_breaks": sum(s["true_breaks"] for s in summaries),
                 "inadmissible_rate": bootstrap(pooled, inadmissible_rate, seed=22).as_dict(),
                 "attributable_to_model": sum(s["model_broken"] for s in summaries),
                 "false_breaks": sum(s["false_breaks"] for s in summaries),

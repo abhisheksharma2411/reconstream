@@ -39,16 +39,19 @@ remedy for a stalled streaming join --- an idleness timeout --- introduces
 contract violations on 5.42\% of obligations (95\% CI [3.94, 6.92]) on traffic
 where the same job without it is exactly sound, and that violations vanish once
 the timeout reaches the slow source's posting period, as predicted. Under a
-lateness shift, all four identity-based reconcilers we test degrade to between
-11.8\% and 14.8\% spurious breaks while their contract violation rate stays at
-or below 1.01\%: the checker attributes the loss to 240 bank-side and 413
-ledger-side bound violations rather than to the reconcilers. Tracking one
+lateness shift, all four identity-based reconcilers we test raise spurious
+breaks on between 18.3\% and 23.0\% of the credits the bank did settle, while
+their contract violation rate stays at or below 1.01\%: the checker attributes
+the loss to 240 bank-side and 413 ledger-side bound violations rather than to
+the reconcilers. Tracking one
 horizon per source, rather than one over the merged stream, leaves break
 latency 12.7\% lower on average and halves its tail (p99 224 against 446 ticks)
 at equal soundness, though it is not cheaper at every cost setting and we
-report where it loses. The contract is expressible as a SQL query over the
-tables a reconciliation system already keeps; the query and the reference
-implementation agree on all 4{,}395 verdicts compared.
+report where it loses. An Apache Flink interval join, written the ordinary
+way, violates the contract on 14.9--20.2\% of obligations, reproducibly across
+two independent runs of the whole experiment. The contract is expressible as a
+SQL query over the tables a reconciliation system already keeps, and the query
+and the reference implementation agree on all 4{,}395 verdicts compared.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -99,8 +102,9 @@ appear exactly when the idleness timeout falls below the posting period and not
 above it, on traffic where the same job is otherwise exactly sound.
 
 Under a shift in the lateness distribution, entitlement and accuracy come
-apart cleanly. Every arm we test degrades to between 11.8\% and 14.8\% spurious
-breaks while its contract violation rate stays at or below 1.01\%. The checker
+apart cleanly. Every arm we test raises spurious breaks on between 18.3\% and
+23.0\% of the credits that did settle, while its contract violation rate stays
+at or below 1.01\%. The checker
 attributes the degradation to the inputs, and it does so from the stream and
 the declared model alone.
 
@@ -380,11 +384,18 @@ from the simulator rather than imposed.
 
 Each regime uses five seeds of 200 interleaved cases spread over a 1440-tick
 day: 1{,}733 arrivals and 885 obligations in calm traffic, 1{,}684 and 593 under
-faults, with 45 genuine breaks in both. Genuine breaks --- movements whose bank
-evidence is removed outright --- are drawn before any fault is applied, so the
-positive class is identical across regimes and a change in break rate cannot be
-the workload. Without them a reconciler that never raises a break would score
-perfectly.
+faults. Genuine breaks --- movements whose bank evidence is removed outright ---
+are injected in 45 cases, drawn before any fault is applied, because without a
+positive class a reconciler that never raises a break would score perfectly.
+
+Injection fixes the class but does not hold it constant, and the difference
+matters for how rates are reported. In calm traffic those 45 cases yield 37
+graded breaks; under faults there are 210, because delivery loss destroys
+further bank evidence and a credit that was dropped in transit is a real break.
+Spurious breaks are therefore reported throughout as a share of the obligations
+the bank \emph{did} settle --- 848 of them in calm traffic and 383 under faults
+--- rather than of all obligations, so that the figure does not move merely
+because the genuine-break class grew.
 
 Every arm is calibrated on calm traffic by one rule: the smallest parameter with
 no contract violations and no spurious breaks. Nobody retunes against the regime
@@ -427,30 +438,31 @@ The event store is PostgreSQL 16.4 and the stream processor is Apache Flink
 
 \begin{table}[t]
 \caption{Each arm calibrated on calm traffic, then run unchanged on both
-regimes. Closure delay is over exceptions only. Amount/date matching never
-calibrates; it is shown at the largest parameter tried.}
+regimes. ``f.break\%'' is spurious breaks as a share of the credits the bank
+settled; ``exc.'' is the number of exceptions the closure statistics are
+computed over. Amount/date matching never calibrates and is shown at the
+largest parameter tried.}
 \label{tab:main}
 \centering
 \footnotesize
-\begin{tabular}{lrrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-& \multicolumn{1}{c}{viol.\%} & \multicolumn{1}{c}{f.break\%}
-& \multicolumn{1}{c}{f.match\%} & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{p99} \\
+& viol.\% & f.break\% & f.match\% & exc. & mean & p99 \\
 \midrule
-\multicolumn{6}{l}{\emph{calm traffic} --- 885 obligations, no bound violations} \\
-typed horizon      & 0.00 & 0.00 & 0.00 & 2.1 & 4 \\
-fixed timeout      & 0.00 & 0.00 & 0.00 & 3.8 & 6 \\
-merged watermark   & 0.00 & 0.00 & 0.00 & 32.7 & 223 \\
-\quad + idleness   & 0.00 & 0.00 & 0.00 & 29.9 & 201 \\
-amount/date        & 94.46 & 2.03 & 22.82 & 421.5 & 426 \\
+\multicolumn{7}{l}{\emph{calm} --- 885 obligations, 848 settled, no bound violations} \\
+typed horizon      & 0.00 & 0.00 & 0.00 & 37 & 2.1 & 4 \\
+fixed timeout      & 0.00 & 0.00 & 0.00 & 37 & 3.8 & 6 \\
+merged watermark   & 0.00 & 0.00 & 0.00 & 37 & 32.7 & 223 \\
+\quad + idleness   & 0.00 & 0.00 & 0.00 & 37 & 29.9 & 201 \\
+amount/date        & 94.46 & 2.12 & 22.82 & 37 & 421.5 & 426 \\
 \midrule
-\multicolumn{6}{l}{\emph{shifted traffic} --- 593 obligations; 240 bank, 413 ledger} \\
-\multicolumn{6}{l}{bound violations} \\
-typed horizon      & 0.17 & 14.84 & 0.00 & 12.9 & 146 \\
-fixed timeout      & 0.00 & 13.49 & 0.00 & 28.9 & 226 \\
-merged watermark   & 0.51 & 11.80 & 0.00 & 53.0 & 213 \\
-\quad + idleness   & 1.01 & 12.14 & 0.00 & 45.5 & 160 \\
-amount/date        & 47.05 & 5.40 & 32.72 & 458.5 & 637 \\
+\multicolumn{7}{l}{\emph{shifted} --- 593 obligations, 383 settled; 240 bank and} \\
+\multicolumn{7}{l}{413 ledger bound violations} \\
+typed horizon      & 0.17 & 22.98 & 0.00 & 298 & 12.9 & 146 \\
+fixed timeout      & 0.00 & 20.89 & 0.00 & 290 & 28.9 & 226 \\
+merged watermark   & 0.51 & 18.28 & 0.00 & 280 & 53.0 & 213 \\
+\quad + idleness   & 1.01 & 18.80 & 0.00 & 282 & 45.5 & 160 \\
+amount/date        & 47.05 & 8.36 & 32.72 & 141 & 458.5 & 637 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -459,19 +471,23 @@ Table~\ref{tab:main} gives the operating points. On calm traffic the four
 identity-based arms are all exactly sound, and they differ by more than an order
 of magnitude in how quickly a genuine break surfaces: 2.1 ticks for the typed
 horizon against 32.7 for the merged watermark, and a tail of 4 ticks against
-223. The watermark arms are not slow because they are cautious. They are slow
+223. Only 37 exceptions arise in calm traffic --- every one of them a genuine
+break --- so the calm percentile is close to a maximum and should be read as
+one; the shifted regime, where the statistics rest on roughly 290 exceptions
+per arm, is the one that supports a percentile claim. The watermark arms are not slow because they are cautious. They are slow
 because the bank's watermark only advances at a batch boundary, so a break
 discovered at the start of a cycle waits for the end of it.
 
 Amount/date matching never calibrates. There is no parameter at which it is both
 sound and accurate, because its failure is not a matter of waiting: with eight
 distinct retail amounts in circulation, two movements of the same size in flight
-together are indistinguishable, and 22.82\% of its verdicts on calm traffic
-pair the wrong records. This is the sense in which matching rules are downstream
+together are indistinguishable, and it pairs the wrong records on 22.82\% of
+obligations in calm traffic. This is the sense in which matching rules are downstream
 of the temporal contract. No amount of tuning the decision deadline repairs a
 pairing that was never justified.
 
 \subsection{Soundness against timeliness}
+\label{sec:frontier}
 
 \begin{figure}[t]
 \centering
@@ -535,8 +551,8 @@ and raising their parameter moves the distribution without narrowing it.
 
 Figure~\ref{fig:shift} sweeps fault intensity from zero to 0.5 on seeds disjoint
 from the calibration set. The share of arrivals breaking their declared bound
-rises from 0\% to 57.9\%, and spurious breaks rise with it, reaching 13.0\% for
-the fixed timeout and 15.6\% for the typed horizon.
+rises from 0\% to 57.9\%, and spurious breaks rise with it, reaching 25.6\% of
+settled credits for the fixed timeout and 30.8\% for the typed horizon.
 
 The contract violation rate barely moves. Across the whole sweep it stays at or
 below 1.11\% for every arm, and at or below 0.43\% for every arm that does not
@@ -670,7 +686,86 @@ against yesterday's verdicts without new infrastructure.
 \subsection{Against a real stream processor}
 \label{sec:flink}
 
-Pending.
+Everything so far grades reconcilers written for this paper. The same
+workloads were also replayed through Apache Flink 1.20, as an ordinary LEFT
+interval join between the two streams --- the shape the pattern is usually built
+as --- with the engine's own verdicts graded by the same checker. The decision
+instant is recovered from \texttt{CURRENT\_WATERMARK}, which the job selects
+alongside each row, mapped back to the wall-clock instant that watermark could
+first have been reached.
+
+\begin{table}[t]
+\caption{Apache Flink 1.20, SQL interval join, shifted traffic, two seeds. The
+idleness timeout changes nothing here, for the reason given in the text.}
+\label{tab:flink}
+\centering
+\footnotesize
+\begin{tabular}{rlrrrr}
+\toprule
+window & idleness & viol.\% & f.break\% & mean & p99 \\
+\midrule
+80  & none or 60     & 14.91 & 18.38 & 51.4 & 239 \\
+80  & 10 or 240      & 14.48 & 17.51 & 54.0 & 239 \\
+160 & any            & 18.40 & 15.78 & 29.4 & 176 \\
+320 & any            & 20.20 & 14.91 & 17.5 & 161 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The engine violates S1 on 14.48\% to 20.20\% of obligations, averaged over the
+two seeds of each configuration in Table~\ref{tab:flink}; individual runs span
+13.91\% to 23.01\%. It does so in the configuration a competent engineer would
+write.
+Widening the join interval buys timeliness and costs soundness, which is the
+frontier of Section~\ref{sec:frontier} seen from inside a real system. The
+engine also emits one output row per matching pair, so a duplicated bank record
+produces a duplicated match --- 15 to 43 extra rows per run --- which a
+downstream sink has to deduplicate on its own.
+
+The violation rates are stable. Two independent runs of the whole experiment,
+days apart, agree to the second decimal place at every window. What follows is
+less comfortable.
+
+\textbf{Our watermark arms are not a faithful model of the engine.} The
+simulated merged watermark agrees with Flink's partition of the obligations on
+77.4\% and 78.8\% of them, across the two seeds. Roughly a fifth of the time the
+model and the engine reach different conclusions, and the explanation is
+structural rather than statistical: the simulated arm models the *decision rule*
+--- raise a break once a watermark has passed --- while the engine's interval
+join also constrains which bank records are eligible to match at all, through
+the event-time interval in the join predicate. Two different constructions,
+agreeing most of the time. The timing results in Table~\ref{tab:frontier} are
+therefore properties of the models, and we state them as such rather than as
+measurements of Flink.
+
+\textbf{An observation we could not reproduce.} An earlier full run of this
+experiment, made while the machine was also running the other seven, showed the
+engine disagreeing with itself: repeating an identical job four times, 26.1\% of
+obligations on one seed and 40.7\% on the other received different verdicts, and
+one repetition raised 104 breaks where the other three raised 58. Re-run on an
+otherwise idle machine, the same configuration gives 0.9\% and 0.0\%, with break
+counts of $[66, 66, 65, 66]$ and $[58, 58, 58, 58]$. Two bounded sources are
+read concurrently and their interleaving is not fixed by the input, so
+contention plausibly changes which records the watermark has seen when an
+obligation is considered --- but that is an inference from one loaded run, not a
+measurement, and we report it as such. It is a reason to be careful about
+reproducing streaming reconciliation results on a busy machine, and it is not a
+claim about Flink.
+
+One thing E7 could not test at all. Flink's idleness timeout is measured in
+processing time, and a bounded file source is consumed in milliseconds, so no
+source is ever idle long enough for the setting to engage --- which is why three
+of its four values give identical numbers above. Proposition~\ref{prop:idle} is
+supported by its proof and by the model in Section~\ref{sec:idleness}, and is
+\emph{not} confirmed on the engine here. Testing it would need a source paced in
+processing time, which means a broker and a producer rather than a file, and
+that is left as future work.
+
+Running the same job with \texttt{execution.runtime-mode = BATCH} produces no
+violations at all, because a batch job sees its whole input and so has no
+partial-evidence problem to get wrong. Offline reconciliation is sound, and the
+price is that it has no answer until the batch runs. Everything in this paper is
+about the systems built to avoid paying that price.
 
 \section{Discussion}
 

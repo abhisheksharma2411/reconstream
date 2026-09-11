@@ -69,6 +69,23 @@ def clone_p1(dest: Path | None = None) -> Path:
     return dest
 
 
+def _anonymise(path: Path) -> str:
+    """Describe where P1 came from without publishing the author's home tree.
+
+    Every results file is committed, so an absolute path here would put the
+    machine's directory layout into the repository -- which says nothing useful
+    about provenance and is exactly the kind of detail that should not leave a
+    laptop.  What matters to a reader is *which* of the documented resolution
+    routes was used, so that is what is recorded.
+    """
+    text = str(path)
+    if (ROOT / "vendor") in path.parents or "vendor" in text.split("/"):
+        return "vendor/finalitybench/src"
+    if path.parent.parent == ROOT.parent:
+        return "../finalitybench/src (sibling checkout)"
+    return "installed package"
+
+
 def p1_provenance() -> dict[str, str]:
     """Which P1 the numbers were produced against.  Printed with every result."""
     root = ensure_p1()
@@ -87,6 +104,6 @@ def p1_provenance() -> dict[str, str]:
         pass
     return {
         "version": getattr(finalitybench, "__version__", "unknown"),
-        "path": str(root),
+        "source": _anonymise(Path(root)),
         "git": rev,
     }

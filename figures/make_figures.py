@@ -80,11 +80,11 @@ def fig_shift() -> None:
     xs = [100 * r["model_violation_rate"] for r in sweep]
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.0, 2.9), sharex=True)
     for name in sweep[0]["arms"]:
-        ax1.plot(xs, [100 * r["arms"][name]["false_break_rate"]["point"] for r in sweep],
+        ax1.plot(xs, [100 * r["arms"][name]["false_break_fpr"]["point"] for r in sweep],
                  label=LABEL[name], ms=3, **STYLE[name])
         ax2.plot(xs, [100 * r["arms"][name]["inadmissible_rate"]["point"] for r in sweep],
                  label=LABEL[name], ms=3, **STYLE[name])
-    ax1.set_ylabel("false breaks (%)")
+    ax1.set_ylabel("false breaks (% of settled credits)")
     ax1.set_title("accuracy collapses", fontsize=9)
     ax2.set_ylabel("contract violations (%)")
     ax2.set_title("entitlement to decide does not", fontsize=9)

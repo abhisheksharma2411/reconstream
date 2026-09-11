@@ -56,13 +56,27 @@ def build_claims() -> list[tuple[str, object, object]]:
             c.append((f"calm {arm} contract violations", 0.0, pct(a["inadmissible_rate"]["point"])))
         c.append(("calm amount/date violations %", 94.46,
                   pct(calm["arms"]["amount_date"]["inadmissible_rate"]["point"])))
+        c.append(("calm amount/date FPR %", 2.12,
+                  pct(calm["arms"]["amount_date"]["false_break_fpr"]["point"])))
+        c.append(("shifted amount/date FPR %", 8.36,
+                  pct(faulty["arms"]["amount_date"]["false_break_fpr"]["point"])))
         c.append(("calm amount/date false match %", 22.82,
                   pct(calm["arms"]["amount_date"]["false_match_rate"]["point"])))
-        fb = {k: pct(v["false_break_rate"]["point"]) for k, v in faulty["arms"].items()}
-        c.append(("shifted min false break % (identity arms)", 11.80,
+        fb = {k: pct(v["false_break_fpr"]["point"]) for k, v in faulty["arms"].items()}
+        c.append(("shifted min false-break FPR % (identity arms)", 18.28,
                   min(v for k, v in fb.items() if k != "amount_date")))
-        c.append(("shifted max false break % (identity arms)", 14.84,
+        c.append(("shifted max false-break FPR % (identity arms)", 22.98,
                   max(v for k, v in fb.items() if k != "amount_date")))
+        for arm, fpr, exc in (("typed_horizon", 22.98, 298), ("fixed_timeout", 20.89, 290),
+                              ("global_watermark", 18.28, 280), ("idle_watermark", 18.80, 282)):
+            a = faulty["arms"][arm]
+            c.append((f"shifted {arm} FPR %", fpr, pct(a["false_break_fpr"]["point"])))
+            c.append((f"shifted {arm} exceptions", exc, a["n_exceptions"]))
+        c.append(("calm settled obligations", 848, calm["arms"]["typed_horizon"]["negatives"]))
+        c.append(("shifted settled obligations", 383, faulty["arms"]["typed_horizon"]["negatives"]))
+        c.append(("calm graded true breaks", 37, calm["arms"]["typed_horizon"]["true_breaks"]))
+        c.append(("shifted graded true breaks", 210, faulty["arms"]["typed_horizon"]["true_breaks"]))
+        c.append(("calm exceptions per arm", 37, calm["arms"]["typed_horizon"]["n_exceptions"]))
         inadm = {k: pct(v["inadmissible_rate"]["point"]) for k, v in faulty["arms"].items()}
         c.append(("shifted max contract violation % (identity arms)", 1.01,
                   max(v for k, v in inadm.items() if k != "amount_date")))
@@ -83,10 +97,10 @@ def build_claims() -> list[tuple[str, object, object]]:
     if e3:
         last = e3["sweep"][-1]
         c.append(("max bound-violation rate in sweep %", 57.9, pct(last["model_violation_rate"])))
-        c.append(("sweep fixed_timeout false break % at 0.5", 13.0,
-                  pct(last["arms"]["fixed_timeout"]["false_break_rate"]["point"])))
-        c.append(("sweep typed_horizon false break % at 0.5", 15.6,
-                  pct(last["arms"]["typed_horizon"]["false_break_rate"]["point"])))
+        c.append(("sweep fixed_timeout FPR % at 0.5", 25.64,
+                  pct(last["arms"]["fixed_timeout"]["false_break_fpr"]["point"])))
+        c.append(("sweep typed_horizon FPR % at 0.5", 30.77,
+                  pct(last["arms"]["typed_horizon"]["false_break_fpr"]["point"])))
         worst = max(pct(r["arms"][a]["inadmissible_rate"]["point"])
                     for r in e3["sweep"] for a in r["arms"])
         c.append(("max contract violation % across whole sweep", 1.11, worst))
@@ -124,6 +138,41 @@ def build_claims() -> list[tuple[str, object, object]]:
         c.append(("SQL parity verdicts compared", 4395, e6["admissibility"]["compared"]))
         c.append(("SQL parity agreement", 1.0, e6["admissibility"]["agreement"]))
         c.append(("SQL parity disagreements", 0, len(e6["disagreements"])))
+
+    e7 = load("e7_flink.json")
+    if e7 and e7.get("status") == "ok":
+        by = {}
+        for r in e7["runs"]:
+            by.setdefault((r["window"], str(r["idle_timeout"])), []).append(r)
+        def avg(key, field):
+            rs = by[key]
+            return sum(x[field] for x in rs) / len(rs)
+        c.append(("flink win80 no-idle violations %", 14.91, pct(avg((80, "None"), "inadmissible_rate"))))
+        c.append(("flink win160 violations %", 18.40, pct(avg((160, "None"), "inadmissible_rate"))))
+        c.append(("flink win320 violations %", 20.20, pct(avg((320, "None"), "inadmissible_rate"))))
+        c.append(("flink win80 idle=10 violations %", 14.48, pct(avg((80, "10"), "inadmissible_rate"))))
+        worst = max(pct(r["inadmissible_rate"]) for r in e7["runs"])
+        best = min(pct(r["inadmissible_rate"]) for r in e7["runs"])
+        c.append(("flink min violation % over single runs", 13.91, best))
+        c.append(("flink max violation % over single runs", 23.01, worst))
+        cfg = [pct(avg(k, "inadmissible_rate")) for k in by]
+        c.append(("flink min config-mean violation %", 14.48, min(cfg)))
+        c.append(("flink max config-mean violation %", 20.20, max(cfg)))
+        # Determinism on an idle machine. The loaded-machine observation in the
+        # paper is explicitly labelled unreproduced and is not checked here,
+        # because there is no results file that reproduces it -- which is the
+        # point of saying so in the text.
+        det = {f["seed"]: f for f in e7["determinism"]}
+        c.append(("flink seed1 unstable % (idle machine)", 0.9, pct(det[1]["unstable_rate"])))
+        c.append(("flink seed2 unstable % (idle machine)", 0.0, pct(det[2]["unstable_rate"])))
+        c.append(("flink seed1 break counts (idle)", [66, 66, 65, 66], det[1]["break_counts"]))
+        c.append(("flink seed2 break counts (idle)", [58, 58, 58, 58], det[2]["break_counts"]))
+        fid = {f["seed"]: f for f in e7["model_fidelity"]}
+        c.append(("flink fidelity seed1 %", 77.4, pct(fid[1]["agreement"])))
+        c.append(("flink fidelity seed2 %", 78.8, pct(fid[2]["agreement"])))
+        dups = [r["duplicate_match_rows"] for r in e7["runs"]]
+        c.append(("flink min duplicate match rows", 15, min(dups)))
+        c.append(("flink max duplicate match rows", 43, max(dups)))
 
     if e8:
         ff = e8["fault_families"]

@@ -263,6 +263,17 @@ def summarise(graded: list[Graded]) -> dict:
         ),
         "false_breaks": len(false_breaks),
         "false_break_rate": len(false_breaks) / n,
+        # Rate over the obligations that *could* have been a false break -- the
+        # ones the bank did settle.  The plain rate divides by every obligation,
+        # so it moves when the size of the genuine-break class moves, and the
+        # genuine-break class is not constant across fault regimes: delivery
+        # loss destroys bank evidence and creates real breaks.  This is the
+        # figure to compare across regimes.
+        "false_break_fpr": (
+            len(false_breaks) / sum(1 for g in graded if not g.true_break)
+            if any(not g.true_break for g in graded) else 0.0
+        ),
+        "negatives": sum(1 for g in graded if not g.true_break),
         "false_matches": len(false_matches),
         "mispaired": sum(1 for g in graded if g.mispaired),
         "false_match_rate": len(false_matches) / n,

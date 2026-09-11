@@ -14,6 +14,7 @@ from _common import write
 from reconstream.bootstrap import (
     bootstrap,
     break_recall,
+    false_break_fpr,
     false_break_rate,
     false_match_rate,
     inadmissible_rate,
@@ -90,6 +91,10 @@ def main() -> None:
                 "n": len(pooled),
                 "inadmissible_rate": bootstrap(pooled, inadmissible_rate, seed=1).as_dict(),
                 "false_break_rate": bootstrap(pooled, false_break_rate, seed=2).as_dict(),
+                "false_break_fpr": bootstrap(pooled, false_break_fpr, seed=7).as_dict(),
+                "n_exceptions": sum(s["n_exceptions"] for s in summaries),
+                "negatives": sum(s["negatives"] for s in summaries),
+                "true_breaks": sum(s["true_breaks"] for s in summaries),
                 "false_match_rate": bootstrap(pooled, false_match_rate, seed=3).as_dict(),
                 "break_recall": bootstrap(pooled, break_recall, seed=6).as_dict(),
                 "mean_closure": bootstrap(pooled, mean_exception_closure, seed=4).as_dict(),

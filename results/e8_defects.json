@@ -834,14 +834,14 @@
     }
   },
   "provenance": {
-    "git": "unversioned",
+    "git": "32fd81bd128079bf7f404d92a2495b7aa5c6a85f-dirty",
     "p1": {
       "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
-      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "source": "../finalitybench/src (sibling checkout)",
       "version": "1.0.0"
     },
     "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-11T19:50:47Z"
+    "utc": "2026-09-11T20:18:32Z"
   }
 }

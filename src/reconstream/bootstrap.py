@@ -152,6 +152,18 @@ def p99_exception_closure(graded: Sequence) -> float:
     return float(xs[min(len(xs) - 1, int(0.99 * len(xs)))]) if xs else 0.0
 
 
+def false_break_fpr(graded: Sequence) -> float:
+    """False breaks as a share of obligations the bank actually settled.
+
+    Preferred over :func:`false_break_rate` for any comparison across fault
+    regimes, whose genuine-break classes differ in size.
+    """
+    neg = [g for g in graded if not g.true_break]
+    if not neg:
+        return 0.0
+    return sum(1 for g in neg if g.error == "false_break") / len(neg)
+
+
 def break_recall(graded: Sequence) -> float:
     """Share of genuine breaks that were actually raised as exceptions.
 

@@ -177,7 +177,13 @@ def _run_once(
             capture_output=True, text=True, timeout=timeout,
         )
         if "STATUS=FINISHED" not in proc.stdout:
-            raise RuntimeError(f"Flink job did not finish: {proc.stdout[-500:]}\n{proc.stderr[-500:]}")
+            # Surface the planner's own message.  A rejected statement exits
+            # cleanly with no job id, and without this the failure arrives as an
+            # empty string -- which cost a full experiment run to diagnose once.
+            raise RuntimeError(
+                f"Flink job did not finish (window={window}, idle={idle_timeout}): "
+                f"{proc.stdout.strip()[-600:] or '<no output>'} :: {proc.stderr.strip()[-300:]}"
+            )
 
         wm_map = _watermark_to_walltime(arrivals)
         wm_values = sorted(wm_map)
