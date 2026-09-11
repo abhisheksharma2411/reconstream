@@ -1,0 +1,57 @@
+{
+  "admissibility": {
+    "agreed": 4395,
+    "agreement": 1.0,
+    "compared": 4395,
+    "per_arm": {
+      "amount_date": {
+        "agreed": 879,
+        "compared": 879
+      },
+      "fixed_timeout": {
+        "agreed": 879,
+        "compared": 879
+      },
+      "global_watermark": {
+        "agreed": 879,
+        "compared": 879
+      },
+      "idle_watermark": {
+        "agreed": 879,
+        "compared": 879
+      },
+      "typed_horizon": {
+        "agreed": 879,
+        "compared": 879
+      }
+    }
+  },
+  "config": {
+    "bank_bound": 80,
+    "n_cases": 200,
+    "seeds": [
+      1,
+      2,
+      3
+    ]
+  },
+  "disagreements": [],
+  "engine": "postgres:16.4-alpine",
+  "outcome": {
+    "agreed": 4395,
+    "agreement": 1.0,
+    "compared": 4395
+  },
+  "provenance": {
+    "git": "unversioned",
+    "p1": {
+      "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
+      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-11T19:43:21Z"
+  },
+  "status": "ok"
+}

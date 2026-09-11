@@ -1,0 +1,15 @@
+.venv/
+vendor/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/*.bbl
+paper/*.blg
+paper/*.toc

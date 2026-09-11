@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "ReconStream: A Temporal Correctness Contract for Streaming Financial Reconciliation"
+abstract: >-
+  A temporal correctness contract for reconciliation on asynchronous streams,
+  a checker that decides verdict admissibility without ground truth, and an
+  evaluation of four deployed reconciliation idioms plus an Apache Flink
+  interval join against it.
+type: software
+authors:
+  - family-names: Sharma
+    given-names: Abhishek
+    email: abhicse24@gmail.com
+    orcid: "https://orcid.org/0009-0007-1103-2103"
+version: 1.0.0
+date-released: 2026-09-11
+license: MIT
+repository-code: "https://github.com/abhisheksharma2411/reconstream"
+keywords:
+  - stream processing
+  - financial reconciliation
+  - temporal semantics
+  - out-of-order events
+  - watermarks
+  - data quality
+references:
+  - type: software
+    title: "FinalityBench: Effect-Level Evaluation of Payment Agents Under Undetermined Outcomes"
+    authors:
+      - family-names: Sharma
+        given-names: Abhishek
+    doi: "10.5281/zenodo.22262591"
+    year: 2026

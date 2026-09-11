@@ -1,0 +1,2256 @@
+{
+  "config": {
+    "grid": [
+      20,
+      40,
+      60,
+      80,
+      100,
+      120,
+      140,
+      160,
+      180,
+      200,
+      220,
+      240,
+      260,
+      280,
+      300,
+      320,
+      340,
+      360,
+      380,
+      400,
+      420,
+      440,
+      460,
+      480,
+      500
+    ],
+    "n_cases": 200,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "provenance": {
+    "git": "unversioned",
+    "p1": {
+      "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
+      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-11T19:41:05Z"
+  },
+  "regimes": {
+    "calm": {
+      "at_zero_false_breaks": {
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 3.8378378378378377,
+          "mean_closure_ci": {
+            "hi": 4.365853658536586,
+            "lo": 3.2941176470588234,
+            "point": 3.8378378378378377,
+            "replicates": 2000
+          },
+          "n_exceptions": 37,
+          "p99_closure": 6.0,
+          "p99_closure_ci": {
+            "hi": 6.0,
+            "lo": 6.0,
+            "point": 6.0,
+            "replicates": 2000
+          },
+          "param": 80,
+          "sd_closure": 1.6193678031292154
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 32.729729729729726,
+          "mean_closure_ci": {
+            "hi": 46.425,
+            "lo": 21.28205128205128,
+            "point": 32.729729729729726,
+            "replicates": 2000
+          },
+          "n_exceptions": 37,
+          "p99_closure": 223.0,
+          "p99_closure_ci": {
+            "hi": 223.0,
+            "lo": 63.0,
+            "point": 223.0,
+            "replicates": 2000
+          },
+          "param": 60,
+          "sd_closure": 40.71964042256722
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 29.89189189189189,
+          "mean_closure_ci": {
+            "hi": 42.36363636363637,
+            "lo": 20.29032258064516,
+            "point": 29.89189189189189,
+            "replicates": 2000
+          },
+          "n_exceptions": 37,
+          "p99_closure": 201.0,
+          "p99_closure_ci": {
+            "hi": 201.0,
+            "lo": 59.0,
+            "point": 201.0,
+            "replicates": 2000
+          },
+          "param": 60,
+          "sd_closure": 35.006396159793724
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 2.081081081081081,
+          "mean_closure_ci": {
+            "hi": 2.473684210526316,
+            "lo": 1.7,
+            "point": 2.081081081081081,
+            "replicates": 2000
+          },
+          "n_exceptions": 37,
+          "p99_closure": 4.0,
+          "p99_closure_ci": {
+            "hi": 4.0,
+            "lo": 4.0,
+            "point": 4.0,
+            "replicates": 2000
+          },
+          "param": 80,
+          "sd_closure": 1.1241423969235365
+        }
+      },
+      "curves": {
+        "fixed_timeout": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.6757062146892655,
+            "inadmissible_rate": 0.7175141242937854,
+            "mean_closure": -56.028346456692915,
+            "n_exceptions": 635,
+            "p99_closure": -54.0,
+            "param": 20,
+            "sd_closure": 1.4150427854634535
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.40451977401129946,
+            "inadmissible_rate": 0.4463276836158192,
+            "mean_closure": -36.06835443037975,
+            "n_exceptions": 395,
+            "p99_closure": -34.0,
+            "param": 40,
+            "sd_closure": 1.433023209842997
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.12768361581920903,
+            "inadmissible_rate": 0.1694915254237288,
+            "mean_closure": -16.2,
+            "n_exceptions": 150,
+            "p99_closure": -14.0,
+            "param": 60,
+            "sd_closure": 1.451436070471816
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 3.8378378378378377,
+            "n_exceptions": 37,
+            "p99_closure": 6.0,
+            "param": 80,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 23.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 26.0,
+            "param": 100,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 43.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 46.0,
+            "param": 120,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 63.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 66.0,
+            "param": 140,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 83.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 86.0,
+            "param": 160,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 103.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 106.0,
+            "param": 180,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 123.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 126.0,
+            "param": 200,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 143.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 146.0,
+            "param": 220,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 163.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 166.0,
+            "param": 240,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 183.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 186.0,
+            "param": 260,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 203.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 206.0,
+            "param": 280,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 223.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 226.0,
+            "param": 300,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 243.83783783783784,
+            "n_exceptions": 37,
+            "p99_closure": 246.0,
+            "param": 320,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 263.8378378378378,
+            "n_exceptions": 37,
+            "p99_closure": 266.0,
+            "param": 340,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 283.8378378378378,
+            "n_exceptions": 37,
+            "p99_closure": 286.0,
+            "param": 360,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 303.8378378378378,
+            "n_exceptions": 37,
+            "p99_closure": 306.0,
+            "param": 380,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 323.8378378378378,
+            "n_exceptions": 37,
+            "p99_closure": 326.0,
+            "param": 400,
+            "sd_closure": 1.6193678031292154
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 343.81081081081084,
+            "n_exceptions": 37,
+            "p99_closure": 346.0,
+            "param": 420,
+            "sd_closure": 1.6247717151555823
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 363.27027027027026,
+            "n_exceptions": 37,
+            "p99_closure": 366.0,
+            "param": 440,
+            "sd_closure": 3.7463398256319653
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 382.72972972972974,
+            "n_exceptions": 37,
+            "p99_closure": 386.0,
+            "param": 460,
+            "sd_closure": 6.816707014501105
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 402.18918918918916,
+            "n_exceptions": 37,
+            "p99_closure": 406.0,
+            "param": 480,
+            "sd_closure": 9.996858527740947
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 421.64864864864865,
+            "n_exceptions": 37,
+            "p99_closure": 426.0,
+            "param": 500,
+            "sd_closure": 13.207729547332166
+          }
+        ],
+        "global_watermark": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.1638418079096045,
+            "inadmissible_rate": 0.1977401129943503,
+            "mean_closure": -25.478021978021978,
+            "n_exceptions": 182,
+            "p99_closure": 30.0,
+            "param": 20,
+            "sd_closure": 15.085727933918877
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.031638418079096044,
+            "inadmissible_rate": 0.04858757062146893,
+            "mean_closure": -0.5230769230769231,
+            "n_exceptions": 65,
+            "p99_closure": 107.0,
+            "param": 40,
+            "sd_closure": 25.115798088244528
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 32.729729729729726,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 60,
+            "sd_closure": 40.71964042256722
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 56.891891891891895,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 80,
+            "sd_closure": 34.896591472817875
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 72.13513513513513,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 100,
+            "sd_closure": 30.518193211158987
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 91.64864864864865,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 120,
+            "sd_closure": 35.71222533971231
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 109.97297297297297,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 140,
+            "sd_closure": 33.638368124514464
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 131.27027027027026,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 160,
+            "sd_closure": 29.04018525055261
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 150.56756756756758,
+            "n_exceptions": 37,
+            "p99_closure": 223.0,
+            "param": 180,
+            "sd_closure": 25.46703278648962
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 171.48648648648648,
+            "n_exceptions": 37,
+            "p99_closure": 303.0,
+            "param": 200,
+            "sd_closure": 30.404144117983563
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 193.24324324324326,
+            "n_exceptions": 37,
+            "p99_closure": 303.0,
+            "param": 220,
+            "sd_closure": 30.41639441059431
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 215.16216216216216,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 240,
+            "sd_closure": 34.43168992368412
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 230.8918918918919,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 260,
+            "sd_closure": 33.54688835111785
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 251.9189189189189,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 280,
+            "sd_closure": 33.62301205085297
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 273.6216216216216,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 300,
+            "sd_closure": 27.779392859467134
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 287.94594594594594,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 320,
+            "sd_closure": 22.831871921866977
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 308.18918918918916,
+            "n_exceptions": 37,
+            "p99_closure": 353.0,
+            "param": 340,
+            "sd_closure": 18.011764680623422
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 328.4594594594595,
+            "n_exceptions": 37,
+            "p99_closure": 366.0,
+            "param": 360,
+            "sd_closure": 17.00174012492202
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 343.02702702702703,
+            "n_exceptions": 37,
+            "p99_closure": 378.0,
+            "param": 380,
+            "sd_closure": 16.945838182337642
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 374.56756756756755,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 400,
+            "sd_closure": 52.71983089653217
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 393.7567567567568,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 420,
+            "sd_closure": 50.23318888102814
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 413.9189189189189,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 440,
+            "sd_closure": 46.67274126521435
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 433.7027027027027,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 460,
+            "sd_closure": 48.674242516831114
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 457.27027027027026,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 480,
+            "sd_closure": 49.13888131290445
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 478.4054054054054,
+            "n_exceptions": 37,
+            "p99_closure": 651.0,
+            "param": 500,
+            "sd_closure": 53.33294679674878
+          }
+        ],
+        "idle_watermark": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.17288135593220338,
+            "inadmissible_rate": 0.207909604519774,
+            "mean_closure": -26.878947368421052,
+            "n_exceptions": 190,
+            "p99_closure": 30.0,
+            "param": 20,
+            "sd_closure": 12.827235783259587
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.03502824858757062,
+            "inadmissible_rate": 0.05310734463276836,
+            "mean_closure": -3.9411764705882355,
+            "n_exceptions": 68,
+            "p99_closure": 67.0,
+            "param": 40,
+            "sd_closure": 21.36371466993205
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 29.89189189189189,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 60,
+            "sd_closure": 35.006396159793724
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 54.054054054054056,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 80,
+            "sd_closure": 30.368854908104627
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 69.29729729729729,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 100,
+            "sd_closure": 26.87696176610145
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 88.21621621621621,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 120,
+            "sd_closure": 32.573521940817606
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 106.21621621621621,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 140,
+            "sd_closure": 29.740440331111202
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 128.97297297297297,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 160,
+            "sd_closure": 25.048586825851924
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 148.75675675675674,
+            "n_exceptions": 37,
+            "p99_closure": 201.0,
+            "param": 180,
+            "sd_closure": 21.595051241662333
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 169.1891891891892,
+            "n_exceptions": 37,
+            "p99_closure": 285.0,
+            "param": 200,
+            "sd_closure": 26.395984377069134
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 190.21621621621622,
+            "n_exceptions": 37,
+            "p99_closure": 285.0,
+            "param": 220,
+            "sd_closure": 25.952279632344684
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 211.43243243243242,
+            "n_exceptions": 37,
+            "p99_closure": 335.0,
+            "param": 240,
+            "sd_closure": 30.457361015511804
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 227.13513513513513,
+            "n_exceptions": 37,
+            "p99_closure": 335.0,
+            "param": 260,
+            "sd_closure": 29.779516052701226
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 249.67567567567568,
+            "n_exceptions": 37,
+            "p99_closure": 343.0,
+            "param": 280,
+            "sd_closure": 30.21727987297733
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 270.5945945945946,
+            "n_exceptions": 37,
+            "p99_closure": 343.0,
+            "param": 300,
+            "sd_closure": 25.648833764604095
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 285.64864864864865,
+            "n_exceptions": 37,
+            "p99_closure": 343.0,
+            "param": 320,
+            "sd_closure": 20.968723448000222
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 305.8378378378378,
+            "n_exceptions": 37,
+            "p99_closure": 343.0,
+            "param": 340,
+            "sd_closure": 18.2926857536506
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 326.5135135135135,
+            "n_exceptions": 37,
+            "p99_closure": 366.0,
+            "param": 360,
+            "sd_closure": 17.835012061189932
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 341.18918918918916,
+            "n_exceptions": 37,
+            "p99_closure": 378.0,
+            "param": 380,
+            "sd_closure": 17.92150729338663
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 371.6216216216216,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 400,
+            "sd_closure": 47.13944314555536
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 390.7567567567568,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 420,
+            "sd_closure": 45.52540449404308
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 411.1081081081081,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 440,
+            "sd_closure": 41.68983529220301
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 430.18918918918916,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 460,
+            "sd_closure": 43.76956726152893
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 453.3243243243243,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 480,
+            "sd_closure": 44.55731447464166
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 472.43243243243245,
+            "n_exceptions": 37,
+            "p99_closure": 630.0,
+            "param": 500,
+            "sd_closure": 46.69425599291546
+          }
+        ],
+        "typed_horizon": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.7005649717514124,
+            "inadmissible_rate": 0.7423728813559322,
+            "mean_closure": -58.018264840182646,
+            "n_exceptions": 657,
+            "p99_closure": -56.0,
+            "param": 20,
+            "sd_closure": 1.4269534246002562
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.4327683615819209,
+            "inadmissible_rate": 0.4745762711864407,
+            "mean_closure": -38.05714285714286,
+            "n_exceptions": 420,
+            "p99_closure": -36.0,
+            "param": 40,
+            "sd_closure": 1.4012142450547018
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.15480225988700566,
+            "inadmissible_rate": 0.19661016949152543,
+            "mean_closure": -18.149425287356323,
+            "n_exceptions": 174,
+            "p99_closure": -16.0,
+            "param": 60,
+            "sd_closure": 1.3521267677781394
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 2.081081081081081,
+            "n_exceptions": 37,
+            "p99_closure": 4.0,
+            "param": 80,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 22.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 24.0,
+            "param": 100,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 42.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 44.0,
+            "param": 120,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 62.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 64.0,
+            "param": 140,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 82.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 84.0,
+            "param": 160,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 102.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 104.0,
+            "param": 180,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 122.08108108108108,
+            "n_exceptions": 37,
+            "p99_closure": 124.0,
+            "param": 200,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 142.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 144.0,
+            "param": 220,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 162.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 164.0,
+            "param": 240,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 182.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 184.0,
+            "param": 260,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 202.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 204.0,
+            "param": 280,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 222.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 224.0,
+            "param": 300,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 242.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 244.0,
+            "param": 320,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 262.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 264.0,
+            "param": 340,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 282.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 284.0,
+            "param": 360,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 302.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 304.0,
+            "param": 380,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 322.0810810810811,
+            "n_exceptions": 37,
+            "p99_closure": 324.0,
+            "param": 400,
+            "sd_closure": 1.1241423969235365
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 342.05405405405406,
+            "n_exceptions": 37,
+            "p99_closure": 344.0,
+            "param": 420,
+            "sd_closure": 1.0891590097086423
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 361.5135135135135,
+            "n_exceptions": 37,
+            "p99_closure": 364.0,
+            "param": 440,
+            "sd_closure": 3.268371126017508
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 380.97297297297297,
+            "n_exceptions": 37,
+            "p99_closure": 384.0,
+            "param": 460,
+            "sd_closure": 6.419928796803458
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 400.43243243243245,
+            "n_exceptions": 37,
+            "p99_closure": 404.0,
+            "param": 480,
+            "sd_closure": 9.632547698524702
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 419.8918918918919,
+            "n_exceptions": 37,
+            "p99_closure": 424.0,
+            "param": 500,
+            "sd_closure": 12.860548901285927
+          }
+        ]
+      }
+    },
+    "faulty": {
+      "at_zero_false_breaks": {
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 253.83809523809524,
+          "mean_closure_ci": {
+            "hi": 262.45853658536583,
+            "lo": 245.67142857142858,
+            "point": 253.83809523809524,
+            "replicates": 2000
+          },
+          "n_exceptions": 210,
+          "p99_closure": 446.0,
+          "p99_closure_ci": {
+            "hi": 462.0,
+            "lo": 423.0,
+            "point": 446.0,
+            "replicates": 2000
+          },
+          "param": 300,
+          "sd_closure": 60.84056037585513
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 264.85714285714283,
+          "mean_closure_ci": {
+            "hi": 274.19170984455957,
+            "lo": 255.75151515151515,
+            "point": 264.85714285714283,
+            "replicates": 2000
+          },
+          "n_exceptions": 210,
+          "p99_closure": 554.0,
+          "p99_closure_ci": {
+            "hi": 595.0,
+            "lo": 453.0,
+            "point": 554.0,
+            "replicates": 2000
+          },
+          "param": 260,
+          "sd_closure": 69.84601138305929
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 245.7952380952381,
+          "mean_closure_ci": {
+            "hi": 251.39423076923077,
+            "lo": 240.5873786407767,
+            "point": 245.7952380952381,
+            "replicates": 2000
+          },
+          "n_exceptions": 210,
+          "p99_closure": 392.0,
+          "p99_closure_ci": {
+            "hi": 434.0,
+            "lo": 353.0,
+            "point": 392.0,
+            "replicates": 2000
+          },
+          "param": 260,
+          "sd_closure": 40.39791338541747
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "mean_closure": 221.64761904761906,
+          "mean_closure_ci": {
+            "hi": 222.10970464135022,
+            "lo": 220.78034682080926,
+            "point": 221.64761904761906,
+            "replicates": 2000
+          },
+          "n_exceptions": 210,
+          "p99_closure": 224.0,
+          "p99_closure_ci": {
+            "hi": 224.0,
+            "lo": 224.0,
+            "point": 224.0,
+            "replicates": 2000
+          },
+          "param": 300,
+          "sd_closure": 5.011379341308571
+        }
+      },
+      "curves": {
+        "fixed_timeout": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.4114671163575042,
+            "inadmissible_rate": 0.6728499156829679,
+            "mean_closure": -38.147577092511014,
+            "n_exceptions": 454,
+            "p99_closure": 156.0,
+            "param": 20,
+            "sd_closure": 47.41858574298903
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.31197301854974707,
+            "inadmissible_rate": 0.5649241146711635,
+            "mean_closure": -16.00759493670886,
+            "n_exceptions": 395,
+            "p99_closure": 177.0,
+            "param": 40,
+            "sd_closure": 50.08673432132668
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.19561551433389546,
+            "inadmissible_rate": 0.43676222596964587,
+            "mean_closure": 7.08282208588957,
+            "n_exceptions": 326,
+            "p99_closure": 197.0,
+            "param": 60,
+            "sd_closure": 52.98665081925792
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.13490725126475547,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 28.896551724137932,
+            "n_exceptions": 290,
+            "p99_closure": 226.0,
+            "param": 80,
+            "sd_closure": 54.749803858937724
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.11298482293423272,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 48.95306859205776,
+            "n_exceptions": 277,
+            "p99_closure": 246.0,
+            "param": 100,
+            "sd_closure": 54.641542423816865
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.09949409780775717,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 68.8736059479554,
+            "n_exceptions": 269,
+            "p99_closure": 266.0,
+            "param": 120,
+            "sd_closure": 54.967841311506426
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.08600337268128162,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 89.44061302681992,
+            "n_exceptions": 261,
+            "p99_closure": 286.0,
+            "param": 140,
+            "sd_closure": 55.64771270345363
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.07419898819561552,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 109.68503937007874,
+            "n_exceptions": 254,
+            "p99_closure": 306.0,
+            "param": 160,
+            "sd_closure": 56.17635347337328
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.06239460370994941,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 130.1255060728745,
+            "n_exceptions": 247,
+            "p99_closure": 326.0,
+            "param": 180,
+            "sd_closure": 56.84751638085005
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.04384485666104553,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 150.95338983050848,
+            "n_exceptions": 236,
+            "p99_closure": 346.0,
+            "param": 200,
+            "sd_closure": 57.79091797482936
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.03035413153456998,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 171.83333333333334,
+            "n_exceptions": 228,
+            "p99_closure": 366.0,
+            "param": 220,
+            "sd_closure": 58.586555649943925
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.021922428330522766,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 192.36322869955157,
+            "n_exceptions": 223,
+            "p99_closure": 386.0,
+            "param": 240,
+            "sd_closure": 59.13758293281893
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.011804384485666104,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 213.08294930875576,
+            "n_exceptions": 217,
+            "p99_closure": 406.0,
+            "param": 260,
+            "sd_closure": 59.82326146658785
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0016863406408094434,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 233.8009478672986,
+            "n_exceptions": 211,
+            "p99_closure": 426.0,
+            "param": 280,
+            "sd_closure": 60.58293597873059
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 253.83809523809524,
+            "n_exceptions": 210,
+            "p99_closure": 446.0,
+            "param": 300,
+            "sd_closure": 60.84056037585513
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 273.74285714285713,
+            "n_exceptions": 210,
+            "p99_closure": 466.0,
+            "param": 320,
+            "sd_closure": 61.01530308770378
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 293.64761904761906,
+            "n_exceptions": 210,
+            "p99_closure": 486.0,
+            "param": 340,
+            "sd_closure": 61.220519584046244
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 313.55238095238093,
+            "n_exceptions": 210,
+            "p99_closure": 506.0,
+            "param": 360,
+            "sd_closure": 61.45590458708406
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 333.3952380952381,
+            "n_exceptions": 210,
+            "p99_closure": 526.0,
+            "param": 380,
+            "sd_closure": 61.57443019236751
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 353.2047619047619,
+            "n_exceptions": 210,
+            "p99_closure": 546.0,
+            "param": 400,
+            "sd_closure": 61.669634236373355
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 373.01428571428573,
+            "n_exceptions": 210,
+            "p99_closure": 566.0,
+            "param": 420,
+            "sd_closure": 61.825751960183844
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 392.82380952380953,
+            "n_exceptions": 210,
+            "p99_closure": 586.0,
+            "param": 440,
+            "sd_closure": 62.042323532384344
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 412.6333333333333,
+            "n_exceptions": 210,
+            "p99_closure": 606.0,
+            "param": 460,
+            "sd_closure": 62.31871868397728
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 432.4428571428571,
+            "n_exceptions": 210,
+            "p99_closure": 626.0,
+            "param": 480,
+            "sd_closure": 62.65414569515026
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 452.252380952381,
+            "n_exceptions": 210,
+            "p99_closure": 646.0,
+            "param": 500,
+            "sd_closure": 63.04766238669205
+          }
+        ],
+        "global_watermark": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.1821247892074199,
+            "inadmissible_rate": 0.28836424957841483,
+            "mean_closure": 11.676100628930818,
+            "n_exceptions": 318,
+            "p99_closure": 160.0,
+            "param": 20,
+            "sd_closure": 53.43654434548849
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.13827993254637436,
+            "inadmissible_rate": 0.1163575042158516,
+            "mean_closure": 31.171232876712327,
+            "n_exceptions": 292,
+            "p99_closure": 213.0,
+            "param": 40,
+            "sd_closure": 51.925309845870004
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.11804384485666104,
+            "inadmissible_rate": 0.00505902192242833,
+            "mean_closure": 52.96785714285714,
+            "n_exceptions": 280,
+            "p99_closure": 213.0,
+            "param": 60,
+            "sd_closure": 49.451950370113444
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.10623946037099494,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 73.39194139194139,
+            "n_exceptions": 273,
+            "p99_closure": 316.0,
+            "param": 80,
+            "sd_closure": 57.61229080912295
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.09106239460370995,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 93.98863636363636,
+            "n_exceptions": 264,
+            "p99_closure": 512.0,
+            "param": 100,
+            "sd_closure": 65.62055081336628
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.08263069139966273,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 112.41698841698842,
+            "n_exceptions": 259,
+            "p99_closure": 512.0,
+            "param": 120,
+            "sd_closure": 67.1453493202017
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0657672849915683,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 132.98393574297188,
+            "n_exceptions": 249,
+            "p99_closure": 519.0,
+            "param": 140,
+            "sd_closure": 71.17482113519074
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.048903878583473864,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 158.36820083682008,
+            "n_exceptions": 239,
+            "p99_closure": 519.0,
+            "param": 160,
+            "sd_closure": 73.64257223155752
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.03372681281618887,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 181.87391304347827,
+            "n_exceptions": 230,
+            "p99_closure": 554.0,
+            "param": 180,
+            "sd_closure": 76.945190642099
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.021922428330522766,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 199.4394618834081,
+            "n_exceptions": 223,
+            "p99_closure": 554.0,
+            "param": 200,
+            "sd_closure": 75.66574278430474
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.008431703204047217,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 221.34883720930233,
+            "n_exceptions": 215,
+            "p99_closure": 554.0,
+            "param": 220,
+            "sd_closure": 73.20397870777187
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.00505902192242833,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 245.5868544600939,
+            "n_exceptions": 213,
+            "p99_closure": 554.0,
+            "param": 240,
+            "sd_closure": 71.8307100550105
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 264.85714285714283,
+            "n_exceptions": 210,
+            "p99_closure": 554.0,
+            "param": 260,
+            "sd_closure": 69.84601138305929
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 281.54761904761904,
+            "n_exceptions": 210,
+            "p99_closure": 554.0,
+            "param": 280,
+            "sd_closure": 67.54187497607279
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 301.04761904761904,
+            "n_exceptions": 210,
+            "p99_closure": 591.0,
+            "param": 300,
+            "sd_closure": 69.3373232760897
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 318.98571428571427,
+            "n_exceptions": 210,
+            "p99_closure": 591.0,
+            "param": 320,
+            "sd_closure": 65.67281662558273
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 339.35714285714283,
+            "n_exceptions": 210,
+            "p99_closure": 595.0,
+            "param": 340,
+            "sd_closure": 64.87923632505587
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 360.8095238095238,
+            "n_exceptions": 210,
+            "p99_closure": 647.0,
+            "param": 360,
+            "sd_closure": 66.32683795498302
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 379.43809523809523,
+            "n_exceptions": 210,
+            "p99_closure": 647.0,
+            "param": 380,
+            "sd_closure": 62.995075213335426
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 408.2047619047619,
+            "n_exceptions": 210,
+            "p99_closure": 662.0,
+            "param": 400,
+            "sd_closure": 69.09958980093585
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 427.4,
+            "n_exceptions": 210,
+            "p99_closure": 722.0,
+            "param": 420,
+            "sd_closure": 71.94238435488961
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 450.5761904761905,
+            "n_exceptions": 210,
+            "p99_closure": 746.0,
+            "param": 440,
+            "sd_closure": 79.22545529335827
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 469.57142857142856,
+            "n_exceptions": 210,
+            "p99_closure": 769.0,
+            "param": 460,
+            "sd_closure": 79.91720205108203
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 489.1714285714286,
+            "n_exceptions": 210,
+            "p99_closure": 769.0,
+            "param": 480,
+            "sd_closure": 78.50507501251806
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 511.68095238095236,
+            "n_exceptions": 210,
+            "p99_closure": 769.0,
+            "param": 500,
+            "sd_closure": 75.53219508481841
+          }
+        ],
+        "idle_watermark": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.19392917369308602,
+            "inadmissible_rate": 0.31703204047217537,
+            "mean_closure": 3.609230769230769,
+            "n_exceptions": 325,
+            "p99_closure": 135.0,
+            "param": 20,
+            "sd_closure": 38.7790336812876
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.1467116357504216,
+            "inadmissible_rate": 0.1315345699831366,
+            "mean_closure": 24.774410774410775,
+            "n_exceptions": 297,
+            "p99_closure": 159.0,
+            "param": 40,
+            "sd_closure": 38.699389041623135
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.12141652613827993,
+            "inadmissible_rate": 0.01011804384485666,
+            "mean_closure": 45.48936170212766,
+            "n_exceptions": 282,
+            "p99_closure": 160.0,
+            "param": 60,
+            "sd_closure": 34.92466401170044
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.10961214165261383,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 63.27272727272727,
+            "n_exceptions": 275,
+            "p99_closure": 177.0,
+            "param": 80,
+            "sd_closure": 33.62653419032197
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.09443507588532883,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 82.1015037593985,
+            "n_exceptions": 266,
+            "p99_closure": 202.0,
+            "param": 100,
+            "sd_closure": 30.614401458889837
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.08600337268128162,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 101.16091954022988,
+            "n_exceptions": 261,
+            "p99_closure": 237.0,
+            "param": 120,
+            "sd_closure": 34.26431190639633
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.06913996627318718,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 120.18326693227091,
+            "n_exceptions": 251,
+            "p99_closure": 272.0,
+            "param": 140,
+            "sd_closure": 36.89295216172909
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.05227655986509275,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 142.19502074688796,
+            "n_exceptions": 241,
+            "p99_closure": 274.0,
+            "param": 160,
+            "sd_closure": 36.93359713883387
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.03372681281618887,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 164.22608695652173,
+            "n_exceptions": 230,
+            "p99_closure": 315.0,
+            "param": 180,
+            "sd_closure": 40.02598305439479
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.021922428330522766,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 182.40358744394618,
+            "n_exceptions": 223,
+            "p99_closure": 316.0,
+            "param": 200,
+            "sd_closure": 40.46587872999097
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.008431703204047217,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 202.8139534883721,
+            "n_exceptions": 215,
+            "p99_closure": 392.0,
+            "param": 220,
+            "sd_closure": 40.35277911178297
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.00505902192242833,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 226.71830985915494,
+            "n_exceptions": 213,
+            "p99_closure": 392.0,
+            "param": 240,
+            "sd_closure": 41.72383488059821
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 245.7952380952381,
+            "n_exceptions": 210,
+            "p99_closure": 392.0,
+            "param": 260,
+            "sd_closure": 40.39791338541747
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 264.35714285714283,
+            "n_exceptions": 210,
+            "p99_closure": 404.0,
+            "param": 280,
+            "sd_closure": 39.80094604557094
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 286.2,
+            "n_exceptions": 210,
+            "p99_closure": 471.0,
+            "param": 300,
+            "sd_closure": 46.65943481379577
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 304.3666666666667,
+            "n_exceptions": 210,
+            "p99_closure": 471.0,
+            "param": 320,
+            "sd_closure": 43.45521869403066
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 322.72857142857146,
+            "n_exceptions": 210,
+            "p99_closure": 471.0,
+            "param": 340,
+            "sd_closure": 40.240084763438404
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 343.53809523809525,
+            "n_exceptions": 210,
+            "p99_closure": 475.0,
+            "param": 360,
+            "sd_closure": 40.1690591208905
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 362.9904761904762,
+            "n_exceptions": 210,
+            "p99_closure": 493.0,
+            "param": 380,
+            "sd_closure": 41.19546790562912
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 390.6333333333333,
+            "n_exceptions": 210,
+            "p99_closure": 557.0,
+            "param": 400,
+            "sd_closure": 48.169480886645324
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 407.57142857142856,
+            "n_exceptions": 210,
+            "p99_closure": 557.0,
+            "param": 420,
+            "sd_closure": 46.88178794389487
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 428.9714285714286,
+            "n_exceptions": 210,
+            "p99_closure": 591.0,
+            "param": 440,
+            "sd_closure": 49.00689108839348
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 445.4952380952381,
+            "n_exceptions": 210,
+            "p99_closure": 591.0,
+            "param": 460,
+            "sd_closure": 46.88692046464127
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 465.84285714285716,
+            "n_exceptions": 210,
+            "p99_closure": 608.0,
+            "param": 480,
+            "sd_closure": 48.8714452749794
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 489.9904761904762,
+            "n_exceptions": 210,
+            "p99_closure": 651.0,
+            "param": 500,
+            "sd_closure": 49.22726601001585
+          }
+        ],
+        "typed_horizon": [
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.41989881956155145,
+            "inadmissible_rate": 0.6964586846543002,
+            "mean_closure": -43.209150326797385,
+            "n_exceptions": 459,
+            "p99_closure": 136.0,
+            "param": 20,
+            "sd_closure": 41.94243179784448
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.3372681281618887,
+            "inadmissible_rate": 0.612141652613828,
+            "mean_closure": -24.658536585365855,
+            "n_exceptions": 410,
+            "p99_closure": 136.0,
+            "param": 40,
+            "sd_closure": 37.91743903831417
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.21585160202360876,
+            "inadmissible_rate": 0.49072512647554806,
+            "mean_closure": -5.313609467455621,
+            "n_exceptions": 338,
+            "p99_closure": 137.0,
+            "param": 60,
+            "sd_closure": 34.926836352905376
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.14839797639123103,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 12.926174496644295,
+            "n_exceptions": 298,
+            "p99_closure": 146.0,
+            "param": 80,
+            "sd_closure": 30.657798193339172
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.1281618887015177,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 30.20979020979021,
+            "n_exceptions": 286,
+            "p99_closure": 146.0,
+            "param": 100,
+            "sd_closure": 25.392403783140697
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.11804384485666104,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 47.864285714285714,
+            "n_exceptions": 280,
+            "p99_closure": 146.0,
+            "param": 120,
+            "sd_closure": 20.217817712632204
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.10286677908937605,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 66.03690036900369,
+            "n_exceptions": 271,
+            "p99_closure": 146.0,
+            "param": 140,
+            "sd_closure": 15.531141314787178
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.09106239460370995,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 84.47727272727273,
+            "n_exceptions": 264,
+            "p99_closure": 146.0,
+            "param": 160,
+            "sd_closure": 11.239113189627382
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.08263069139966273,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 103.3976833976834,
+            "n_exceptions": 259,
+            "p99_closure": 146.0,
+            "param": 180,
+            "sd_closure": 7.391437864631805
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.06239460370994941,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 122.57894736842105,
+            "n_exceptions": 247,
+            "p99_closure": 146.0,
+            "param": 200,
+            "sd_closure": 4.294903545228572
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0387858347386172,
+            "inadmissible_rate": 0.0016863406408094434,
+            "mean_closure": 142.137339055794,
+            "n_exceptions": 233,
+            "p99_closure": 146.0,
+            "param": 220,
+            "sd_closure": 2.2115626214034294
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.02866779089376054,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 161.90308370044053,
+            "n_exceptions": 227,
+            "p99_closure": 164.0,
+            "param": 240,
+            "sd_closure": 1.5278152917422516
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.01517706576728499,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 181.84018264840182,
+            "n_exceptions": 219,
+            "p99_closure": 184.0,
+            "param": 260,
+            "sd_closure": 2.448936394510167
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0016863406408094434,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 201.739336492891,
+            "n_exceptions": 211,
+            "p99_closure": 204.0,
+            "param": 280,
+            "sd_closure": 3.6987659701498297
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 221.64761904761906,
+            "n_exceptions": 210,
+            "p99_closure": 224.0,
+            "param": 300,
+            "sd_closure": 5.011379341308571
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 241.55238095238096,
+            "n_exceptions": 210,
+            "p99_closure": 244.0,
+            "param": 320,
+            "sd_closure": 6.346323948901371
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 261.45714285714286,
+            "n_exceptions": 210,
+            "p99_closure": 264.0,
+            "param": 340,
+            "sd_closure": 7.696045455054076
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 281.3619047619048,
+            "n_exceptions": 210,
+            "p99_closure": 284.0,
+            "param": 360,
+            "sd_closure": 9.053937643261774
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 301.26666666666665,
+            "n_exceptions": 210,
+            "p99_closure": 304.0,
+            "param": 380,
+            "sd_closure": 10.416805713357682
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 321.1714285714286,
+            "n_exceptions": 210,
+            "p99_closure": 324.0,
+            "param": 400,
+            "sd_closure": 11.78292319042964
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 341.0761904761905,
+            "n_exceptions": 210,
+            "p99_closure": 344.0,
+            "param": 420,
+            "sd_closure": 13.151277495864903
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 360.9809523809524,
+            "n_exceptions": 210,
+            "p99_closure": 364.0,
+            "param": 440,
+            "sd_closure": 14.521236306006294
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 380.8857142857143,
+            "n_exceptions": 210,
+            "p99_closure": 384.0,
+            "param": 460,
+            "sd_closure": 15.892384690676934
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 400.79047619047617,
+            "n_exceptions": 210,
+            "p99_closure": 404.0,
+            "param": 480,
+            "sd_closure": 17.264439222807226
+          },
+          {
+            "break_recall": 1.0,
+            "false_break_rate": 0.0,
+            "inadmissible_rate": 0.0,
+            "mean_closure": 420.6952380952381,
+            "n_exceptions": 210,
+            "p99_closure": 424.0,
+            "param": 500,
+            "sd_closure": 18.637199774094313
+          }
+        ]
+      }
+    }
+  }
+}

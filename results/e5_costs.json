@@ -1,0 +1,5604 @@
+{
+  "calibration": {
+    "amount_date": {
+      "converged": false,
+      "false_break_rate": 0.020338983050847456,
+      "family": "amount_date",
+      "inadmissible_rate": 0.9446327683615819,
+      "param": null
+    },
+    "fixed_timeout": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "fixed_timeout",
+      "inadmissible_rate": 0.0,
+      "param": 80
+    },
+    "global_watermark": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "global_watermark",
+      "inadmissible_rate": 0.0,
+      "param": 60
+    },
+    "idle_watermark": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "idle_watermark",
+      "inadmissible_rate": 0.0,
+      "param": 60
+    },
+    "typed_horizon": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "typed_horizon",
+      "inadmissible_rate": 0.0,
+      "param": 80
+    }
+  },
+  "config": {
+    "carry": [
+      0,
+      1,
+      2,
+      5,
+      10
+    ],
+    "investigation": [
+      600,
+      1200,
+      2400,
+      4800,
+      9600
+    ],
+    "model": {
+      "bound": {
+        "bank": 80,
+        "ledger": 2
+      },
+      "settlement_window": 0
+    },
+    "n_cases": 200,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "unrecovered": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ]
+  },
+  "provenance": {
+    "git": "unversioned",
+    "p1": {
+      "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
+      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-11T19:43:19Z"
+  },
+  "sweeps": {
+    "calm": {
+      "baseline_order": [
+        "typed_horizon",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "amount_date"
+      ],
+      "cheapest_counts": {
+        "amount_date": 0,
+        "fixed_timeout": 0,
+        "global_watermark": 0,
+        "idle_watermark": 0,
+        "typed_horizon": 125
+      },
+      "n_points": 125,
+      "order_stable_fraction": 0.2,
+      "points": [
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4446806,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4462563,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4478320,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4525591,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4604376,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8882812,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8898569,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8914326,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8961597,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9040382,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13318818,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13334575,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13350332,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13397603,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13476388,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17754824,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17770581,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17786338,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17833609,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17912394,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22190830,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22206587,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22222344,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22269615,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22348400,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4457606,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4473363,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4489120,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4536391,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4615176,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8893612,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8909369,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8925126,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8972397,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9051182,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13329618,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13345375,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13361132,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13408403,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13487188,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17765624,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17781381,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17797138,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17844409,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17923194,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22201630,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22217387,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22233144,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22280415,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22359200,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4479206,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4494963,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4510720,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4557991,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4636776,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8915212,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8930969,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8946726,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8993997,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9072782,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13351218,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13366975,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13382732,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13430003,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13508788,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17787224,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17802981,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17818738,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17866009,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17944794,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22223230,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22238987,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22254744,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22302015,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22380800,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4522406,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4538163,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4553920,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4601191,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4679976,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8958412,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8974169,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 8989926,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9037197,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9115982,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13394418,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13410175,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13425932,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13473203,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13551988,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17830424,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17846181,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17861938,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17909209,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17987994,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22266430,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22282187,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22297944,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22345215,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22424000,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 4800,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4608806,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4624563,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4640320,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4687591,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4766376,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9044812,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9060569,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9076326,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9123597,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9202382,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13480818,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13496575,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13512332,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13559603,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13638388,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17916824,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17932581,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17948338,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17995609,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 18074394,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22352830,
+            "fixed_timeout": 0,
+            "global_watermark": 0,
+            "idle_watermark": 0,
+            "typed_horizon": 0
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "global_watermark",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22368587,
+            "fixed_timeout": 142,
+            "global_watermark": 1211,
+            "idle_watermark": 1106,
+            "typed_horizon": 77
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22384344,
+            "fixed_timeout": 284,
+            "global_watermark": 2422,
+            "idle_watermark": 2212,
+            "typed_horizon": 154
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22431615,
+            "fixed_timeout": 710,
+            "global_watermark": 6055,
+            "idle_watermark": 5530,
+            "typed_horizon": 385
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 22510400,
+            "fixed_timeout": 1420,
+            "global_watermark": 12110,
+            "idle_watermark": 11060,
+            "typed_horizon": 770
+          },
+          "investigation": 9600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        }
+      ]
+    },
+    "faulty": {
+      "baseline_order": [
+        "global_watermark",
+        "idle_watermark",
+        "fixed_timeout",
+        "typed_horizon",
+        "amount_date"
+      ],
+      "cheapest_counts": {
+        "amount_date": 0,
+        "fixed_timeout": 20,
+        "global_watermark": 75,
+        "idle_watermark": 0,
+        "typed_horizon": 30
+      },
+      "n_points": 125,
+      "order_stable_fraction": 0.44,
+      "points": [
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3277116,
+            "fixed_timeout": 49800,
+            "global_watermark": 46200,
+            "idle_watermark": 48600,
+            "typed_horizon": 56400
+          },
+          "investigation": 600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 3356170,
+            "fixed_timeout": 67343,
+            "global_watermark": 68693,
+            "idle_watermark": 69048,
+            "typed_horizon": 68865
+          },
+          "investigation": 600,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 3435224,
+            "fixed_timeout": 84886,
+            "global_watermark": 91186,
+            "idle_watermark": 89496,
+            "typed_horizon": 81330
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 3672386,
+            "fixed_timeout": 137515,
+            "global_watermark": 158665,
+            "idle_watermark": 150840,
+            "typed_horizon": 118725
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4067656,
+            "fixed_timeout": 225230,
+            "global_watermark": 271130,
+            "idle_watermark": 253080,
+            "typed_horizon": 181050
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6538032,
+            "fixed_timeout": 49800,
+            "global_watermark": 46200,
+            "idle_watermark": 48600,
+            "typed_horizon": 56400
+          },
+          "investigation": 600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 6617086,
+            "fixed_timeout": 67343,
+            "global_watermark": 68693,
+            "idle_watermark": 69048,
+            "typed_horizon": 68865
+          },
+          "investigation": 600,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 6696140,
+            "fixed_timeout": 84886,
+            "global_watermark": 91186,
+            "idle_watermark": 89496,
+            "typed_horizon": 81330
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 6933302,
+            "fixed_timeout": 137515,
+            "global_watermark": 158665,
+            "idle_watermark": 150840,
+            "typed_horizon": 118725
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 7328572,
+            "fixed_timeout": 225230,
+            "global_watermark": 271130,
+            "idle_watermark": 253080,
+            "typed_horizon": 181050
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9798948,
+            "fixed_timeout": 49800,
+            "global_watermark": 46200,
+            "idle_watermark": 48600,
+            "typed_horizon": 56400
+          },
+          "investigation": 600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 9878002,
+            "fixed_timeout": 67343,
+            "global_watermark": 68693,
+            "idle_watermark": 69048,
+            "typed_horizon": 68865
+          },
+          "investigation": 600,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 9957056,
+            "fixed_timeout": 84886,
+            "global_watermark": 91186,
+            "idle_watermark": 89496,
+            "typed_horizon": 81330
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 10194218,
+            "fixed_timeout": 137515,
+            "global_watermark": 158665,
+            "idle_watermark": 150840,
+            "typed_horizon": 118725
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 10589488,
+            "fixed_timeout": 225230,
+            "global_watermark": 271130,
+            "idle_watermark": 253080,
+            "typed_horizon": 181050
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13059864,
+            "fixed_timeout": 49800,
+            "global_watermark": 46200,
+            "idle_watermark": 48600,
+            "typed_horizon": 56400
+          },
+          "investigation": 600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 13138918,
+            "fixed_timeout": 67343,
+            "global_watermark": 68693,
+            "idle_watermark": 69048,
+            "typed_horizon": 68865
+          },
+          "investigation": 600,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13217972,
+            "fixed_timeout": 84886,
+            "global_watermark": 91186,
+            "idle_watermark": 89496,
+            "typed_horizon": 81330
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13455134,
+            "fixed_timeout": 137515,
+            "global_watermark": 158665,
+            "idle_watermark": 150840,
+            "typed_horizon": 118725
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13850404,
+            "fixed_timeout": 225230,
+            "global_watermark": 271130,
+            "idle_watermark": 253080,
+            "typed_horizon": 181050
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16320780,
+            "fixed_timeout": 49800,
+            "global_watermark": 46200,
+            "idle_watermark": 48600,
+            "typed_horizon": 56400
+          },
+          "investigation": 600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 16399834,
+            "fixed_timeout": 67343,
+            "global_watermark": 68693,
+            "idle_watermark": 69048,
+            "typed_horizon": 68865
+          },
+          "investigation": 600,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 16478888,
+            "fixed_timeout": 84886,
+            "global_watermark": 91186,
+            "idle_watermark": 89496,
+            "typed_horizon": 81330
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 16716050,
+            "fixed_timeout": 137515,
+            "global_watermark": 158665,
+            "idle_watermark": 150840,
+            "typed_horizon": 118725
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17111320,
+            "fixed_timeout": 225230,
+            "global_watermark": 271130,
+            "idle_watermark": 253080,
+            "typed_horizon": 181050
+          },
+          "investigation": 600,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3293316,
+            "fixed_timeout": 99600,
+            "global_watermark": 92400,
+            "idle_watermark": 97200,
+            "typed_horizon": 112800
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3372370,
+            "fixed_timeout": 117143,
+            "global_watermark": 114893,
+            "idle_watermark": 117648,
+            "typed_horizon": 125265
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 3451424,
+            "fixed_timeout": 134686,
+            "global_watermark": 137386,
+            "idle_watermark": 138096,
+            "typed_horizon": 137730
+          },
+          "investigation": 1200,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 3688586,
+            "fixed_timeout": 187315,
+            "global_watermark": 204865,
+            "idle_watermark": 199440,
+            "typed_horizon": 175125
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4083856,
+            "fixed_timeout": 275030,
+            "global_watermark": 317330,
+            "idle_watermark": 301680,
+            "typed_horizon": 237450
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6554232,
+            "fixed_timeout": 99600,
+            "global_watermark": 92400,
+            "idle_watermark": 97200,
+            "typed_horizon": 112800
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6633286,
+            "fixed_timeout": 117143,
+            "global_watermark": 114893,
+            "idle_watermark": 117648,
+            "typed_horizon": 125265
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 6712340,
+            "fixed_timeout": 134686,
+            "global_watermark": 137386,
+            "idle_watermark": 138096,
+            "typed_horizon": 137730
+          },
+          "investigation": 1200,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 6949502,
+            "fixed_timeout": 187315,
+            "global_watermark": 204865,
+            "idle_watermark": 199440,
+            "typed_horizon": 175125
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 7344772,
+            "fixed_timeout": 275030,
+            "global_watermark": 317330,
+            "idle_watermark": 301680,
+            "typed_horizon": 237450
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9815148,
+            "fixed_timeout": 99600,
+            "global_watermark": 92400,
+            "idle_watermark": 97200,
+            "typed_horizon": 112800
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9894202,
+            "fixed_timeout": 117143,
+            "global_watermark": 114893,
+            "idle_watermark": 117648,
+            "typed_horizon": 125265
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 9973256,
+            "fixed_timeout": 134686,
+            "global_watermark": 137386,
+            "idle_watermark": 138096,
+            "typed_horizon": 137730
+          },
+          "investigation": 1200,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 10210418,
+            "fixed_timeout": 187315,
+            "global_watermark": 204865,
+            "idle_watermark": 199440,
+            "typed_horizon": 175125
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 10605688,
+            "fixed_timeout": 275030,
+            "global_watermark": 317330,
+            "idle_watermark": 301680,
+            "typed_horizon": 237450
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13076064,
+            "fixed_timeout": 99600,
+            "global_watermark": 92400,
+            "idle_watermark": 97200,
+            "typed_horizon": 112800
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13155118,
+            "fixed_timeout": 117143,
+            "global_watermark": 114893,
+            "idle_watermark": 117648,
+            "typed_horizon": 125265
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 13234172,
+            "fixed_timeout": 134686,
+            "global_watermark": 137386,
+            "idle_watermark": 138096,
+            "typed_horizon": 137730
+          },
+          "investigation": 1200,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13471334,
+            "fixed_timeout": 187315,
+            "global_watermark": 204865,
+            "idle_watermark": 199440,
+            "typed_horizon": 175125
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13866604,
+            "fixed_timeout": 275030,
+            "global_watermark": 317330,
+            "idle_watermark": 301680,
+            "typed_horizon": 237450
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16336980,
+            "fixed_timeout": 99600,
+            "global_watermark": 92400,
+            "idle_watermark": 97200,
+            "typed_horizon": 112800
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16416034,
+            "fixed_timeout": 117143,
+            "global_watermark": 114893,
+            "idle_watermark": 117648,
+            "typed_horizon": 125265
+          },
+          "investigation": 1200,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 16495088,
+            "fixed_timeout": 134686,
+            "global_watermark": 137386,
+            "idle_watermark": 138096,
+            "typed_horizon": 137730
+          },
+          "investigation": 1200,
+          "order": [
+            "fixed_timeout",
+            "global_watermark",
+            "typed_horizon",
+            "idle_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 16732250,
+            "fixed_timeout": 187315,
+            "global_watermark": 204865,
+            "idle_watermark": 199440,
+            "typed_horizon": 175125
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17127520,
+            "fixed_timeout": 275030,
+            "global_watermark": 317330,
+            "idle_watermark": 301680,
+            "typed_horizon": 237450
+          },
+          "investigation": 1200,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3325716,
+            "fixed_timeout": 199200,
+            "global_watermark": 184800,
+            "idle_watermark": 194400,
+            "typed_horizon": 225600
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3404770,
+            "fixed_timeout": 216743,
+            "global_watermark": 207293,
+            "idle_watermark": 214848,
+            "typed_horizon": 238065
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3483824,
+            "fixed_timeout": 234286,
+            "global_watermark": 229786,
+            "idle_watermark": 235296,
+            "typed_horizon": 250530
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 3720986,
+            "fixed_timeout": 286915,
+            "global_watermark": 297265,
+            "idle_watermark": 296640,
+            "typed_horizon": 287925
+          },
+          "investigation": 2400,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 4116256,
+            "fixed_timeout": 374630,
+            "global_watermark": 409730,
+            "idle_watermark": 398880,
+            "typed_horizon": 350250
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6586632,
+            "fixed_timeout": 199200,
+            "global_watermark": 184800,
+            "idle_watermark": 194400,
+            "typed_horizon": 225600
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6665686,
+            "fixed_timeout": 216743,
+            "global_watermark": 207293,
+            "idle_watermark": 214848,
+            "typed_horizon": 238065
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6744740,
+            "fixed_timeout": 234286,
+            "global_watermark": 229786,
+            "idle_watermark": 235296,
+            "typed_horizon": 250530
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 6981902,
+            "fixed_timeout": 286915,
+            "global_watermark": 297265,
+            "idle_watermark": 296640,
+            "typed_horizon": 287925
+          },
+          "investigation": 2400,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 7377172,
+            "fixed_timeout": 374630,
+            "global_watermark": 409730,
+            "idle_watermark": 398880,
+            "typed_horizon": 350250
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9847548,
+            "fixed_timeout": 199200,
+            "global_watermark": 184800,
+            "idle_watermark": 194400,
+            "typed_horizon": 225600
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9926602,
+            "fixed_timeout": 216743,
+            "global_watermark": 207293,
+            "idle_watermark": 214848,
+            "typed_horizon": 238065
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10005656,
+            "fixed_timeout": 234286,
+            "global_watermark": 229786,
+            "idle_watermark": 235296,
+            "typed_horizon": 250530
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 10242818,
+            "fixed_timeout": 286915,
+            "global_watermark": 297265,
+            "idle_watermark": 296640,
+            "typed_horizon": 287925
+          },
+          "investigation": 2400,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 10638088,
+            "fixed_timeout": 374630,
+            "global_watermark": 409730,
+            "idle_watermark": 398880,
+            "typed_horizon": 350250
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13108464,
+            "fixed_timeout": 199200,
+            "global_watermark": 184800,
+            "idle_watermark": 194400,
+            "typed_horizon": 225600
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13187518,
+            "fixed_timeout": 216743,
+            "global_watermark": 207293,
+            "idle_watermark": 214848,
+            "typed_horizon": 238065
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13266572,
+            "fixed_timeout": 234286,
+            "global_watermark": 229786,
+            "idle_watermark": 235296,
+            "typed_horizon": 250530
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 13503734,
+            "fixed_timeout": 286915,
+            "global_watermark": 297265,
+            "idle_watermark": 296640,
+            "typed_horizon": 287925
+          },
+          "investigation": 2400,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 13899004,
+            "fixed_timeout": 374630,
+            "global_watermark": 409730,
+            "idle_watermark": 398880,
+            "typed_horizon": 350250
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16369380,
+            "fixed_timeout": 199200,
+            "global_watermark": 184800,
+            "idle_watermark": 194400,
+            "typed_horizon": 225600
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16448434,
+            "fixed_timeout": 216743,
+            "global_watermark": 207293,
+            "idle_watermark": 214848,
+            "typed_horizon": 238065
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16527488,
+            "fixed_timeout": 234286,
+            "global_watermark": 229786,
+            "idle_watermark": 235296,
+            "typed_horizon": 250530
+          },
+          "investigation": 2400,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 16764650,
+            "fixed_timeout": 286915,
+            "global_watermark": 297265,
+            "idle_watermark": 296640,
+            "typed_horizon": 287925
+          },
+          "investigation": 2400,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "typed_horizon",
+          "costs": {
+            "amount_date": 17159920,
+            "fixed_timeout": 374630,
+            "global_watermark": 409730,
+            "idle_watermark": 398880,
+            "typed_horizon": 350250
+          },
+          "investigation": 2400,
+          "order": [
+            "typed_horizon",
+            "fixed_timeout",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3390516,
+            "fixed_timeout": 398400,
+            "global_watermark": 369600,
+            "idle_watermark": 388800,
+            "typed_horizon": 451200
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3469570,
+            "fixed_timeout": 415943,
+            "global_watermark": 392093,
+            "idle_watermark": 409248,
+            "typed_horizon": 463665
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3548624,
+            "fixed_timeout": 433486,
+            "global_watermark": 414586,
+            "idle_watermark": 429696,
+            "typed_horizon": 476130
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3785786,
+            "fixed_timeout": 486115,
+            "global_watermark": 482065,
+            "idle_watermark": 491040,
+            "typed_horizon": 513525
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 4181056,
+            "fixed_timeout": 573830,
+            "global_watermark": 594530,
+            "idle_watermark": 593280,
+            "typed_horizon": 575850
+          },
+          "investigation": 4800,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6651432,
+            "fixed_timeout": 398400,
+            "global_watermark": 369600,
+            "idle_watermark": 388800,
+            "typed_horizon": 451200
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6730486,
+            "fixed_timeout": 415943,
+            "global_watermark": 392093,
+            "idle_watermark": 409248,
+            "typed_horizon": 463665
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6809540,
+            "fixed_timeout": 433486,
+            "global_watermark": 414586,
+            "idle_watermark": 429696,
+            "typed_horizon": 476130
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 7046702,
+            "fixed_timeout": 486115,
+            "global_watermark": 482065,
+            "idle_watermark": 491040,
+            "typed_horizon": 513525
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 7441972,
+            "fixed_timeout": 573830,
+            "global_watermark": 594530,
+            "idle_watermark": 593280,
+            "typed_horizon": 575850
+          },
+          "investigation": 4800,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9912348,
+            "fixed_timeout": 398400,
+            "global_watermark": 369600,
+            "idle_watermark": 388800,
+            "typed_horizon": 451200
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 9991402,
+            "fixed_timeout": 415943,
+            "global_watermark": 392093,
+            "idle_watermark": 409248,
+            "typed_horizon": 463665
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10070456,
+            "fixed_timeout": 433486,
+            "global_watermark": 414586,
+            "idle_watermark": 429696,
+            "typed_horizon": 476130
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10307618,
+            "fixed_timeout": 486115,
+            "global_watermark": 482065,
+            "idle_watermark": 491040,
+            "typed_horizon": 513525
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 10702888,
+            "fixed_timeout": 573830,
+            "global_watermark": 594530,
+            "idle_watermark": 593280,
+            "typed_horizon": 575850
+          },
+          "investigation": 4800,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13173264,
+            "fixed_timeout": 398400,
+            "global_watermark": 369600,
+            "idle_watermark": 388800,
+            "typed_horizon": 451200
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13252318,
+            "fixed_timeout": 415943,
+            "global_watermark": 392093,
+            "idle_watermark": 409248,
+            "typed_horizon": 463665
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13331372,
+            "fixed_timeout": 433486,
+            "global_watermark": 414586,
+            "idle_watermark": 429696,
+            "typed_horizon": 476130
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13568534,
+            "fixed_timeout": 486115,
+            "global_watermark": 482065,
+            "idle_watermark": 491040,
+            "typed_horizon": 513525
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 13963804,
+            "fixed_timeout": 573830,
+            "global_watermark": 594530,
+            "idle_watermark": 593280,
+            "typed_horizon": 575850
+          },
+          "investigation": 4800,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16434180,
+            "fixed_timeout": 398400,
+            "global_watermark": 369600,
+            "idle_watermark": 388800,
+            "typed_horizon": 451200
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16513234,
+            "fixed_timeout": 415943,
+            "global_watermark": 392093,
+            "idle_watermark": 409248,
+            "typed_horizon": 463665
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16592288,
+            "fixed_timeout": 433486,
+            "global_watermark": 414586,
+            "idle_watermark": 429696,
+            "typed_horizon": 476130
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16829450,
+            "fixed_timeout": 486115,
+            "global_watermark": 482065,
+            "idle_watermark": 491040,
+            "typed_horizon": 513525
+          },
+          "investigation": 4800,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "fixed_timeout",
+          "costs": {
+            "amount_date": 17224720,
+            "fixed_timeout": 573830,
+            "global_watermark": 594530,
+            "idle_watermark": 593280,
+            "typed_horizon": 575850
+          },
+          "investigation": 4800,
+          "order": [
+            "fixed_timeout",
+            "typed_horizon",
+            "idle_watermark",
+            "global_watermark",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3520116,
+            "fixed_timeout": 796800,
+            "global_watermark": 739200,
+            "idle_watermark": 777600,
+            "typed_horizon": 902400
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3599170,
+            "fixed_timeout": 814343,
+            "global_watermark": 761693,
+            "idle_watermark": 798048,
+            "typed_horizon": 914865
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3678224,
+            "fixed_timeout": 831886,
+            "global_watermark": 784186,
+            "idle_watermark": 818496,
+            "typed_horizon": 927330
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 3915386,
+            "fixed_timeout": 884515,
+            "global_watermark": 851665,
+            "idle_watermark": 879840,
+            "typed_horizon": 964725
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 10,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 4310656,
+            "fixed_timeout": 972230,
+            "global_watermark": 964130,
+            "idle_watermark": 982080,
+            "typed_horizon": 1027050
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.2
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6781032,
+            "fixed_timeout": 796800,
+            "global_watermark": 739200,
+            "idle_watermark": 777600,
+            "typed_horizon": 902400
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6860086,
+            "fixed_timeout": 814343,
+            "global_watermark": 761693,
+            "idle_watermark": 798048,
+            "typed_horizon": 914865
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 6939140,
+            "fixed_timeout": 831886,
+            "global_watermark": 784186,
+            "idle_watermark": 818496,
+            "typed_horizon": 927330
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 7176302,
+            "fixed_timeout": 884515,
+            "global_watermark": 851665,
+            "idle_watermark": 879840,
+            "typed_horizon": 964725
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 10,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 7571572,
+            "fixed_timeout": 972230,
+            "global_watermark": 964130,
+            "idle_watermark": 982080,
+            "typed_horizon": 1027050
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.4
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10041948,
+            "fixed_timeout": 796800,
+            "global_watermark": 739200,
+            "idle_watermark": 777600,
+            "typed_horizon": 902400
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10121002,
+            "fixed_timeout": 814343,
+            "global_watermark": 761693,
+            "idle_watermark": 798048,
+            "typed_horizon": 914865
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10200056,
+            "fixed_timeout": 831886,
+            "global_watermark": 784186,
+            "idle_watermark": 818496,
+            "typed_horizon": 927330
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10437218,
+            "fixed_timeout": 884515,
+            "global_watermark": 851665,
+            "idle_watermark": 879840,
+            "typed_horizon": 964725
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 10,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 10832488,
+            "fixed_timeout": 972230,
+            "global_watermark": 964130,
+            "idle_watermark": 982080,
+            "typed_horizon": 1027050
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.6
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13302864,
+            "fixed_timeout": 796800,
+            "global_watermark": 739200,
+            "idle_watermark": 777600,
+            "typed_horizon": 902400
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13381918,
+            "fixed_timeout": 814343,
+            "global_watermark": 761693,
+            "idle_watermark": 798048,
+            "typed_horizon": 914865
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13460972,
+            "fixed_timeout": 831886,
+            "global_watermark": 784186,
+            "idle_watermark": 818496,
+            "typed_horizon": 927330
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 13698134,
+            "fixed_timeout": 884515,
+            "global_watermark": 851665,
+            "idle_watermark": 879840,
+            "typed_horizon": 964725
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 10,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 14093404,
+            "fixed_timeout": 972230,
+            "global_watermark": 964130,
+            "idle_watermark": 982080,
+            "typed_horizon": 1027050
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 0.8
+        },
+        {
+          "carry": 0,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16563780,
+            "fixed_timeout": 796800,
+            "global_watermark": 739200,
+            "idle_watermark": 777600,
+            "typed_horizon": 902400
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 1,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16642834,
+            "fixed_timeout": 814343,
+            "global_watermark": 761693,
+            "idle_watermark": 798048,
+            "typed_horizon": 914865
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 2,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16721888,
+            "fixed_timeout": 831886,
+            "global_watermark": 784186,
+            "idle_watermark": 818496,
+            "typed_horizon": 927330
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 5,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 16959050,
+            "fixed_timeout": 884515,
+            "global_watermark": 851665,
+            "idle_watermark": 879840,
+            "typed_horizon": 964725
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "idle_watermark",
+            "fixed_timeout",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        },
+        {
+          "carry": 10,
+          "cheapest": "global_watermark",
+          "costs": {
+            "amount_date": 17354320,
+            "fixed_timeout": 972230,
+            "global_watermark": 964130,
+            "idle_watermark": 982080,
+            "typed_horizon": 1027050
+          },
+          "investigation": 9600,
+          "order": [
+            "global_watermark",
+            "fixed_timeout",
+            "idle_watermark",
+            "typed_horizon",
+            "amount_date"
+          ],
+          "unrecovered": 1.0
+        }
+      ]
+    }
+  },
+  "tallies": {
+    "calm": {
+      "amount_date": {
+        "carried_ticks": 15757,
+        "false_breaks": 18,
+        "false_match_amounts": [
+          29900,
+          29900,
+          29900,
+          29900,
+          29900,
+          48000,
+          48000,
+          7900,
+          14950,
+          14950,
+          7900,
+          349900,
+          349900,
+          189900,
+          189900,
+          189900,
+          189900,
+          7900,
+          7900,
+          189900,
+          2499,
+          189900,
+          7900,
+          2499,
+          7900,
+          7900,
+          349900,
+          349900,
+          349900,
+          189900,
+          349900,
+          189900,
+          99900,
+          99900,
+          349900,
+          349900,
+          349900,
+          349900,
+          349900,
+          14950,
+          349900,
+          14950,
+          99900,
+          99900,
+          7900,
+          7900,
+          189900,
+          189900,
+          189900,
+          7900,
+          7900,
+          7900,
+          7900,
+          7900,
+          349900,
+          99900,
+          349900,
+          349900,
+          14950,
+          349900,
+          349900,
+          14950,
+          14950,
+          14950,
+          48000,
+          48000,
+          99900,
+          99900,
+          2499,
+          99900,
+          99900,
+          2499,
+          99900,
+          99900,
+          349900,
+          349900,
+          99900,
+          99900,
+          189900,
+          189900,
+          99900,
+          99900,
+          14950,
+          14950,
+          29900,
+          29900,
+          189900,
+          189900,
+          2499,
+          2499,
+          189900,
+          14950,
+          14950,
+          189900,
+          349900,
+          14950,
+          2499,
+          14950,
+          2499,
+          2499,
+          48000,
+          48000,
+          48000,
+          2499,
+          189900,
+          189900,
+          349900,
+          349900,
+          349900,
+          349900,
+          48000,
+          14950,
+          189900,
+          48000,
+          48000,
+          14950,
+          48000,
+          189900,
+          189900,
+          7900,
+          7900,
+          99900,
+          99900,
+          99900,
+          99900,
+          349900,
+          349900,
+          349900,
+          2499,
+          2499,
+          2499,
+          2499,
+          99900,
+          99900,
+          48000,
+          29900,
+          48000,
+          29900,
+          29900,
+          29900,
+          349900,
+          349900,
+          349900,
+          14950,
+          99900,
+          14950,
+          99900,
+          29900,
+          29900,
+          29900,
+          29900,
+          14950,
+          14950,
+          99900,
+          99900,
+          2499,
+          2499,
+          189900,
+          189900,
+          99900,
+          99900,
+          349900,
+          2499,
+          7900,
+          7900,
+          48000,
+          48000,
+          29900,
+          29900,
+          14950,
+          14950,
+          29900,
+          29900,
+          349900,
+          349900,
+          7900,
+          99900,
+          99900,
+          14950,
+          7900,
+          14950,
+          14950,
+          7900,
+          99900,
+          14950,
+          99900,
+          7900,
+          7900,
+          48000,
+          48000,
+          2499,
+          349900,
+          349900,
+          99900,
+          99900,
+          2499,
+          2499,
+          14950,
+          14950,
+          14950,
+          14950,
+          14950
+        ],
+        "param": 500
+      },
+      "fixed_timeout": {
+        "carried_ticks": 142,
+        "false_breaks": 0,
+        "false_match_amounts": [],
+        "param": 80
+      },
+      "global_watermark": {
+        "carried_ticks": 1211,
+        "false_breaks": 0,
+        "false_match_amounts": [],
+        "param": 60
+      },
+      "idle_watermark": {
+        "carried_ticks": 1106,
+        "false_breaks": 0,
+        "false_match_amounts": [],
+        "param": 60
+      },
+      "typed_horizon": {
+        "carried_ticks": 77,
+        "false_breaks": 0,
+        "false_match_amounts": [],
+        "param": 80
+      }
+    },
+    "faulty": {
+      "amount_date": {
+        "carried_ticks": 79054,
+        "false_breaks": 27,
+        "false_match_amounts": [
+          189900,
+          29900,
+          29900,
+          189900,
+          189900,
+          29900,
+          48000,
+          7900,
+          48000,
+          349900,
+          349900,
+          349900,
+          99900,
+          349900,
+          99900,
+          7900,
+          2499,
+          29900,
+          2499,
+          14950,
+          14950,
+          189900,
+          99900,
+          7900,
+          14950,
+          189900,
+          99900,
+          99900,
+          99900,
+          2499,
+          7900,
+          7900,
+          29900,
+          7900,
+          7900,
+          48000,
+          29900,
+          48000,
+          7900,
+          2499,
+          2499,
+          2499,
+          14950,
+          29900,
+          7900,
+          2499,
+          7900,
+          7900,
+          48000,
+          48000,
+          29900,
+          14950,
+          29900,
+          99900,
+          189900,
+          29900,
+          29900,
+          29900,
+          48000,
+          2499,
+          14950,
+          14950,
+          189900,
+          189900,
+          14950,
+          14950,
+          189900,
+          14950,
+          99900,
+          99900,
+          7900,
+          48000,
+          48000,
+          48000,
+          7900,
+          349900,
+          48000,
+          48000,
+          99900,
+          349900,
+          99900,
+          349900,
+          48000,
+          2499,
+          48000,
+          7900,
+          99900,
+          189900,
+          14950,
+          189900,
+          2499,
+          48000,
+          189900,
+          48000,
+          48000,
+          189900,
+          48000,
+          189900,
+          7900,
+          99900,
+          14950,
+          14950,
+          14950,
+          48000,
+          29900,
+          48000,
+          99900,
+          14950,
+          14950,
+          99900,
+          14950,
+          48000,
+          189900,
+          2499,
+          99900,
+          48000,
+          7900,
+          189900,
+          189900,
+          2499,
+          189900,
+          2499,
+          29900,
+          14950,
+          349900,
+          99900,
+          349900,
+          14950,
+          349900,
+          99900,
+          29900,
+          99900,
+          349900,
+          14950,
+          48000,
+          99900,
+          48000,
+          2499,
+          2499,
+          2499,
+          14950,
+          29900,
+          48000,
+          48000,
+          14950,
+          14950,
+          2499,
+          29900,
+          29900,
+          349900,
+          349900,
+          349900,
+          14950,
+          2499,
+          29900,
+          29900,
+          2499,
+          189900,
+          29900,
+          48000,
+          99900,
+          7900,
+          7900,
+          99900,
+          48000,
+          14950,
+          48000,
+          7900,
+          7900,
+          48000,
+          48000,
+          29900,
+          29900,
+          7900,
+          189900,
+          29900,
+          99900,
+          29900,
+          14950,
+          14950,
+          99900,
+          189900,
+          189900,
+          48000,
+          29900,
+          29900,
+          14950,
+          48000,
+          29900,
+          99900,
+          29900,
+          48000,
+          189900,
+          48000,
+          189900,
+          14950,
+          349900,
+          349900,
+          29900,
+          29900,
+          14950,
+          2499,
+          189900,
+          189900
+        ],
+        "param": 500
+      },
+      "fixed_timeout": {
+        "carried_ticks": 17543,
+        "false_breaks": 83,
+        "false_match_amounts": [],
+        "param": 80
+      },
+      "global_watermark": {
+        "carried_ticks": 22493,
+        "false_breaks": 77,
+        "false_match_amounts": [],
+        "param": 60
+      },
+      "idle_watermark": {
+        "carried_ticks": 20448,
+        "false_breaks": 81,
+        "false_match_amounts": [],
+        "param": 60
+      },
+      "typed_horizon": {
+        "carried_ticks": 12465,
+        "false_breaks": 94,
+        "false_match_amounts": [],
+        "param": 80
+      }
+    }
+  }
+}

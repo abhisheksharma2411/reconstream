@@ -1,0 +1,23 @@
+# Event store for the reconciliation workloads.
+#
+# The contract check runs twice: once in Python against in-memory arrivals, and
+# once as SQL against this store.  Keeping a real relational engine in the loop
+# is not decoration -- the SQL formulation is a claim in the paper, and a claim
+# that only ever ran against a mock would not be worth making.
+services:
+  eventstore:
+    image: postgres:16.4-alpine
+    container_name: reconstream-eventstore
+    environment:
+      POSTGRES_USER: reconstream
+      POSTGRES_PASSWORD: reconstream
+      POSTGRES_DB: reconstream
+    ports:
+      - "55432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U reconstream -d reconstream"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+    tmpfs:
+      - /var/lib/postgresql/data

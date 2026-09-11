@@ -1,0 +1,5 @@
+# Experiments and checker: standard library only.
+# These are needed for the figures, the tests and the PostgreSQL arm.
+matplotlib>=3.8
+pytest>=8.0
+psycopg[binary]>=3.1

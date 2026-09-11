@@ -1,0 +1,549 @@
+{
+  "baseline_no_idleness": {
+    "calm": {
+      "false_break_rate": {
+        "hi": 0.0,
+        "lo": 0.0,
+        "point": 0.0,
+        "replicates": 2000
+      },
+      "inadmissible_rate": {
+        "hi": 0.0,
+        "lo": 0.0,
+        "point": 0.0,
+        "replicates": 2000
+      },
+      "mean_closure": 32.729729729729726,
+      "undecided": 0
+    },
+    "faulty": {
+      "false_break_rate": {
+        "hi": 0.1492776886035313,
+        "lo": 0.0985691573926868,
+        "point": 0.12261146496815287,
+        "replicates": 2000
+      },
+      "inadmissible_rate": {
+        "hi": 0.0048543689320388345,
+        "lo": 0.0,
+        "point": 0.0015923566878980893,
+        "replicates": 2000
+      },
+      "mean_closure": 52.96551724137931,
+      "undecided": 0
+    }
+  },
+  "config": {
+    "bank_batch_period": 60,
+    "delta": 60,
+    "model": {
+      "bound": {
+        "bank": 80,
+        "ledger": 2
+      },
+      "settlement_window": 0
+    },
+    "n_cases": 200,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "provenance": {
+    "git": "unversioned",
+    "p1": {
+      "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
+      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-11T19:42:19Z"
+  },
+  "sweep": [
+    {
+      "idle_timeout": 5,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.04195011337868481,
+            "lo": 0.020134228187919462,
+            "point": 0.030508474576271188,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.06919642857142858,
+            "lo": 0.03937007874015748,
+            "point": 0.05423728813559322,
+            "replicates": 2000
+          },
+          "mean_closure": -1.734375,
+          "s1_premature_break": 48
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1765625,
+            "lo": 0.12111801242236025,
+            "point": 0.1480891719745223,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.18040435458786935,
+            "lo": 0.12400635930047695,
+            "point": 0.15127388535031847,
+            "replicates": 2000
+          },
+          "mean_closure": 22.84115523465704,
+          "s1_premature_break": 95
+        }
+      }
+    },
+    {
+      "idle_timeout": 10,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.025842696629213482,
+            "lo": 0.009009009009009009,
+            "point": 0.01694915254237288,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.04288939051918736,
+            "lo": 0.02027027027027027,
+            "point": 0.031638418079096044,
+            "replicates": 2000
+          },
+          "mean_closure": 3.5384615384615383,
+          "s1_premature_break": 28
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.17128874388254486,
+            "lo": 0.11688311688311688,
+            "point": 0.14331210191082802,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.144,
+            "lo": 0.0932475884244373,
+            "point": 0.1178343949044586,
+            "replicates": 2000
+          },
+          "mean_closure": 26.335766423357665,
+          "s1_premature_break": 74
+        }
+      }
+    },
+    {
+      "idle_timeout": 15,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.014460511679644048,
+            "lo": 0.0023014959723820483,
+            "point": 0.007909604519774011,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.026018099547511313,
+            "lo": 0.009009009009009009,
+            "point": 0.01694915254237288,
+            "replicates": 2000
+          },
+          "mean_closure": 10.545454545454545,
+          "s1_premature_break": 15
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.16719745222929935,
+            "lo": 0.11392405063291139,
+            "point": 0.14012738853503184,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.11605723370429252,
+            "lo": 0.06984126984126984,
+            "point": 0.09235668789808917,
+            "replicates": 2000
+          },
+          "mean_closure": 29.051470588235293,
+          "s1_premature_break": 58
+        }
+      }
+    },
+    {
+      "idle_timeout": 20,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.009195402298850575,
+            "lo": 0.0011148272017837235,
+            "point": 0.004519774011299435,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.01452513966480447,
+            "lo": 0.002290950744558992,
+            "point": 0.007909604519774011,
+            "replicates": 2000
+          },
+          "mean_closure": 16.121951219512194,
+          "s1_premature_break": 7
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.16535433070866143,
+            "lo": 0.11254019292604502,
+            "point": 0.13853503184713375,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.09828393135725429,
+            "lo": 0.05573248407643312,
+            "point": 0.07643312101910828,
+            "replicates": 2000
+          },
+          "mean_closure": 31.535055350553506,
+          "s1_premature_break": 48
+        }
+      }
+    },
+    {
+      "idle_timeout": 30,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.005649717514124294,
+            "lo": 0.0,
+            "point": 0.0022598870056497176,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.009122006841505131,
+            "lo": 0.0011160714285714285,
+            "point": 0.004519774011299435,
+            "replicates": 2000
+          },
+          "mean_closure": 22.153846153846153,
+          "s1_premature_break": 4
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.16401273885350318,
+            "lo": 0.1111111111111111,
+            "point": 0.13694267515923567,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.054313099041533544,
+            "lo": 0.023809523809523808,
+            "point": 0.03821656050955414,
+            "replicates": 2000
+          },
+          "mean_closure": 37.48148148148148,
+          "s1_premature_break": 24
+        }
+      }
+    },
+    {
+      "idle_timeout": 40,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.005649717514124294,
+            "lo": 0.0,
+            "point": 0.0022598870056497176,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.005733944954128441,
+            "lo": 0.0,
+            "point": 0.0022598870056497176,
+            "replicates": 2000
+          },
+          "mean_closure": 26.46153846153846,
+          "s1_premature_break": 2
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.15705128205128205,
+            "lo": 0.10593900481540931,
+            "point": 0.1305732484076433,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.028616852146263912,
+            "lo": 0.008025682182985553,
+            "point": 0.01751592356687898,
+            "replicates": 2000
+          },
+          "mean_closure": 42.77067669172932,
+          "s1_premature_break": 11
+        }
+      }
+    },
+    {
+      "idle_timeout": 50,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0034207525655644243,
+            "lo": 0.0,
+            "point": 0.0011299435028248588,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.003424657534246575,
+            "lo": 0.0,
+            "point": 0.0011299435028248588,
+            "replicates": 2000
+          },
+          "mean_closure": 28.210526315789473,
+          "s1_premature_break": 1
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.15548281505728315,
+            "lo": 0.10383386581469649,
+            "point": 0.12898089171974522,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.022257551669316374,
+            "lo": 0.004784688995215311,
+            "point": 0.012738853503184714,
+            "replicates": 2000
+          },
+          "mean_closure": 43.91698113207547,
+          "s1_premature_break": 8
+        }
+      }
+    },
+    {
+      "idle_timeout": 60,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 29.89189189189189,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.15548281505728315,
+            "lo": 0.10383386581469649,
+            "point": 0.12898089171974522,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.01929260450160772,
+            "lo": 0.0032414910858995136,
+            "point": 0.011146496815286623,
+            "replicates": 2000
+          },
+          "mean_closure": 45.35471698113208,
+          "s1_premature_break": 7
+        }
+      }
+    },
+    {
+      "idle_timeout": 75,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 30.56756756756757,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1537242472266244,
+            "lo": 0.1024,
+            "point": 0.12738853503184713,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.01584786053882726,
+            "lo": 0.0016,
+            "point": 0.007961783439490446,
+            "replicates": 2000
+          },
+          "mean_closure": 47.60227272727273,
+          "s1_premature_break": 5
+        }
+      }
+    },
+    {
+      "idle_timeout": 90,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 31.2972972972973,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1485623003194888,
+            "lo": 0.09794628751974724,
+            "point": 0.12261146496815287,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.01584786053882726,
+            "lo": 0.0016,
+            "point": 0.007961783439490446,
+            "replicates": 2000
+          },
+          "mean_closure": 48.2183908045977,
+          "s1_premature_break": 5
+        }
+      }
+    },
+    {
+      "idle_timeout": 120,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 32.108108108108105,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1485623003194888,
+            "lo": 0.09794628751974724,
+            "point": 0.12261146496815287,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.011093502377179081,
+            "lo": 0.0,
+            "point": 0.004777070063694267,
+            "replicates": 2000
+          },
+          "mean_closure": 49.81992337164751,
+          "s1_premature_break": 3
+        }
+      }
+    },
+    {
+      "idle_timeout": 180,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 32.351351351351354,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1485623003194888,
+            "lo": 0.09794628751974724,
+            "point": 0.12261146496815287,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.011093502377179081,
+            "lo": 0.0,
+            "point": 0.004777070063694267,
+            "replicates": 2000
+          },
+          "mean_closure": 51.2911877394636,
+          "s1_premature_break": 3
+        }
+      }
+    },
+    {
+      "idle_timeout": 240,
+      "regimes": {
+        "calm": {
+          "false_break_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.0,
+            "lo": 0.0,
+            "point": 0.0,
+            "replicates": 2000
+          },
+          "mean_closure": 32.729729729729726,
+          "s1_premature_break": 0
+        },
+        "faulty": {
+          "false_break_rate": {
+            "hi": 0.1485623003194888,
+            "lo": 0.09794628751974724,
+            "point": 0.12261146496815287,
+            "replicates": 2000
+          },
+          "inadmissible_rate": {
+            "hi": 0.011093502377179081,
+            "lo": 0.0,
+            "point": 0.004777070063694267,
+            "replicates": 2000
+          },
+          "mean_closure": 52.12643678160919,
+          "s1_premature_break": 3
+        }
+      }
+    }
+  ]
+}

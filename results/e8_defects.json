@@ -1,0 +1,847 @@
+{
+  "calibration": {
+    "amount_date": {
+      "converged": false,
+      "false_break_rate": 0.020338983050847456,
+      "family": "amount_date",
+      "inadmissible_rate": 0.9446327683615819,
+      "param": null
+    },
+    "fixed_timeout": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "fixed_timeout",
+      "inadmissible_rate": 0.0,
+      "param": 80
+    },
+    "global_watermark": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "global_watermark",
+      "inadmissible_rate": 0.0,
+      "param": 60
+    },
+    "idle_watermark": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "idle_watermark",
+      "inadmissible_rate": 0.0,
+      "param": 60
+    },
+    "typed_horizon": {
+      "converged": true,
+      "false_break_rate": 0.0,
+      "family": "typed_horizon",
+      "inadmissible_rate": 0.0,
+      "param": 80
+    }
+  },
+  "config": {
+    "intensity": 0.3,
+    "model": {
+      "bound": {
+        "bank": 80,
+        "ledger": 2
+      },
+      "settlement_window": 0
+    },
+    "n_cases": 200,
+    "recon_defect_archetypes": [
+      "lost_settlement",
+      "duplicate_settlement",
+      "partial_ledger",
+      "stale_processor"
+    ],
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "defect_corpus": {
+    "duplicate_settlement": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": true,
+      "obligations": 79,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 2,
+          "false_match": 32,
+          "inadmissible": 43,
+          "n": 79,
+          "s1": 0,
+          "s2": 43
+        },
+        "fixed_timeout": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 79,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 2,
+          "n": 79,
+          "s1": 2,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 9,
+          "false_match": 0,
+          "inadmissible": 4,
+          "n": 79,
+          "s1": 4,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 11,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 79,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "late_chargeback": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": false,
+      "obligations": 142,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 4,
+          "false_match": 44,
+          "inadmissible": 78,
+          "n": 142,
+          "s1": 0,
+          "s2": 78
+        },
+        "fixed_timeout": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 142,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 7,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 142,
+          "s1": 0,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 1,
+          "n": 142,
+          "s1": 1,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 142,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "lost_settlement": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": true,
+      "obligations": 73,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 1,
+          "false_match": 29,
+          "inadmissible": 38,
+          "n": 73,
+          "s1": 0,
+          "s2": 38
+        },
+        "fixed_timeout": {
+          "false_break": 13,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 73,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 1,
+          "n": 73,
+          "s1": 1,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 2,
+          "n": 73,
+          "s1": 2,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 13,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 73,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "partial_ledger": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S2"
+      ],
+      "is_recon_defect": true,
+      "obligations": 76,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 3,
+          "false_match": 32,
+          "inadmissible": 45,
+          "n": 76,
+          "s1": 0,
+          "s2": 45
+        },
+        "fixed_timeout": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 6,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 6,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "pending_settle": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": false,
+      "obligations": 76,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 1,
+          "false_match": 26,
+          "inadmissible": 39,
+          "n": 76,
+          "s1": 0,
+          "s2": 39
+        },
+        "fixed_timeout": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 7,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 7,
+          "false_match": 0,
+          "inadmissible": 2,
+          "n": 76,
+          "s1": 2,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 76,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "stale_processor": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": true,
+      "obligations": 80,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 3,
+          "false_match": 22,
+          "inadmissible": 37,
+          "n": 80,
+          "s1": 0,
+          "s2": 37
+        },
+        "fixed_timeout": {
+          "false_break": 13,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 80,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 15,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 80,
+          "s1": 0,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 15,
+          "false_match": 0,
+          "inadmissible": 3,
+          "n": 80,
+          "s1": 3,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 15,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 80,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    },
+    "unresolvable": {
+      "affected_arms": [
+        "amount_date",
+        "fixed_timeout",
+        "global_watermark",
+        "idle_watermark",
+        "typed_horizon"
+      ],
+      "breaks_property": [
+        "S1",
+        "S2"
+      ],
+      "is_recon_defect": false,
+      "obligations": 79,
+      "per_arm": {
+        "amount_date": {
+          "false_break": 4,
+          "false_match": 23,
+          "inadmissible": 41,
+          "n": 79,
+          "s1": 0,
+          "s2": 41
+        },
+        "fixed_timeout": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 79,
+          "s1": 0,
+          "s2": 0
+        },
+        "global_watermark": {
+          "false_break": 5,
+          "false_match": 0,
+          "inadmissible": 1,
+          "n": 79,
+          "s1": 1,
+          "s2": 0
+        },
+        "idle_watermark": {
+          "false_break": 8,
+          "false_match": 0,
+          "inadmissible": 1,
+          "n": 79,
+          "s1": 1,
+          "s2": 0
+        },
+        "typed_horizon": {
+          "false_break": 10,
+          "false_match": 0,
+          "inadmissible": 0,
+          "n": 79,
+          "s1": 0,
+          "s2": 0
+        }
+      }
+    }
+  },
+  "fault_families": {
+    "delay": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5476190476190477,
+          "false_break_rate": 0.04067796610169491,
+          "false_match_rate": 0.3593220338983051,
+          "inadmissible_rate": 0.5875706214689266,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 520
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.20677966101694914,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.19096045197740114,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0022598870056497176,
+          "m1_retracted": 0,
+          "s1_premature_break": 2,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.19548022598870057,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0022598870056497176,
+          "m1_retracted": 0,
+          "s1_premature_break": 2,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.22937853107344633,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 216,
+        "ledger": 246
+      }
+    },
+    "duplicate": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.42857142857142855,
+          "false_break_rate": 0.006779661016949152,
+          "false_match_rate": 0.3638418079096045,
+          "inadmissible_rate": 0.9672316384180791,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 856
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 55,
+        "ledger": 375
+      }
+    },
+    "loss": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5507246376811594,
+          "false_break_rate": 0.06677265500794913,
+          "false_match_rate": 0.2893481717011129,
+          "inadmissible_rate": 0.7154213036565977,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 450
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0047694753577106515,
+          "m1_retracted": 0,
+          "s1_premature_break": 3,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 0,
+        "ledger": 0
+      }
+    },
+    "none": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5714285714285714,
+          "false_break_rate": 0.020338983050847456,
+          "false_match_rate": 0.23954802259887006,
+          "inadmissible_rate": 0.9378531073446328,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 830
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 0,
+        "ledger": 0
+      }
+    },
+    "partial_commit": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5714285714285714,
+          "false_break_rate": 0.020338983050847456,
+          "false_match_rate": 0.23954802259887006,
+          "inadmissible_rate": 0.9378531073446328,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 830
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 0,
+        "ledger": 0
+      }
+    },
+    "reorder": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5714285714285714,
+          "false_break_rate": 0.020338983050847456,
+          "false_match_rate": 0.23954802259887006,
+          "inadmissible_rate": 0.9378531073446328,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 830
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 0,
+        "ledger": 0
+      }
+    },
+    "stale_read": {
+      "arms": {
+        "amount_date": {
+          "break_recall": 0.5714285714285714,
+          "false_break_rate": 0.020338983050847456,
+          "false_match_rate": 0.23954802259887006,
+          "inadmissible_rate": 0.9378531073446328,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 830
+        },
+        "fixed_timeout": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "global_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "idle_watermark": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        },
+        "typed_horizon": {
+          "break_recall": 1.0,
+          "false_break_rate": 0.0,
+          "false_match_rate": 0.0,
+          "inadmissible_rate": 0.0,
+          "m1_retracted": 0,
+          "s1_premature_break": 0,
+          "s2_violations": 0
+        }
+      },
+      "model_violations": {
+        "bank": 0,
+        "ledger": 0
+      }
+    }
+  },
+  "provenance": {
+    "git": "unversioned",
+    "p1": {
+      "git": "ea5c643209befe103b1080ccf54d16f084fd0bf8",
+      "path": "/Users/Abhishek.Sharma/Downloads/papers/finalitybench/src",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-11T19:50:47Z"
+  }
+}
