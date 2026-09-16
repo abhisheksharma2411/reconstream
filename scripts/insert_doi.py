@@ -19,6 +19,11 @@ PAPER = ROOT / "paper" / "reconstream.tex"
 CFF = ROOT / "CITATION.cff"
 README = ROOT / "README.md"
 
+#: The paper ships saying the DOI is coming rather than showing a placeholder,
+#: because a literal ``ZENODO_DOI_PLACEHOLDER`` in a posted preprint is worse
+#: than an honest sentence. This is the sentence to replace when the DOI exists.
+FORTHCOMING = "An archival DOI is forthcoming."
+
 PLAIN = "ZENODO_DOI_PLACEHOLDER"
 ESCAPED = r"ZENODO\_DOI\_PLACEHOLDER"
 
@@ -31,7 +36,12 @@ def main(doi: str) -> int:
     changed, missed = [], []
 
     text = PAPER.read_text()
-    if ESCAPED in text or PLAIN in text:
+    if FORTHCOMING in text:
+        escaped = doi.replace("_", r"\_")
+        PAPER.write_text(text.replace(
+            FORTHCOMING, f"It is archived at DOI \\texttt{{{escaped}}}."))
+        changed.append(PAPER.name)
+    elif ESCAPED in text or PLAIN in text:
         PAPER.write_text(text.replace(ESCAPED, doi.replace("_", r"\_")).replace(PLAIN, doi))
         changed.append(PAPER.name)
     else:
