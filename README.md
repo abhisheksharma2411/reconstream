@@ -66,7 +66,7 @@ Piecemeal:
 make setup        # venv + fetch FinalityBench (P1)
 make up           # PostgreSQL event store on :55432
 make flink-image  # pull the pinned Flink image
-make experiments  # E1-E8 into results/
+make experiments  # E1-E9 into results/
 make figures      # figures/ from results/
 make test         # 27 unit tests and sanity checks
 make paper        # paper/reconstream.pdf
@@ -89,7 +89,7 @@ src/reconstream/
   bootstrap.py   percentile bootstrap resampling *cases*, not obligations
   calibrate.py   pick each arm's parameter the way an operator would
   cost.py        what each kind of mistake costs
-experiments/     E1-E8, each writing one JSON to results/
+experiments/     E1-E9, each writing one JSON to results/
 ```
 
 ## Relationship to FinalityBench

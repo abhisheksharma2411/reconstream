@@ -1,0 +1,58 @@
+{
+  "config": {
+    "bank_lag": 15,
+    "batch_cycle": 60,
+    "late_publication": 1200,
+    "model": {
+      "bound": {
+        "bank": 75,
+        "ledger": 2
+      },
+      "settlement_window": 0
+    },
+    "settles_at": 1000,
+    "timeout": 80
+  },
+  "headline": {
+    "a_later_credit_at": 1070,
+    "actual_posting_instant": 1020,
+    "an_early_break_at": 1060,
+    "bank_batch": 60,
+    "bank_bound": 75,
+    "bank_lag": 15,
+    "decidable_at": 1075,
+    "earliest_credit": 1015,
+    "gap_between_the_two": 198,
+    "late_publication_fires_at": 1280,
+    "late_timeout_after_decidable": 205,
+    "latest_credit": 1074,
+    "ledger_lag": 2,
+    "prompt_publication_fires_at": 1082
+  },
+  "provenance": {
+    "git": "1a22fe15d12cfccf4caa5a7c06eb6a54d87f4de5-dirty",
+    "p1": {
+      "git": "0b016616808b164df273f30f4d033c06690f9627",
+      "source": "../finalitybench/src (sibling checkout)",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-16T00:23:39Z"
+  },
+  "timeline": {
+    "actual_delay": 20,
+    "actual_posting_instant": 1020,
+    "decidable_at": 1075,
+    "earliest_credit": 1015,
+    "latest_credit": 1074,
+    "ledger_publishes_at": 1002,
+    "settles_at": 1000
+  },
+  "timeouts": {
+    "gap_between_the_two": 198,
+    "late_publication_fires_at": 1280,
+    "late_timeout_after_decidable": 205,
+    "prompt_publication_fires_at": 1082
+  }
+}

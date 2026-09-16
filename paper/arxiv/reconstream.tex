@@ -244,14 +244,22 @@ properties.
 \subsection{A worked instance}
 
 Take the simulator's own numbers. A capture settles at tick 1000. The ledger
-publishes at 1002, so an obligation exists from then. The bank's next batch
-boundary at least 15 ticks later falls at 1080, so with no faults the credit
-appears somewhere in $[1015, 1074]$ and the declared bound is
+publishes at 1002, so an obligation exists from then. The bank posts on a
+sixty-tick cycle, no sooner than fifteen ticks after the money moved, so
+without knowing where in that cycle the movement fell the credit can appear
+anywhere in $[1015, 1074]$ --- as prompt as the lag, or one tick short of a
+further full cycle. That range is what a reconciler may assume, and it gives
 $\Lambda_{\mathrm{bank}} = 75$. With $W = 0$, \eqref{eq:decidable} gives
 $D(o) = 1075$.
 
+This movement in fact posts at 1020, twenty ticks after settling, and the
+distinction matters more than it looks. The contract is stated over what a
+reconciler can know, and where in the batch cycle a particular movement landed
+is not among it. A reconciler that happened to be right about 1020 would have
+been guessing.
+
 A reconciler that raises a break at 1060 is wrong to do so even if the credit
-never comes: at 1060 the bank had not finished speaking, and a continuation
+never comes: at 1060 the declared bound had not expired, and a continuation
 exists in which the credit posts at 1070. The verdict may turn out correct, and
 it was not justified. That is the distinction the contract makes, and the reason
 it can be checked without knowing the answer.

@@ -43,7 +43,7 @@ flink-image: ## pull the pinned Flink image used by E7
 data: setup ## nothing to download -- the workloads are generated
 	@echo "workloads are generated from P1 at run time; nothing to fetch"
 
-experiments: setup up ## run E1-E8
+experiments: setup up ## run E1-E9
 	$(PY) experiments/e1_main.py
 	$(PY) experiments/e2_frontier.py
 	$(PY) experiments/e3_shift.py
@@ -51,6 +51,7 @@ experiments: setup up ## run E1-E8
 	$(PY) experiments/e5_costs.py
 	$(PY) experiments/e6_sql_parity.py
 	$(PY) experiments/e8_defects.py
+	$(PY) experiments/e9_worked_instance.py
 	$(PY) experiments/e7_flink.py
 
 figures: ## regenerate every figure from results/

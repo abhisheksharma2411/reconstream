@@ -34,6 +34,7 @@ def build_claims() -> list[tuple[str, object, object]]:
     """(description, stated in paper, computed from results)."""
     e1, e2, e3 = load("e1_main.json"), load("e2_frontier.json"), load("e3_shift.json")
     e4, e5, e6 = load("e4_idleness.json"), load("e5_costs.json"), load("e6_sql_parity.json")
+    e9 = load("e9_worked_instance.json")
     e8 = load("e8_defects.json")
     c: list[tuple[str, object, object]] = []
 
@@ -188,6 +189,23 @@ def build_claims() -> list[tuple[str, object, object]]:
             base = ff["none"]["arms"]["typed_horizon"]["false_break_rate"]
             c.append((f"{fam} identical to fault-free",
                       round(pct(base), 1), round(pct(ff[fam]["arms"]["typed_horizon"]["false_break_rate"]), 1)))
+    if e9:
+        t, o = e9["timeline"], e9["timeouts"]
+        c.append(("the movement settles at", 1000, t["settles_at"]))
+        c.append(("the ledger publishes at", 1002, t["ledger_publishes_at"]))
+        c.append(("earliest the credit can appear", 1015, t["earliest_credit"]))
+        c.append(("latest the credit can appear", 1074, t["latest_credit"]))
+        c.append(("where it actually posts", 1020, t["actual_posting_instant"]))
+        c.append(("decidable at", 1075, t["decidable_at"]))
+        c.append(("a prompt timeout fires at", 1082,
+                  o["prompt_publication_fires_at"]))
+        c.append(("a late timeout fires at", 1280,
+                  o["late_publication_fires_at"]))
+        c.append(("ticks after the decision became sound", 205,
+                  o["late_timeout_after_decidable"]))
+        c.append(("ticks between the two timeouts", 198,
+                  o["gap_between_the_two"]))
+
     return c
 
 

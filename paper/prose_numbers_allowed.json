@@ -1,0 +1,7 @@
+{
+  "1440": "DAY in src/reconstream/workload.py: the length of a simulated day in ticks, one per minute. A workload parameter the paper states so the arrival counts can be read, and which lives in the code rather than in any results file.",
+  "26.1": "Part of the withdrawn nondeterminism observation, and deliberately unsupported. The paragraph reports a figure from an earlier run that the re-run did not reproduce, and says so; a results file recording it would defeat the point, since the artifact's current numbers are the 0.9% and 0.0% reported beside it.",
+  "40.7": "The other half of the same withdrawn observation. See the note on 26.1.",
+  "104": "Breaks raised by one repetition in the withdrawn observation. See the note on 26.1.",
+  "58": "Breaks raised by the other three repetitions in the withdrawn observation. See the note on 26.1."
+}

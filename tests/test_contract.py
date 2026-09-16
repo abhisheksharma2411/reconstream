@@ -77,3 +77,22 @@ def test_closure_delay_is_signed(model, ob):
 def test_pending_is_the_only_non_terminal_verdict():
     assert not Verdict.PENDING.is_terminal
     assert Verdict.MATCHED.is_terminal and Verdict.EXCEPTION.is_terminal
+
+
+def test_the_worked_timeline_matches_the_simulator():
+    """The paragraph said the batch boundary falls at 1080. It falls at 1020.
+
+    The range [1015, 1074] is right -- it is what the contract may assume
+    without knowing where in the cycle the movement fell -- and the specific
+    boundary was not. Both are asserted here so the distinction survives.
+    """
+    from reconstream._p1 import ensure_p1
+    ensure_p1()
+    from finalitybench.faults import BANK_BATCH, _bank_visible_at as visible
+
+    assert visible(1000) == 1020
+    delays = [visible(t) - t for t in range(BANK_BATCH)]
+    assert min(delays) == 15
+    assert max(delays) == 74
+    # The declared bound has to cover the worst case and nothing less.
+    assert SourceModel().lateness("bank") == max(delays) + 1
