@@ -34,9 +34,8 @@ relative to a declared per-source lateness bound, and a checker for it that
 needs no ground truth. The contract separates three things an operator
 otherwise sees only as a rising break rate: the reconciler decided too early,
 an input broke the bound it declared, or the money really is gone. On
-workloads built from a published payment simulator we find that the standard
-remedy for a stalled streaming join --- an idleness timeout --- introduces
-contract violations on 5.42\% of obligations (95\% CI [3.94, 6.92]) on traffic
+workloads built from a published payment simulator we find that the standard remedy for a stalled streaming join, an idleness timeout,
+introduces contract violations on 5.42\% of obligations (95\% CI [3.94, 6.92]) on traffic
 where the same job without it is exactly sound, and that violations vanish once
 the timeout reaches the slow source's posting period, as predicted. Under a
 lateness shift, all four identity-based reconcilers we test raise spurious
@@ -63,9 +62,8 @@ events, watermarks, data quality
 
 A payment settles, and two systems find out at different times. The ledger
 learns within seconds, because the processor told it. The bank feed posts on a
-cycle, so the same fact can take an hour to appear. In between, a reconciliation
-system looking for the credit sees nothing --- and has to decide what nothing
-means.
+cycle, so the same fact can take an hour to appear. In between, a reconciliation system looking for the credit sees nothing, and has to decide
+what nothing means.
 
 Most of the time it means the batch has not run. Occasionally it means the money
 is gone. The two are indistinguishable from the evidence available at the
@@ -87,8 +85,8 @@ break, given only what it has seen and a declared bound on how late each source
 may be. Entitlement is not accuracy. A reconciler can be entitled and wrong,
 which happens when an input violates the bound it declared, and it can be
 unentitled and right, which happens whenever the traffic was benign. Those two
-cases have different owners and different fixes, and telling them apart does
-not require knowing the answer --- which is what makes the check deployable.
+cases have different owners and different fixes, and telling them apart does not require knowing the answer, which is what
+makes the check deployable.
 
 Three findings follow from the contract, and one of them is a negative result
 about our own construction.
@@ -129,9 +127,8 @@ and POL\'IMON~\cite{polimon} continues that line with a tool that reports
 verdicts promptly. The machinery this paper needs is theirs: an undetermined
 verdict under partial knowledge is exactly their third value.
 
-What a general framework leaves open is the formula. For reconciliation the
-property turns on something neither a temporal logic nor a stream processor
-represents --- which \emph{source} an absence of evidence is about. The safety
+What a general framework leaves open is the formula. For reconciliation the property turns on something neither a temporal logic nor a stream
+processor represents: which \emph{source} an absence of evidence is about. The safety
 property below is not ``a match eventually occurs''. It is that silence from the
 bank carries no information until the bank's own completeness horizon has
 passed, and that horizon is a property of the bank rather than of the stream the
@@ -165,9 +162,9 @@ sentinel~\cite{patent2024}. That is an implementation technique for bounding
 work, complementary to a correctness property; it states no temporal condition
 on when a verdict is admissible.
 
-Practitioner writing on exception management describes the phenomenon
-accurately --- an item inside its settlement window is pending, not a break ---
-and recommends holding such items until the window expires. That instinct is
+Practitioner writing on exception management describes the phenomenon accurately, noting that an item inside its settlement
+window is pending and not a break, and recommends holding such items until the
+window expires. That instinct is
 the safety property below in informal clothes. What is missing is a statement of
 the property, a way to check a pipeline against it, and a measurement.
 
@@ -181,7 +178,7 @@ a capture that has not settled, and a reconciler raising a break against a
 credit that has not posted. CausalLoss-Fin~\cite{causalloss} attributes
 realised loss to infrastructure or policy after the fact using counterfactuals;
 that analysis needs ground truth, where the decomposition here does not.
-Operation identity --- what makes two records the same money movement --- follows
+Operation identity, what makes two records the same money movement, follows
 the provider-aware contract of~\cite{t8}.
 
 \section{The contract}
@@ -205,9 +202,8 @@ $H_s(t)$ has arrived by $t$, if it was ever going to.
 \end{definition}
 
 A source model is a declaration, not a fact. An input that exceeds its bound has
-broken the interface, and the contract is relative to the declaration --- a point
-we return to, because it is what makes the check useful rather than merely
-strict.
+broken the interface, and the contract is relative to the declaration. We return to that, because it
+is what makes the check useful instead of merely strict.
 
 An \emph{obligation} $o$ is a money movement the ledger has reported, with
 identity $(\text{case}, \text{reference}, \text{kind})$ following~\cite{t8} and
@@ -230,8 +226,7 @@ asserts something the evidence does not support.
 \paragraph{S2, no premature match} A reconciler may assign \textsc{matched} to
 $o$ at $t$ only if no admissible continuation makes that pairing wrong. A
 pairing justified by identity satisfies this on arrival: nothing that arrives
-later makes a record describe a different movement. A pairing justified by
-attributes --- an amount and a nearby date --- does not, because a later record
+later makes a record describe a different movement. A pairing justified by attributes, an amount and a nearby date, does not, because a later record
 may turn out to be the real counterpart, and is admissible only once $t \ge
 D(o)$.
 
@@ -246,9 +241,8 @@ properties.
 Take the simulator's own numbers. A capture settles at tick 1000. The ledger
 publishes at 1002, so an obligation exists from then. The bank posts on a
 sixty-tick cycle, no sooner than fifteen ticks after the money moved, so
-without knowing where in that cycle the movement fell the credit can appear
-anywhere in $[1015, 1074]$ --- as prompt as the lag, or one tick short of a
-further full cycle. That range is what a reconciler may assume, and it gives
+without knowing where in that cycle the movement fell the credit can appear anywhere in $[1015, 1074]$: as prompt as the lag, or one
+tick short of a further full cycle. That range is what a reconciler may assume, and it gives
 $\Lambda_{\mathrm{bank}} = 75$. With $W = 0$, \eqref{eq:decidable} gives
 $D(o) = 1075$.
 
@@ -264,9 +258,8 @@ exists in which the credit posts at 1070. The verdict may turn out correct, and
 it was not justified. That is the distinction the contract makes, and the reason
 it can be checked without knowing the answer.
 
-Now suppose the ledger itself was late and published at 1200. A timeout of 80
-ticks measured from publication fires at 1280 --- 205 ticks after the decision
-became sound. The same timeout on a promptly reported movement fires at 1082.
+Now suppose the ledger itself was late and published at 1200. A timeout of 80 ticks measured from publication fires at 1280, which is 205
+ticks after the decision became sound. The same timeout on a promptly reported movement fires at 1082.
 Same bound, same bank, decisions 198 ticks apart, and the difference is entirely
 attributable to a source that has nothing to do with the question being asked.
 
@@ -330,9 +323,8 @@ of one.
 \subsection{Two axes, kept apart}
 
 The checker scores each terminal verdict twice. \emph{Admissibility} asks
-whether the verdict satisfied S1 and S2 at the instant it was emitted, and is
-computed from the verdict, the obligation and the source model --- no ground
-truth. \emph{Outcome} asks whether it was right, and needs the oracle.
+whether the verdict satisfied S1 and S2 at the instant it was emitted, and is computed from the verdict, the obligation and the source model, with no
+ground truth. \emph{Outcome} asks whether it was right, and needs the oracle.
 
 Neither implies the other, and the gap is the point. A reconciler that raises a
 break the moment a credit is overdue is inadmissible, and on a stream where
@@ -347,8 +339,7 @@ unfalsifiable.
 \label{sec:sql}
 
 Reconciliation data is already in a database, so the contract is stated twice:
-once as the predicates above, and once as SQL over three tables --- arrivals,
-obligations and verdicts. Admissibility is a join and a comparison against
+once as the predicates above, and once as SQL over three tables: arrivals, obligations and verdicts. Admissibility is a join and a comparison against
 \eqref{eq:decidable}; the source-model check is an aggregate over arrivals. No
 window function or recursive query is needed, which is part of the argument that
 the check is cheap enough to run continuously.
@@ -376,9 +367,9 @@ stall, with the idleness timeout of Proposition~\ref{prop:idle}.
 modelling deployments with no shared reference. Its failure is ambiguity rather
 than lateness.
 
-\textbf{Typed horizon} is the contract's reference implementation. It declares a
-bound per source, matches on identity --- so a match is asserted on arrival ---
-and waits for the \emph{bank's} horizon specifically before raising a break.
+\textbf{Typed horizon} is the contract's reference implementation. It declares a bound per source and matches on identity, so a match is asserted
+on arrival, and it waits for the \emph{bank's} horizon specifically before
+raising a break.
 Duplicate records are dropped by identity rather than matched again.
 
 \section{Experimental setup}
@@ -392,17 +383,16 @@ from the simulator rather than imposed.
 
 Each regime uses five seeds of 200 interleaved cases spread over a 1440-tick
 day: 1{,}733 arrivals and 885 obligations in calm traffic, 1{,}684 and 593 under
-faults. Genuine breaks --- movements whose bank evidence is removed outright ---
-are injected in 45 cases, drawn before any fault is applied, because without a
+faults. Genuine breaks, movements whose bank evidence is removed outright, are
+injected in 45 cases, drawn before any fault is applied, because without a
 positive class a reconciler that never raises a break would score perfectly.
 
 Injection fixes the class but does not hold it constant, and the difference
 matters for how rates are reported. In calm traffic those 45 cases yield 37
 graded breaks; under faults there are 210, because delivery loss destroys
 further bank evidence and a credit that was dropped in transit is a real break.
-Spurious breaks are therefore reported throughout as a share of the obligations
-the bank \emph{did} settle --- 848 of them in calm traffic and 383 under faults
---- rather than of all obligations, so that the figure does not move merely
+Spurious breaks are therefore reported throughout as a share of the obligations the bank \emph{did} settle, 848 of them in calm
+traffic and 383 under faults, instead of all obligations, so that the figure does not move merely
 because the genuine-break class grew.
 
 Every arm is calibrated on calm traffic by one rule: the smallest parameter with
@@ -433,9 +423,8 @@ between the two sources is the reason a single horizon cannot serve both.}
 Table~\ref{tab:lag} gives the lag structure. In calm traffic the ledger is
 exactly two ticks behind and the bank's worst case is 74, inside the declared
 bound of 75; the calibration procedure selects 80 for the arms that take a
-bound directly. Under faults both tails run far past the declaration --- the
-ledger to 265 and the bank to 326 --- which is the shift the later experiments
-measure against.
+bound directly. Under faults both tails run far past the declaration, the ledger to 265 and
+the bank to 326. That is the shift the later experiments measure against.
 
 The event store is PostgreSQL 16.4 and the stream processor is Apache Flink
 1.20, both in Docker and both pinned.
@@ -479,8 +468,8 @@ Table~\ref{tab:main} gives the operating points. On calm traffic the four
 identity-based arms are all exactly sound, and they differ by more than an order
 of magnitude in how quickly a genuine break surfaces: 2.1 ticks for the typed
 horizon against 32.7 for the merged watermark, and a tail of 4 ticks against
-223. Only 37 exceptions arise in calm traffic --- every one of them a genuine
-break --- so the calm percentile is close to a maximum and should be read as
+223. Only 37 exceptions arise in calm traffic, every one of them a genuine break,
+so the calm percentile is close to a maximum and should be read as
 one; the shifted regime, where the statistics rest on roughly 290 exceptions
 per arm, is the one that supports a percentile claim. The watermark arms are not slow because they are cautious. They are slow
 because the bank's watermark only advances at a batch boundary, so a break
@@ -563,11 +552,10 @@ rises from 0\% to 57.9\%, and spurious breaks rise with it, reaching 25.6\% of
 settled credits for the fixed timeout and 30.8\% for the typed horizon.
 
 The contract violation rate barely moves. Across the whole sweep it stays at or
-below 1.11\% for every arm, and at or below 0.43\% for every arm that does not
-use an idleness timeout --- the exception being the one construction we already
-know breaks S1. These reconcilers were, with that caveat, entitled to the
-verdicts they issued, and they were wrong anyway --- because the inputs
-stopped honouring the bounds against which they were calibrated. The checker
+below 1.11\% for every arm, and at or below 0.43\% for every arm that does not use an idleness timeout. The exception is the one
+construction we already know breaks S1. These reconcilers were, with that caveat, entitled to the
+verdicts they issued, and they were wrong anyway, because the inputs stopped honouring the bounds
+against which they were calibrated. The checker
 reaches that conclusion from the arrivals and the declared model, without
 consulting the oracle, which is what makes it usable on the morning the break
 rate triples.
@@ -611,9 +599,8 @@ Enabling one fault family at a time is unusually decisive here. Of the six
 delivery-fault families in the simulator, only two touch reconciliation
 correctness at all. Delay produces 462 bound violations and drives spurious
 breaks to 22.9\% for the typed horizon. Duplication produces 430 bound
-violations and, for identity-based arms, no errors whatsoever, because a
-repeated delivery of the same movement is recognised and dropped --- while
-amount/date matching mispairs 36.4\% of its verdicts under the same faults.
+violations and, for identity-based arms, no errors whatsoever, because a repeated delivery of the same movement is recognised and dropped.
+Amount/date matching mispairs 36.4\% of its verdicts under the same faults.
 Reordering, partial commits and stale reads leave the ledger-to-bank path
 untouched, with results identical to the fault-free arm to three digits.
 
@@ -674,9 +661,8 @@ amount/date      &   0 &  0 \\
 \end{table}
 
 That reversal, in Table~\ref{tab:cost}, is real and worth stating plainly. At its calibrated parameter the
-typed horizon decides at the earliest instant its declared bound permits, which
-is exactly what makes it fast --- and exactly what exposes it when the bound
-turns out to be wrong. The merged watermark's extra conservatism, which costs it
+typed horizon decides at the earliest instant its declared bound permits, which is exactly what makes it fast, and exactly what exposes it when the
+bound turns out to be wrong. The merged watermark's extra conservatism, which costs it
 an order of magnitude in latency on calm traffic, is what pays under shift. At
 matched soundness (Table~\ref{tab:frontier}) the ordering reverses again.
 
@@ -695,9 +681,9 @@ against yesterday's verdicts without new infrastructure.
 \label{sec:flink}
 
 Everything so far grades reconcilers written for this paper. The same
-workloads were also replayed through Apache Flink 1.20, as an ordinary LEFT
-interval join between the two streams --- the shape the pattern is usually built
-as --- with the engine's own verdicts graded by the same checker. The decision
+workloads were also replayed through Apache Flink 1.20, as an ordinary LEFT interval join between the two streams, the shape the
+pattern is usually built as, with the engine's own verdicts graded by the same
+checker. The decision
 instant is recovered from \texttt{CURRENT\_WATERMARK}, which the job selects
 alongside each row, mapped back to the wall-clock instant that watermark could
 first have been reached.
@@ -726,9 +712,8 @@ two seeds of each configuration in Table~\ref{tab:flink}; individual runs span
 write.
 Widening the join interval buys timeliness and costs soundness, which is the
 frontier of Section~\ref{sec:frontier} seen from inside a real system. The
-engine also emits one output row per matching pair, so a duplicated bank record
-produces a duplicated match --- 15 to 43 extra rows per run --- which a
-downstream sink has to deduplicate on its own.
+engine also emits one output row per matching pair, so a duplicated bank record produces a duplicated match, 15 to 43 extra rows
+per run, which a downstream sink has to deduplicate on its own.
 
 The violation rates are stable. Two independent runs of the whole experiment,
 days apart, agree to the second decimal place at every window. What follows is
@@ -738,9 +723,8 @@ less comfortable.
 simulated merged watermark agrees with Flink's partition of the obligations on
 77.4\% and 78.8\% of them, across the two seeds. Roughly a fifth of the time the
 model and the engine reach different conclusions, and the explanation is
-structural rather than statistical: the simulated arm models the *decision rule*
---- raise a break once a watermark has passed --- while the engine's interval
-join also constrains which bank records are eligible to match at all, through
+structural rather than statistical: the simulated arm models the *decision rule*, raise a break once a watermark
+has passed, while the engine's interval join also constrains which bank records are eligible to match at all, through
 the event-time interval in the join predicate. Two different constructions,
 agreeing most of the time. The timing results in Table~\ref{tab:frontier} are
 therefore properties of the models, and we state them as such rather than as
@@ -753,17 +737,15 @@ obligations on one seed and 40.7\% on the other received different verdicts, and
 one repetition raised 104 breaks where the other three raised 58. Re-run on an
 otherwise idle machine, the same configuration gives 0.9\% and 0.0\%, with break
 counts of $[66, 66, 65, 66]$ and $[58, 58, 58, 58]$. Two bounded sources are
-read concurrently and their interleaving is not fixed by the input, so
-contention plausibly changes which records the watermark has seen when an
-obligation is considered --- but that is an inference from one loaded run, not a
+read concurrently and their interleaving is not fixed by the input, so contention plausibly changes which records the watermark has seen when an
+obligation is considered. That is an inference from one loaded run and not a
 measurement, and we report it as such. It is a reason to be careful about
 reproducing streaming reconciliation results on a busy machine, and it is not a
 claim about Flink.
 
 One thing E7 could not test at all. Flink's idleness timeout is measured in
-processing time, and a bounded file source is consumed in milliseconds, so no
-source is ever idle long enough for the setting to engage --- which is why three
-of its four values give identical numbers above. Proposition~\ref{prop:idle} is
+processing time, and a bounded file source is consumed in milliseconds, so no source is ever idle long enough for the setting to engage. That is why
+three of its four values give identical numbers above. Proposition~\ref{prop:idle} is
 supported by its proof and by the model in Section~\ref{sec:idleness}, and is
 \emph{not} confirmed on the engine here. Testing it would need a source paced in
 processing time, which means a broker and a producer rather than a file, and
@@ -793,9 +775,8 @@ implicitly in a timeout, where it cannot be checked and cannot be blamed.
 \paragraph{The check is cheap where the data already is} Nothing in S1 or S2
 requires the reconciler's cooperation. Both are predicates over a verdict log,
 an obligation table and a declared model, which is why
-Section~\ref{sec:sql} can state them as a join. An organisation that cannot
-change its reconciliation engine --- the common case, since that engine is
-often a vendor product --- can still run the check against yesterday's output
+Section~\ref{sec:sql} can state them as a join. An organisation that cannot change its reconciliation engine, the common case
+since that engine is often a vendor product, can still run the check against yesterday's output
 and learn whether its break queue is the engine's doing or its counterparties'.
 
 \paragraph{Matching is downstream} A reconciliation product is usually sold on
@@ -806,8 +787,8 @@ allowed to conclude that none does.
 
 \section{Limitations}
 
-Two sources, not many. Reconciling three or more generalises the contract --- the
-horizon becomes a vector --- but is not tested, and multi-way reconciliation may
+Two sources, not many. Reconciling three or more generalises the contract, with the horizon becoming
+a vector, but is not tested, and multi-way reconciliation may
 raise ambiguities that two-way does not.
 
 Bounds are declared, not learned. Estimating $\Lambda_s$ online, and stating a
@@ -819,8 +800,8 @@ Obligations are ledger-side. A bank credit with no ledger expectation is
 counted and reported but not graded, and that direction of break is a real
 concern we do not measure.
 
-The workload is synthetic throughout, built from one simulator. Its lateness
-structure --- a fast ledger and a batching bank --- is realistic in shape, and the
+The workload is synthetic throughout, built from one simulator. Its lateness structure, a fast ledger and a batching bank, is realistic in
+shape, and the
 contract does not depend on the particular numbers, but the rates reported here
 are properties of this generator and should not be read as field rates.
 
@@ -831,9 +812,9 @@ on them, as it does under shift, we report the dependence instead of a figure.
 
 Reconciliation on a stream is a decision under partial evidence, and the
 question of when the evidence is sufficient has been answered in deployed
-systems by a constant nobody writes down. Writing it down --- as a per-source
-lateness bound, with a safety property relating it to the instant a verdict is
-issued --- costs little and buys a diagnosis: contract violation, model
+systems by a constant nobody writes down. Writing it down as a per-source lateness bound, with a safety property
+relating it to the instant a verdict is issued, costs little and buys a
+diagnosis: contract violation, model
 violation, or genuine loss, told apart without knowing the answer. The parts of
 this that surprised us were that the documented remedy for a stalled streaming
 join is unsound for reconciliation below the slow source's posting period, and
