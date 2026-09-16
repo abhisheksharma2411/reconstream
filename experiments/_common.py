@@ -27,16 +27,36 @@ sys.path.insert(0, str(SRC))
 from reconstream._p1 import p1_provenance  # noqa: E402
 
 
+
+#: Paths that are outputs of a run rather than inputs to it. A run writes its
+#: own results, and on the second experiment of a batch the first one's output
+#: would otherwise make the tree look dirty and mark every later result as
+#: irreproducible. What has to be clean is the code and the data that went in.
+GENERATED = ("results/", "figures/", "paper/")
+
+
+def _dirty_inputs(root) -> str:
+    """Uncommitted changes outside the generated directories."""
+    out = subprocess.run(
+        ["git", "-C", str(root), "status", "--porcelain"],
+        capture_output=True, text=True, check=True,
+    ).stdout.splitlines()
+    changed = []
+    for line in out:
+        path = line[3:].strip().strip('"')
+        if path.startswith("R ") or " -> " in path:
+            path = path.split(" -> ")[-1]
+        if not any(path.startswith(g) for g in GENERATED):
+            changed.append(path)
+    return "; ".join(sorted(changed))
+
 def git_rev() -> str:
     try:
         out = subprocess.run(
             ["git", "-C", str(ROOT), "rev-parse", "HEAD"],
             capture_output=True, text=True, check=True,
         ).stdout.strip()
-        dirty = subprocess.run(
-            ["git", "-C", str(ROOT), "status", "--porcelain"],
-            capture_output=True, text=True, check=True,
-        ).stdout.strip()
+        dirty = _dirty_inputs(ROOT)
         return out + ("-dirty" if dirty else "")
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "unversioned"
