@@ -30,7 +30,7 @@
     "prompt_publication_fires_at": 1082
   },
   "provenance": {
-    "git": "1a22fe15d12cfccf4caa5a7c06eb6a54d87f4de5-dirty",
+    "git": "a4d26f552a8deadf9fe5e5e510b0ec772b42e1e9",
     "p1": {
       "git": "0b016616808b164df273f30f4d033c06690f9627",
       "source": "../finalitybench/src (sibling checkout)",
@@ -38,7 +38,7 @@
     },
     "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-16T00:23:39Z"
+    "utc": "2026-09-16T01:52:43Z"
   },
   "timeline": {
     "actual_delay": 20,

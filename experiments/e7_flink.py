@@ -110,18 +110,37 @@ def main() -> None:
 
         # Fidelity: does the simulated arm partition the obligations the same
         # way the engine does, at the setting that corresponds to it?
-        fr = run_flink(w.arrivals, window=CHECK_BANK_BOUND, idle_timeout=None)
+        #
+        # Measured once per repeat rather than once, because the engine is not
+        # deterministic here and a single draw gives a figure that moves
+        # between runs of this experiment. Reporting the range makes the
+        # variability part of the result instead of something a reader
+        # discovers by re-running it.
         sim = M.GlobalWatermark(60)
         sim_d = run(sim, w.arrivals, horizon=w.horizon)
-        common = set(fr.decisions) & set(sim_d)
-        agree = sum(1 for o in common if fr.decisions[o].verdict is sim_d[o].verdict)
+        per_repeat = []
+        for _ in range(REPEATS):
+            fr = run_flink(w.arrivals, window=CHECK_BANK_BOUND, idle_timeout=None)
+            common = set(fr.decisions) & set(sim_d)
+            agree = sum(1 for o in common
+                        if fr.decisions[o].verdict is sim_d[o].verdict)
+            per_repeat.append({
+                "common": len(common),
+                "agree": agree,
+                "agreement": agree / len(common) if common else 0.0,
+                "only_engine": len(set(fr.decisions) - set(sim_d)),
+                "only_model": len(set(sim_d) - set(fr.decisions)),
+            })
+        rates = [r["agreement"] for r in per_repeat]
         out["model_fidelity"].append({
             "seed": seed,
-            "common": len(common),
-            "agree": agree,
-            "agreement": agree / len(common) if common else 0.0,
-            "only_engine": len(set(fr.decisions) - set(sim_d)),
-            "only_model": len(set(sim_d) - set(fr.decisions)),
+            "repeats": REPEATS,
+            "common": per_repeat[0]["common"],
+            "agreement_min": min(rates),
+            "agreement_max": max(rates),
+            "agreement_mean": sum(rates) / len(rates),
+            "stable_across_repeats": len(set(rates)) == 1,
+            "per_repeat": per_repeat,
         })
 
     write("e7_flink.json", out)
