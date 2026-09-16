@@ -21,16 +21,16 @@
   "determinism": [
     {
       "break_counts": [
-        66,
-        66,
+        61,
+        67,
         65,
-        64
+        66
       ],
       "obligations": 115,
       "repeats": 4,
       "seed": 1,
-      "unstable": 2,
-      "unstable_rate": 0.017391304347826087
+      "unstable": 25,
+      "unstable_rate": 0.21739130434782608
     },
     {
       "break_counts": [
@@ -49,24 +49,86 @@
   "engine": "apache/flink 1.20 (scala_2.12-java17), SQL interval join",
   "model_fidelity": [
     {
-      "agree": 83,
-      "agreement": 0.7217391304347827,
+      "agreement_max": 0.7739130434782608,
+      "agreement_mean": 0.7739130434782608,
+      "agreement_min": 0.7739130434782608,
       "common": 115,
-      "only_engine": 0,
-      "only_model": 0,
-      "seed": 1
+      "per_repeat": [
+        {
+          "agree": 89,
+          "agreement": 0.7739130434782608,
+          "common": 115,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7739130434782608,
+          "common": 115,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7739130434782608,
+          "common": 115,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7739130434782608,
+          "common": 115,
+          "only_engine": 0,
+          "only_model": 0
+        }
+      ],
+      "repeats": 4,
+      "seed": 1,
+      "stable_across_repeats": true
     },
     {
-      "agree": 89,
-      "agreement": 0.7876106194690266,
+      "agreement_max": 0.7876106194690266,
+      "agreement_mean": 0.7876106194690266,
+      "agreement_min": 0.7876106194690266,
       "common": 113,
-      "only_engine": 0,
-      "only_model": 0,
-      "seed": 2
+      "per_repeat": [
+        {
+          "agree": 89,
+          "agreement": 0.7876106194690266,
+          "common": 113,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7876106194690266,
+          "common": 113,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7876106194690266,
+          "common": 113,
+          "only_engine": 0,
+          "only_model": 0
+        },
+        {
+          "agree": 89,
+          "agreement": 0.7876106194690266,
+          "common": 113,
+          "only_engine": 0,
+          "only_model": 0
+        }
+      ],
+      "repeats": 4,
+      "seed": 2,
+      "stable_across_repeats": true
     }
   ],
   "provenance": {
-    "git": "a4d26f552a8deadf9fe5e5e510b0ec772b42e1e9-dirty",
+    "git": "991c1a4a0a855b0bb8ce464fea7a35b5a2ab45b2-dirty",
     "p1": {
       "git": "0b016616808b164df273f30f4d033c06690f9627",
       "source": "../finalitybench/src (sibling checkout)",
@@ -74,7 +136,7 @@
     },
     "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-16T01:58:56Z"
+    "utc": "2026-09-16T02:46:39Z"
   },
   "runs": [
     {
@@ -97,13 +159,13 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 36,
-      "false_break_rate": 0.22608695652173913,
-      "false_breaks": 26,
+      "duplicate_match_rows": 35,
+      "false_break_rate": 0.21739130434782608,
+      "false_breaks": 25,
       "flushed": 0,
       "idle_timeout": 10,
       "inadmissible_rate": 0.14782608695652175,
-      "mean_closure": 68.46969696969697,
+      "mean_closure": 69.35384615384615,
       "n": 115,
       "p99_closure": 251,
       "rows": 178,
@@ -151,31 +213,31 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 41,
-      "false_break_rate": 0.17391304347826086,
-      "false_breaks": 20,
+      "duplicate_match_rows": 38,
+      "false_break_rate": 0.1565217391304348,
+      "false_breaks": 18,
       "flushed": 0,
       "idle_timeout": null,
-      "inadmissible_rate": 0.20869565217391303,
-      "mean_closure": 33.766666666666666,
+      "inadmissible_rate": 0.1826086956521739,
+      "mean_closure": 33.48275862068966,
       "n": 115,
       "p99_closure": 165,
-      "rows": 180,
+      "rows": 181,
       "runtime_mode": "STREAMING",
-      "s1_premature_break": 24,
+      "s1_premature_break": 21,
       "seed": 1,
       "verdicts": 115,
       "window": 160
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 36,
-      "false_break_rate": 0.17391304347826086,
-      "false_breaks": 20,
+      "duplicate_match_rows": 39,
+      "false_break_rate": 0.16521739130434782,
+      "false_breaks": 19,
       "flushed": 0,
       "idle_timeout": 10,
       "inadmissible_rate": 0.2,
-      "mean_closure": 28.333333333333332,
+      "mean_closure": 35.644067796610166,
       "n": 115,
       "p99_closure": 165,
       "rows": 180,
@@ -223,11 +285,29 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 43,
+      "duplicate_match_rows": 42,
       "false_break_rate": 0.1565217391304348,
       "false_breaks": 18,
       "flushed": 0,
       "idle_timeout": null,
+      "inadmissible_rate": 0.17391304347826086,
+      "mean_closure": 38.327586206896555,
+      "n": 115,
+      "p99_closure": 178,
+      "rows": 182,
+      "runtime_mode": "STREAMING",
+      "s1_premature_break": 20,
+      "seed": 1,
+      "verdicts": 115,
+      "window": 320
+    },
+    {
+      "break_recall": 1.0,
+      "duplicate_match_rows": 44,
+      "false_break_rate": 0.1565217391304348,
+      "false_breaks": 18,
+      "flushed": 0,
+      "idle_timeout": 10,
       "inadmissible_rate": 0.17391304347826086,
       "mean_closure": 38.327586206896555,
       "n": 115,
@@ -245,7 +325,7 @@
       "false_break_rate": 0.1565217391304348,
       "false_breaks": 18,
       "flushed": 0,
-      "idle_timeout": 10,
+      "idle_timeout": 60,
       "inadmissible_rate": 0.17391304347826086,
       "mean_closure": 38.327586206896555,
       "n": 115,
@@ -263,7 +343,7 @@
       "false_break_rate": 0.1565217391304348,
       "false_breaks": 18,
       "flushed": 0,
-      "idle_timeout": 60,
+      "idle_timeout": 240,
       "inadmissible_rate": 0.17391304347826086,
       "mean_closure": 38.327586206896555,
       "n": 115,
@@ -277,24 +357,6 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 37,
-      "false_break_rate": 0.16521739130434782,
-      "false_breaks": 19,
-      "flushed": 0,
-      "idle_timeout": 240,
-      "inadmissible_rate": 0.17391304347826086,
-      "mean_closure": 38.152542372881356,
-      "n": 115,
-      "p99_closure": 178,
-      "rows": 180,
-      "runtime_mode": "STREAMING",
-      "s1_premature_break": 20,
-      "seed": 1,
-      "verdicts": 115,
-      "window": 320
-    },
-    {
-      "break_recall": 1.0,
       "duplicate_match_rows": 16,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
@@ -385,7 +447,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 16,
+      "duplicate_match_rows": 15,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,
@@ -439,7 +501,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 15,
+      "duplicate_match_rows": 16,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,
@@ -475,7 +537,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 16,
+      "duplicate_match_rows": 15,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,
@@ -493,7 +555,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 15,
+      "duplicate_match_rows": 16,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,

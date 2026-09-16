@@ -163,14 +163,29 @@ def build_claims() -> list[tuple[str, object, object]]:
         # paper is explicitly labelled unreproduced and is not checked here,
         # because there is no results file that reproduces it -- which is the
         # point of saying so in the text.
+        # The engine is not deterministic on seed 1, so what is asserted here
+        # is the shape of the instability, not the exact obligation count. An
+        # earlier version pinned the break counts and the fidelity to one
+        # draw, and a re-run that changed no code failed the suite.
         det = {f["seed"]: f for f in e7["determinism"]}
-        c.append(("flink seed1 unstable % (idle machine)", 0.9, pct(det[1]["unstable_rate"])))
-        c.append(("flink seed2 unstable % (idle machine)", 0.0, pct(det[2]["unstable_rate"])))
-        c.append(("flink seed1 break counts (idle)", [66, 66, 65, 66], det[1]["break_counts"]))
-        c.append(("flink seed2 break counts (idle)", [58, 58, 58, 58], det[2]["break_counts"]))
+        c.append(("flink seed1 is unstable across repeats", True,
+                  det[1]["unstable"] > 0))
+        c.append(("flink seed1 instability stays under 5%", True,
+                  det[1]["unstable_rate"] < 0.05))
+        c.append(("flink seed2 is stable across repeats", 0.0,
+                  pct(det[2]["unstable_rate"])))
+        c.append(("flink seed2 break counts (idle)", [58, 58, 58, 58],
+                  det[2]["break_counts"]))
+        c.append(("flink seed1 break counts vary", True,
+                  len(set(det[1]["break_counts"])) > 1))
         fid = {f["seed"]: f for f in e7["model_fidelity"]}
-        c.append(("flink fidelity seed1 %", 77.4, pct(fid[1]["agreement"])))
-        c.append(("flink fidelity seed2 %", 78.8, pct(fid[2]["agreement"])))
+        c.append(("flink fidelity seed1 is a range", False,
+                  fid[1]["stable_across_repeats"]))
+        c.append(("flink fidelity seed1 stays near three quarters", True,
+                  0.70 <= fid[1]["agreement_min"] <= fid[1]["agreement_max"] <= 0.80))
+        c.append(("flink fidelity seed2 %", 78.8, pct(fid[2]["agreement_mean"])))
+        c.append(("flink fidelity seed2 is stable", True,
+                  fid[2]["stable_across_repeats"]))
         dups = [r["duplicate_match_rows"] for r in e7["runs"]]
         c.append(("flink min duplicate match rows", 15, min(dups)))
         c.append(("flink max duplicate match rows", 43, max(dups)))

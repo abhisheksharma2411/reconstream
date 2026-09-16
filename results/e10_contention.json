@@ -1,0 +1,93 @@
+{
+  "arms": {
+    "idle": [
+      {
+        "break_counts": [
+          66,
+          65,
+          65,
+          64
+        ],
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 2,
+        "unstable_rate": 0.017391304347826087
+      },
+      {
+        "break_counts": [
+          58,
+          59,
+          58,
+          58
+        ],
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 3,
+        "unstable_rate": 0.02654867256637168
+      }
+    ],
+    "loaded": [
+      {
+        "break_counts": [
+          65,
+          65,
+          66,
+          65
+        ],
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 1,
+        "unstable_rate": 0.008695652173913044
+      },
+      {
+        "break_counts": [
+          58,
+          58,
+          58,
+          58
+        ],
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 0,
+        "unstable_rate": 0.0
+      }
+    ]
+  },
+  "config": {
+    "cpus": 12,
+    "load_workers": 12,
+    "n_cases": 200,
+    "repeats": 4,
+    "seeds": [
+      1,
+      2
+    ]
+  },
+  "headline": {
+    "idle_rates": {
+      "1": 0.017391304347826087,
+      "2": 0.02654867256637168
+    },
+    "idle_worst_unstable_rate": 0.02654867256637168,
+    "load_increases_instability": false,
+    "loaded_rates": {
+      "1": 0.008695652173913044,
+      "2": 0.0
+    },
+    "loaded_worst_unstable_rate": 0.008695652173913044,
+    "note": "the withdrawn observation in the paper was made on a loaded machine and the re-run on an idle one; this varies load deliberately instead",
+    "ratio": 0.327536231884058
+  },
+  "provenance": {
+    "git": "991c1a4a0a855b0bb8ce464fea7a35b5a2ab45b2-dirty",
+    "p1": {
+      "git": "0b016616808b164df273f30f4d033c06690f9627",
+      "source": "../finalitybench/src (sibling checkout)",
+      "version": "1.0.0"
+    },
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "utc": "2026-09-16T02:49:08Z"
+  },
+  "status": "ok"
+}

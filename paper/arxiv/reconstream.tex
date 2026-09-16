@@ -431,6 +431,50 @@ The event store is PostgreSQL 16.4 and the stream processor is Apache Flink
 
 \section{Results}
 
+\subsection{What supports what}
+\label{sec:evidence}
+
+Three kinds of evidence appear below and they carry different weight, so it is
+worth saying once which conclusion rests on which.
+
+\textbf{Propositions} are proved from the definitions and hold for any system
+matching them. Proposition~\ref{prop:inherit} and Proposition~\ref{prop:idle}
+are of this kind, and no experiment can confirm or refute them; the
+experiments show that our implementations behave as the propositions say,
+which is a check on the implementations.
+
+\textbf{Simulator results} are everything graded over reconcilers written for
+this paper on workloads from the published generator. Precision, closure
+delay, the frontier and the fault breakdown are all of this kind. They compare
+constructions against each other on identical streams, which is a like-for-
+like measurement, and they say nothing about any deployed system.
+
+\textbf{The engine experiment} is Apache Flink 1.20 running the SQL interval
+join, with its own verdicts graded by the same checker
+(Section~\ref{sec:flink}). It is the only arm in which a real stream processor
+makes a decision.
+
+One boundary between the second and third matters enough to state before the
+numbers rather than after. Our watermark arms agree with Flink on roughly four
+obligations in five, and Section~\ref{sec:flink} gives the reason and the
+figures. The timing results in the simulator are therefore properties of our
+models. They are not measurements of Flink, and the Flink arm is not a
+validation of them.
+
+A second boundary concerns Proposition~\ref{prop:idle}. It is proved, and the
+simulator reproduces its prediction. The engine arm does \emph{not} test it:
+Flink's idleness timeout is measured in processing time and a bounded file
+source is consumed in milliseconds, so the setting never engages, which is why
+its four values give identical rows in Table~\ref{tab:flink}. Nothing in the
+engine arm confirms the proposition and nothing in it contradicts the
+proposition.
+
+Intervals throughout are percentile bootstraps resampled over \emph{cases}
+rather than obligations. Several obligations come from one sampled case and
+share its amount, archetype and fault draw, so resampling obligations would
+treat correlated evidence as independent and give intervals that are too
+narrow. Comparisons between arms use the same case resample for both.
+
 \subsection{Calibrated operating points}
 
 \begin{table}[t]
@@ -824,8 +868,7 @@ verdict it got wrong.
 \section*{Artifact availability}
 
 Code, workload generator, Docker configuration and every results file are at
-\url{https://github.com/abhisheksharma2411/reconstream}, archived at
-DOI~\texttt{ZENODO\_DOI\_PLACEHOLDER}. \texttt{make reproduce} runs the whole
+\url{https://github.com/abhisheksharma2411/reconstream}. An archival DOI is forthcoming. \texttt{make reproduce} runs the whole
 pipeline from a clean checkout: it fetches FinalityBench, starts PostgreSQL and
 Flink, runs every experiment, regenerates each figure from the raw results and
 rebuilds this paper. No number in the text is entered by hand.
