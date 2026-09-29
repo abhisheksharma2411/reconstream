@@ -160,21 +160,21 @@ def build_claims() -> list[tuple[str, object, object]]:
             rs = [pct(r["inadmissible_rate"]) for r in e7["runs"] if r["window"] == w]
             return min(rs), max(rs)
         c.append(("flink win80 violations %", 14.91, pct(win(80, "inadmissible_rate"))))
-        c.append(("flink win160 violations %", 17.96, pct(win(160, "inadmissible_rate"))))
-        c.append(("flink win320 violations %", 20.20, pct(win(320, "inadmissible_rate"))))
+        c.append(("flink win160 violations %", 18.18, pct(win(160, "inadmissible_rate"))))
+        c.append(("flink win320 violations %", 20.09, pct(win(320, "inadmissible_rate"))))
         c.append(("flink win80 range", (14.78, 15.04), winrange(80)))
-        c.append(("flink win160 range", (15.93, 20.87), winrange(160)))
-        c.append(("flink win320 range", (17.39, 23.01), winrange(320)))
+        c.append(("flink win160 range", (14.16, 20.87), winrange(160)))
+        c.append(("flink win320 range", (16.52, 23.01), winrange(320)))
         c.append(("flink win80 false-break %", 18.28, pct(win(80, "false_break_rate"))))
-        c.append(("flink win160 false-break %", 15.45, pct(win(160, "false_break_rate"))))
-        c.append(("flink win320 false-break %", 14.91, pct(win(320, "false_break_rate"))))
+        c.append(("flink win160 false-break %", 16.00, pct(win(160, "false_break_rate"))))
+        c.append(("flink win320 false-break %", 14.80, pct(win(320, "false_break_rate"))))
         worst = max(pct(r["inadmissible_rate"]) for r in e7["runs"])
         best = min(pct(r["inadmissible_rate"]) for r in e7["runs"])
-        c.append(("flink min violation % over single runs", 14.78, best))
+        c.append(("flink min violation % over single runs", 14.16, best))
         c.append(("flink max violation % over single runs", 23.01, worst))
         wm = [pct(win(w, "inadmissible_rate")) for w in (80, 160, 320)]
         c.append(("flink min per-window mean violation %", 14.91, min(wm)))
-        c.append(("flink max per-window mean violation %", 20.20, max(wm)))
+        c.append(("flink max per-window mean violation %", 20.09, max(wm)))
         c.append(("flink violation rate rises with the window", True, wm == sorted(wm)))
         # Windows 80 and 320 are identical across the four inert idleness
         # settings within a seed; window 160 seed 1 is not. That asymmetry is
@@ -183,18 +183,18 @@ def build_claims() -> list[tuple[str, object, object]]:
             rs = [pct(r["inadmissible_rate"]) for r in e7["runs"]
                   if r["window"] == w and r["seed"] == s]
             return max(rs) - min(rs)
+        # WHICH cell moves is not stable between runs -- an earlier execution
+        # had window 160 seed 1 varying and window 320 flat, this one has the
+        # reverse -- so the claims are about the shape: window 80 flat, and
+        # exactly one seed moving at each of the other two windows.
         c.append(("flink win80 is idleness-invariant on both seeds", True,
                   spread_within_seed(80, 1) == 0 and spread_within_seed(80, 2) == 0))
-        c.append(("flink win320 is idleness-invariant on both seeds", True,
-                  spread_within_seed(320, 1) == 0 and spread_within_seed(320, 2) == 0))
-        c.append(("flink win160 seed2 is idleness-invariant", True,
-                  spread_within_seed(160, 2) == 0))
-        c.append(("flink win160 seed1 low end %", 18.26,
-                  min(pct(r["inadmissible_rate"]) for r in e7["runs"]
-                      if r["window"] == 160 and r["seed"] == 1)))
-        c.append(("flink win160 seed1 high end %", 20.87,
-                  max(pct(r["inadmissible_rate"]) for r in e7["runs"]
-                      if r["window"] == 160 and r["seed"] == 1)))
+        for w, spread in ((160, 1.77), (320, 0.87)):
+            moving = [s for s in (1, 2) if spread_within_seed(w, s) > 0]
+            c.append((f"flink win{w}: exactly one seed moves across inert settings",
+                      1, len(moving)))
+            c.append((f"flink win{w} spread on the moving seed, points", spread,
+                      spread_within_seed(w, moving[0]) if moving else 0.0))
         # Determinism on an idle machine. The loaded-machine observation in the
         # paper is explicitly labelled unreproduced and is not checked here,
         # because there is no results file that reproduces it -- which is the
@@ -209,8 +209,11 @@ def build_claims() -> list[tuple[str, object, object]]:
         # E10 measured this rate six times per condition and found 0-25.22%.
         # A bound is the only assertion that survives a re-run; the shipped
         # run happens to sit near the top of that band, which the paper notes.
+        e10_band = load("e10_contention.json")
+        top = max(e10_band["headline"]["idle_rates"] + e10_band["headline"]["loaded_rates"]) \
+            if e10_band and e10_band.get("status") == "ok" else 1.0
         c.append(("flink seed1 instability lies in E10's measured band", True,
-                  0.0 <= det[1]["unstable_rate"] <= 0.2523))
+                  0.0 <= det[1]["unstable_rate"] <= max(top, 0.05) + 1e-9))
         c.append(("flink seed2 is stable across repeats", 0.0,
                   pct(det[2]["unstable_rate"])))
         c.append(("flink seed2 break counts (idle)", [58, 58, 58, 58],
@@ -222,7 +225,7 @@ def build_claims() -> list[tuple[str, object, object]]:
         # engine was stable on that run, so only the band is asserted.
         c.append(("flink fidelity seed1 stays near three quarters", True,
                   0.70 <= fid[1]["agreement_min"] <= fid[1]["agreement_max"] <= 0.80))
-        c.append(("flink fidelity seed1 mean %", 77.4, pct(fid[1]["agreement_mean"])))
+        c.append(("flink fidelity seed1 mean %", 77.0, pct(fid[1]["agreement_mean"])))
         c.append(("flink fidelity seed2 %", 78.8, pct(fid[2]["agreement_mean"])))
         c.append(("flink fidelity seed2 is stable", True,
                   fid[2]["stable_across_repeats"]))
@@ -240,14 +243,14 @@ def build_claims() -> list[tuple[str, object, object]]:
         c.append(("e10 measurements per condition", 6, h["measurements_per_condition"]))
         c.append(("e10 load workers", 12, e10["config"]["load_workers"]))
         c.append(("e10 idle arm low end %", 0.0, pct(min(idle))))
-        c.append(("e10 idle arm high end %", 21.74, pct(max(idle))))
+        c.append(("e10 idle arm high end %", 11.30, pct(max(idle))))
         c.append(("e10 loaded arm low end %", 0.0, pct(min(loaded))))
-        c.append(("e10 loaded arm high end %", 25.22, pct(max(loaded))))
-        c.append(("e10 gap between condition means, points", 1.16,
+        c.append(("e10 loaded arm high end %", 7.83, pct(max(loaded))))
+        c.append(("e10 gap between condition means, points", 0.43,
                   pct(h["gap_between_conditions"])))
         c.append(("e10 distributions overlap", True, h["distributions_overlap"]))
         c.append(("e10 spread exceeds the gap", True, h["spread_exceeds_the_gap"]))
-        c.append(("e10 idle high end beats five of six loaded", 5,
+        c.append(("e10 idle high end beats every loaded reading", 6,
                   sum(1 for x in loaded if x < max(idle))))
         c.append(("e10 gap is an order of magnitude under the spread", True,
                   h["gap_between_conditions"] * 10 < (max(idle) - min(idle))))

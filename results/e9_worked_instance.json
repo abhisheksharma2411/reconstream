@@ -30,15 +30,15 @@
     "prompt_publication_fires_at": 1082
   },
   "provenance": {
-    "git": "a4d26f552a8deadf9fe5e5e510b0ec772b42e1e9",
+    "git": "a77557526c46f042d47a545e413dc93bd73c358c",
     "p1": {
       "git": "0b016616808b164df273f30f4d033c06690f9627",
       "source": "../finalitybench/src (sibling checkout)",
       "version": "1.0.0"
     },
-    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-16T01:52:43Z"
+    "utc": "2026-09-29T20:34:26Z"
   },
   "timeline": {
     "actual_delay": 20,

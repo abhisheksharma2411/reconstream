@@ -745,33 +745,34 @@ engine disagreeing with itself.}
 window & viol.\% & (range) & f.break\% & mean & p99 \\
 \midrule
 80  & 14.91 & 14.78--15.04 & 18.28 & 51.5 & 239 \\
-160 & 17.96 & 15.93--20.87 & 15.45 & 29.4 & 176 \\
-320 & 20.20 & 17.39--23.01 & 14.91 & 17.5 & 161 \\
+160 & 18.18 & 14.16--20.87 & 16.00 & 30.1 & 176 \\
+320 & 20.09 & 16.52--23.01 & 14.80 & 18.3 & 161 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The engine violates S1 on 14.91\% to 20.20\% of obligations, averaged over the
+The engine violates S1 on 14.91\% to 20.09\% of obligations, averaged over the
 eight runs of each window in Table~\ref{tab:flink}; individual runs span
-14.78\% to 23.01\%. It does so in the configuration a competent engineer would
+14.16\% to 23.01\%. It does so in the configuration a competent engineer would
 write.
 Widening the join interval buys timeliness and costs soundness, which is the
 frontier of Section~\ref{sec:frontier} seen from inside a real system. The
 engine also emits one output row per matching pair, so a duplicated bank record produces a duplicated match, 15 to 44 extra rows
 per run, which a downstream sink has to deduplicate on its own.
 
-The window effect is solid; the individual rates are less so. At windows 80 and
-320 all eight runs of each window agree to the second decimal place within a
-seed, across four idleness settings that cannot matter. At window 160 seed~2 is
-equally stable while seed~1 moves between 18.26\% and 20.87\% across those same
-inert settings, which is the engine disagreeing with itself rather than any
-effect of the configuration. The ordering across windows survives every run we
-have made; a single per-configuration rate does not. What follows is less
-comfortable.
+The window effect is solid; the individual rates are less so. Window 80 is
+identical to the second decimal place on both seeds across all four idleness
+settings. Windows 160 and 320 are not: at each, one seed repeats exactly while
+the other moves across settings that cannot affect it, by 1.77 and 0.87 points
+respectively. Nothing in the configuration distinguishes those cells, so the
+spread is the engine disagreeing with itself, and which cell it lands in is not
+a property of the window or the seed. The ordering across windows survives
+every run we have made; a single per-configuration rate does not. What follows
+is less comfortable.
 
 \textbf{Our watermark arms are not a faithful model of the engine.} The
 simulated merged watermark agrees with Flink's partition of the obligations on
-77.4\% and 78.8\% of them, across the two seeds. Roughly a fifth of the time the
+77.0\% and 78.8\% of them, across the two seeds. Roughly a fifth of the time the
 model and the engine reach different conclusions, and the explanation is
 structural rather than statistical: the simulated arm models the \emph{decision rule}, raise a break once a watermark
 has passed, while the engine's interval join also constrains which bank records are eligible to match at all, through
@@ -791,18 +792,20 @@ assert. E10 varies load deliberately, running the determinism check idle and
 under twelve busy-loop workers on twelve cores, six times per condition.
 
 Load does not explain it. Across six measurements per condition the idle arm
-spans 0.0\% to 21.74\% and the loaded arm 0.0\% to 25.22\%; the condition means
-differ by 1.16 points, which is an order of magnitude smaller than the spread
-within either condition. The distributions overlap almost completely, and the
-largest idle reading exceeds five of the six loaded ones. The useful result is
-the spread, not the comparison: repeating an identical job on an unchanged
-machine gives a verdict-instability rate anywhere between zero and a quarter of
-all obligations, so no single execution of this check --- the
+spans 0.0\% to 11.30\% and the loaded arm 0.0\% to 7.83\%; the condition means
+differ by 0.43 points, an order of magnitude inside the spread of either
+condition, and in the direction opposite to the hypothesis. The distributions
+overlap almost completely, and the largest idle reading exceeds every one of
+the six loaded ones. The useful result is the spread, not the comparison:
+repeating an identical job on an unchanged machine gives a verdict-instability
+rate anywhere between zero and a tenth of all obligations, a range spanning
+more than an order of magnitude within one condition, so no single run --- the
 loaded one we withdrew, the idle one we replaced it with, or any of the twelve
 reported here --- carries information about the engine on its own. The E7 run
-shipped with this paper is itself one of the high draws: seed~1 disagrees with
-itself on 21.74\% of obligations there, which is why Table~\ref{tab:flink}
-reports a range per window rather than a figure per configuration.
+shipped with this paper happens to be a quiet one, with seed~1 disagreeing with
+itself on 3.48\% of obligations, and that is not evidence of stability either.
+It is why Table~\ref{tab:flink} reports a range per window rather than a figure
+per configuration.
 
 \textbf{What that does and does not undermine.} The volatility is confined to
 the repeat-to-repeat determinism check. The violation rates underlying

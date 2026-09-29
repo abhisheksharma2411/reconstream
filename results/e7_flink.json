@@ -21,16 +21,16 @@
   "determinism": [
     {
       "break_counts": [
-        61,
-        67,
+        66,
+        64,
         65,
-        66
+        68
       ],
       "obligations": 115,
       "repeats": 4,
       "seed": 1,
-      "unstable": 25,
-      "unstable_rate": 0.21739130434782608
+      "unstable": 4,
+      "unstable_rate": 0.034782608695652174
     },
     {
       "break_counts": [
@@ -50,8 +50,8 @@
   "model_fidelity": [
     {
       "agreement_max": 0.7739130434782608,
-      "agreement_mean": 0.7739130434782608,
-      "agreement_min": 0.7739130434782608,
+      "agreement_mean": 0.7695652173913043,
+      "agreement_min": 0.7565217391304347,
       "common": 115,
       "per_repeat": [
         {
@@ -76,8 +76,8 @@
           "only_model": 0
         },
         {
-          "agree": 89,
-          "agreement": 0.7739130434782608,
+          "agree": 87,
+          "agreement": 0.7565217391304347,
           "common": 115,
           "only_engine": 0,
           "only_model": 0
@@ -85,7 +85,7 @@
       ],
       "repeats": 4,
       "seed": 1,
-      "stable_across_repeats": true
+      "stable_across_repeats": false
     },
     {
       "agreement_max": 0.7876106194690266,
@@ -128,15 +128,15 @@
     }
   ],
   "provenance": {
-    "git": "991c1a4a0a855b0bb8ce464fea7a35b5a2ab45b2-dirty",
+    "git": "a77557526c46f042d47a545e413dc93bd73c358c",
     "p1": {
       "git": "0b016616808b164df273f30f4d033c06690f9627",
       "source": "../finalitybench/src (sibling checkout)",
       "version": "1.0.0"
     },
-    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-16T02:46:39Z"
+    "utc": "2026-09-29T20:40:05Z"
   },
   "runs": [
     {
@@ -147,10 +147,10 @@
       "flushed": 0,
       "idle_timeout": null,
       "inadmissible_rate": 0.14782608695652175,
-      "mean_closure": 68.3030303030303,
+      "mean_closure": 68.46969696969697,
       "n": 115,
       "p99_closure": 251,
-      "rows": 177,
+      "rows": 178,
       "runtime_mode": "STREAMING",
       "s1_premature_break": 17,
       "seed": 1,
@@ -213,36 +213,36 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 38,
-      "false_break_rate": 0.1565217391304348,
-      "false_breaks": 18,
+      "duplicate_match_rows": 40,
+      "false_break_rate": 0.17391304347826086,
+      "false_breaks": 20,
       "flushed": 0,
       "idle_timeout": null,
-      "inadmissible_rate": 0.1826086956521739,
-      "mean_closure": 33.48275862068966,
+      "inadmissible_rate": 0.20869565217391303,
+      "mean_closure": 34.43333333333333,
       "n": 115,
       "p99_closure": 165,
-      "rows": 181,
+      "rows": 180,
       "runtime_mode": "STREAMING",
-      "s1_premature_break": 21,
+      "s1_premature_break": 24,
       "seed": 1,
       "verdicts": 115,
       "window": 160
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 39,
-      "false_break_rate": 0.16521739130434782,
-      "false_breaks": 19,
+      "duplicate_match_rows": 40,
+      "false_break_rate": 0.17391304347826086,
+      "false_breaks": 20,
       "flushed": 0,
       "idle_timeout": 10,
-      "inadmissible_rate": 0.2,
-      "mean_closure": 35.644067796610166,
+      "inadmissible_rate": 0.20869565217391303,
+      "mean_closure": 34.43333333333333,
       "n": 115,
       "p99_closure": 165,
       "rows": 180,
       "runtime_mode": "STREAMING",
-      "s1_premature_break": 23,
+      "s1_premature_break": 24,
       "seed": 1,
       "verdicts": 115,
       "window": 160
@@ -285,11 +285,29 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 42,
+      "duplicate_match_rows": 43,
       "false_break_rate": 0.1565217391304348,
       "false_breaks": 18,
       "flushed": 0,
       "idle_timeout": null,
+      "inadmissible_rate": 0.17391304347826086,
+      "mean_closure": 38.327586206896555,
+      "n": 115,
+      "p99_closure": 178,
+      "rows": 182,
+      "runtime_mode": "STREAMING",
+      "s1_premature_break": 20,
+      "seed": 1,
+      "verdicts": 115,
+      "window": 320
+    },
+    {
+      "break_recall": 1.0,
+      "duplicate_match_rows": 42,
+      "false_break_rate": 0.1565217391304348,
+      "false_breaks": 18,
+      "flushed": 0,
+      "idle_timeout": 10,
       "inadmissible_rate": 0.17391304347826086,
       "mean_closure": 38.327586206896555,
       "n": 115,
@@ -304,35 +322,17 @@
     {
       "break_recall": 1.0,
       "duplicate_match_rows": 44,
-      "false_break_rate": 0.1565217391304348,
-      "false_breaks": 18,
-      "flushed": 0,
-      "idle_timeout": 10,
-      "inadmissible_rate": 0.17391304347826086,
-      "mean_closure": 38.327586206896555,
-      "n": 115,
-      "p99_closure": 178,
-      "rows": 182,
-      "runtime_mode": "STREAMING",
-      "s1_premature_break": 20,
-      "seed": 1,
-      "verdicts": 115,
-      "window": 320
-    },
-    {
-      "break_recall": 1.0,
-      "duplicate_match_rows": 42,
-      "false_break_rate": 0.1565217391304348,
-      "false_breaks": 18,
+      "false_break_rate": 0.14782608695652175,
+      "false_breaks": 17,
       "flushed": 0,
       "idle_timeout": 60,
-      "inadmissible_rate": 0.17391304347826086,
-      "mean_closure": 38.327586206896555,
+      "inadmissible_rate": 0.16521739130434782,
+      "mean_closure": 44.228070175438596,
       "n": 115,
       "p99_closure": 178,
       "rows": 182,
       "runtime_mode": "STREAMING",
-      "s1_premature_break": 20,
+      "s1_premature_break": 19,
       "seed": 1,
       "verdicts": 115,
       "window": 320
@@ -393,7 +393,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 16,
+      "duplicate_match_rows": 15,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,
@@ -448,17 +448,17 @@
     {
       "break_recall": 1.0,
       "duplicate_match_rows": 15,
-      "false_break_rate": 0.1415929203539823,
-      "false_breaks": 16,
+      "false_break_rate": 0.1592920353982301,
+      "false_breaks": 18,
       "flushed": 0,
       "idle_timeout": 10,
-      "inadmissible_rate": 0.1592920353982301,
-      "mean_closure": 24.396551724137932,
+      "inadmissible_rate": 0.1415929203539823,
+      "mean_closure": 29.55,
       "n": 113,
       "p99_closure": 186,
       "rows": 176,
       "runtime_mode": "STREAMING",
-      "s1_premature_break": 18,
+      "s1_premature_break": 16,
       "seed": 2,
       "verdicts": 113,
       "window": 160
@@ -501,7 +501,7 @@
     },
     {
       "break_recall": 1.0,
-      "duplicate_match_rows": 16,
+      "duplicate_match_rows": 15,
       "false_break_rate": 0.1415929203539823,
       "false_breaks": 16,
       "flushed": 0,

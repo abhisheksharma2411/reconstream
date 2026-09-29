@@ -4,130 +4,24 @@
       {
         "break_counts": [
           66,
-          66,
-          66,
-          66
-        ],
-        "execution": 0,
-        "obligations": 115,
-        "seed": 1,
-        "unstable": 0,
-        "unstable_rate": 0.0
-      },
-      {
-        "break_counts": [
-          58,
-          58,
-          58,
-          58
-        ],
-        "execution": 0,
-        "obligations": 113,
-        "seed": 2,
-        "unstable": 0,
-        "unstable_rate": 0.0
-      },
-      {
-        "break_counts": [
-          66,
-          64,
-          59,
-          66
-        ],
-        "execution": 1,
-        "obligations": 115,
-        "seed": 1,
-        "unstable": 25,
-        "unstable_rate": 0.21739130434782608
-      },
-      {
-        "break_counts": [
-          58,
-          58,
-          58,
-          58
-        ],
-        "execution": 1,
-        "obligations": 113,
-        "seed": 2,
-        "unstable": 0,
-        "unstable_rate": 0.0
-      },
-      {
-        "break_counts": [
-          66,
-          66,
-          66,
-          66
-        ],
-        "execution": 2,
-        "obligations": 115,
-        "seed": 1,
-        "unstable": 0,
-        "unstable_rate": 0.0
-      },
-      {
-        "break_counts": [
-          58,
-          58,
-          58,
-          58
-        ],
-        "execution": 2,
-        "obligations": 113,
-        "seed": 2,
-        "unstable": 0,
-        "unstable_rate": 0.0
-      }
-    ],
-    "loaded": [
-      {
-        "break_counts": [
-          65,
-          66,
+          67,
           65,
           66
         ],
         "execution": 0,
         "obligations": 115,
         "seed": 1,
-        "unstable": 1,
-        "unstable_rate": 0.008695652173913044
+        "unstable": 13,
+        "unstable_rate": 0.11304347826086956
       },
       {
         "break_counts": [
           58,
-          60,
+          58,
           58,
           58
         ],
         "execution": 0,
-        "obligations": 113,
-        "seed": 2,
-        "unstable": 2,
-        "unstable_rate": 0.017699115044247787
-      },
-      {
-        "break_counts": [
-          66,
-          66,
-          65,
-          65
-        ],
-        "execution": 1,
-        "obligations": 115,
-        "seed": 1,
-        "unstable": 1,
-        "unstable_rate": 0.008695652173913044
-      },
-      {
-        "break_counts": [
-          58,
-          58,
-          58,
-          58
-        ],
-        "execution": 1,
         "obligations": 113,
         "seed": 2,
         "unstable": 0,
@@ -136,15 +30,69 @@
       {
         "break_counts": [
           68,
+          66,
+          66,
+          66
+        ],
+        "execution": 1,
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 2,
+        "unstable_rate": 0.017391304347826087
+      },
+      {
+        "break_counts": [
+          62,
+          58,
+          58,
+          58
+        ],
+        "execution": 1,
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 4,
+        "unstable_rate": 0.035398230088495575
+      },
+      {
+        "break_counts": [
           65,
-          59,
-          65
+          65,
+          66,
+          66
         ],
         "execution": 2,
         "obligations": 115,
         "seed": 1,
-        "unstable": 29,
-        "unstable_rate": 0.25217391304347825
+        "unstable": 1,
+        "unstable_rate": 0.008695652173913044
+      },
+      {
+        "break_counts": [
+          58,
+          58,
+          58,
+          59
+        ],
+        "execution": 2,
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 1,
+        "unstable_rate": 0.008849557522123894
+      }
+    ],
+    "loaded": [
+      {
+        "break_counts": [
+          64,
+          67,
+          64,
+          66
+        ],
+        "execution": 0,
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 9,
+        "unstable_rate": 0.0782608695652174
       },
       {
         "break_counts": [
@@ -153,11 +101,63 @@
           58,
           58
         ],
-        "execution": 2,
+        "execution": 0,
         "obligations": 113,
         "seed": 2,
         "unstable": 0,
         "unstable_rate": 0.0
+      },
+      {
+        "break_counts": [
+          66,
+          66,
+          66,
+          66
+        ],
+        "execution": 1,
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 0,
+        "unstable_rate": 0.0
+      },
+      {
+        "break_counts": [
+          58,
+          58,
+          58,
+          58
+        ],
+        "execution": 1,
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 0,
+        "unstable_rate": 0.0
+      },
+      {
+        "break_counts": [
+          66,
+          66,
+          66,
+          64
+        ],
+        "execution": 2,
+        "obligations": 115,
+        "seed": 1,
+        "unstable": 2,
+        "unstable_rate": 0.017391304347826087
+      },
+      {
+        "break_counts": [
+          58,
+          58,
+          63,
+          58
+        ],
+        "execution": 2,
+        "obligations": 113,
+        "seed": 2,
+        "unstable": 7,
+        "unstable_rate": 0.061946902654867256
       }
     ]
   },
@@ -174,45 +174,45 @@
   },
   "headline": {
     "distributions_overlap": true,
-    "gap_between_conditions": 0.011645504681287666,
-    "idle_max": 0.21739130434782608,
-    "idle_mean": 0.036231884057971016,
+    "gap_between_conditions": 0.004296524304219566,
+    "idle_max": 0.11304347826086956,
+    "idle_mean": 0.030563037065538024,
     "idle_min": 0.0,
     "idle_rates": [
       0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.0,
-      0.21739130434782608
+      0.008695652173913044,
+      0.008849557522123894,
+      0.017391304347826087,
+      0.035398230088495575,
+      0.11304347826086956
     ],
-    "load_increases_instability": true,
-    "loaded_max": 0.25217391304347825,
-    "loaded_mean": 0.04787738873925868,
+    "load_increases_instability": false,
+    "loaded_max": 0.0782608695652174,
+    "loaded_mean": 0.02626651276131846,
     "loaded_min": 0.0,
     "loaded_rates": [
       0.0,
       0.0,
-      0.008695652173913044,
-      0.008695652173913044,
-      0.017699115044247787,
-      0.25217391304347825
+      0.0,
+      0.017391304347826087,
+      0.061946902654867256,
+      0.0782608695652174
     ],
     "measurements_per_condition": 6,
     "note": "the paper's withdrawn observation came from a loaded machine and its replacement from an idle one, with one execution each; this measures both conditions several times so the spread can be compared against the gap",
     "spread_exceeds_the_gap": true,
-    "spread_within_a_condition": 0.21739130434782608
+    "spread_within_a_condition": 0.11304347826086956
   },
   "provenance": {
-    "git": "2c4e5e5cff5cfafedef082fdd1d7a20cab80d202",
+    "git": "a77557526c46f042d47a545e413dc93bd73c358c",
     "p1": {
       "git": "0b016616808b164df273f30f4d033c06690f9627",
       "source": "../finalitybench/src (sibling checkout)",
       "version": "1.0.0"
     },
-    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
     "python": "3.14.7",
-    "utc": "2026-09-16T02:58:16Z"
+    "utc": "2026-09-29T20:46:52Z"
   },
   "status": "ok"
 }
