@@ -43,7 +43,7 @@ flink-image: ## pull the pinned Flink image used by E7
 data: setup ## nothing to download -- the workloads are generated
 	@echo "workloads are generated from P1 at run time; nothing to fetch"
 
-experiments: setup up ## run E1-E9
+experiments: setup up ## run E1-E10
 	$(PY) experiments/e1_main.py
 	$(PY) experiments/e2_frontier.py
 	$(PY) experiments/e3_shift.py
@@ -53,6 +53,7 @@ experiments: setup up ## run E1-E9
 	$(PY) experiments/e8_defects.py
 	$(PY) experiments/e9_worked_instance.py
 	$(PY) experiments/e7_flink.py
+	$(PY) experiments/e10_contention.py
 
 figures: ## regenerate every figure from results/
 	$(PY) figures/make_figures.py
@@ -63,9 +64,14 @@ paper: figures ## build the PDF
 test: setup ## unit tests and sanity checks
 	$(PY) -m pytest tests/
 
-reproduce: distclean setup up flink-image experiments figures paper test ## clean-room end to end
+reproduce: distclean setup up flink-image experiments figures paper test verify ## clean-room end to end
 	@echo
 	@echo "reproduction complete -- results/ figures/ paper/reconstream.pdf"
+
+verify: ## the gates that must pass before a release
+	$(PY) scripts/verify_claims.py
+	$(PY) scripts/check_provenance.py
+	$(PY) scripts/check_prose_numbers.py
 
 clean:
 	rm -rf paper/*.aux paper/*.log paper/*.out paper/*.fls paper/*.fdb_latexmk

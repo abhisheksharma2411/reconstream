@@ -733,59 +733,87 @@ alongside each row, mapped back to the wall-clock instant that watermark could
 first have been reached.
 
 \begin{table}[t]
-\caption{Apache Flink 1.20, SQL interval join, shifted traffic, two seeds. The
-idleness timeout changes nothing here, for the reason given in the text.}
+\caption{Apache Flink 1.20, SQL interval join, shifted traffic. Each row
+averages eight runs, four idleness settings by two seeds; the idleness timeout
+changes nothing here, for the reason given in the text, so the spread is the
+engine disagreeing with itself.}
 \label{tab:flink}
 \centering
 \footnotesize
-\begin{tabular}{rlrrrr}
+\begin{tabular}{rrlrrr}
 \toprule
-window & idleness & viol.\% & f.break\% & mean & p99 \\
+window & viol.\% & (range) & f.break\% & mean & p99 \\
 \midrule
-80  & none or 60     & 14.91 & 18.38 & 51.4 & 239 \\
-80  & 10 or 240      & 14.48 & 17.51 & 54.0 & 239 \\
-160 & any            & 18.40 & 15.78 & 29.4 & 176 \\
-320 & any            & 20.20 & 14.91 & 17.5 & 161 \\
+80  & 14.91 & 14.78--15.04 & 18.28 & 51.5 & 239 \\
+160 & 17.96 & 15.93--20.87 & 15.45 & 29.4 & 176 \\
+320 & 20.20 & 17.39--23.01 & 14.91 & 17.5 & 161 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The engine violates S1 on 14.48\% to 20.20\% of obligations, averaged over the
-two seeds of each configuration in Table~\ref{tab:flink}; individual runs span
-13.91\% to 23.01\%. It does so in the configuration a competent engineer would
+The engine violates S1 on 14.91\% to 20.20\% of obligations, averaged over the
+eight runs of each window in Table~\ref{tab:flink}; individual runs span
+14.78\% to 23.01\%. It does so in the configuration a competent engineer would
 write.
 Widening the join interval buys timeliness and costs soundness, which is the
 frontier of Section~\ref{sec:frontier} seen from inside a real system. The
-engine also emits one output row per matching pair, so a duplicated bank record produces a duplicated match, 15 to 43 extra rows
+engine also emits one output row per matching pair, so a duplicated bank record produces a duplicated match, 15 to 44 extra rows
 per run, which a downstream sink has to deduplicate on its own.
 
-The violation rates are stable. Two independent runs of the whole experiment,
-days apart, agree to the second decimal place at every window. What follows is
-less comfortable.
+The window effect is solid; the individual rates are less so. At windows 80 and
+320 all eight runs of each window agree to the second decimal place within a
+seed, across four idleness settings that cannot matter. At window 160 seed~2 is
+equally stable while seed~1 moves between 18.26\% and 20.87\% across those same
+inert settings, which is the engine disagreeing with itself rather than any
+effect of the configuration. The ordering across windows survives every run we
+have made; a single per-configuration rate does not. What follows is less
+comfortable.
 
 \textbf{Our watermark arms are not a faithful model of the engine.} The
 simulated merged watermark agrees with Flink's partition of the obligations on
 77.4\% and 78.8\% of them, across the two seeds. Roughly a fifth of the time the
 model and the engine reach different conclusions, and the explanation is
-structural rather than statistical: the simulated arm models the *decision rule*, raise a break once a watermark
+structural rather than statistical: the simulated arm models the \emph{decision rule}, raise a break once a watermark
 has passed, while the engine's interval join also constrains which bank records are eligible to match at all, through
 the event-time interval in the join predicate. Two different constructions,
 agreeing most of the time. The timing results in Table~\ref{tab:frontier} are
 therefore properties of the models, and we state them as such rather than as
 measurements of Flink.
 
-\textbf{An observation we could not reproduce.} An earlier full run of this
-experiment, made while the machine was also running the other seven, showed the
-engine disagreeing with itself: repeating an identical job four times, 26.1\% of
-obligations on one seed and 40.7\% on the other received different verdicts, and
-one repetition raised 104 breaks where the other three raised 58. Re-run on an
-otherwise idle machine, the same configuration gives 0.9\% and 0.0\%, with break
-counts of $[66, 66, 65, 66]$ and $[58, 58, 58, 58]$. Two bounded sources are
-read concurrently and their interleaving is not fixed by the input, so contention plausibly changes which records the watermark has seen when an
-obligation is considered. That is an inference from one loaded run and not a
-measurement, and we report it as such. It is a reason to be careful about
-reproducing streaming reconciliation results on a busy machine, and it is not a
-claim about Flink.
+\textbf{The instability rate is itself a random variable.} An earlier full run
+of this experiment, made while the machine was also running the other seven,
+showed the engine disagreeing with itself: repeating an identical job four
+times, 26.1\% of obligations on one seed and 40.7\% on the other received
+different verdicts. Re-run on an otherwise idle machine, the same configuration
+gave 0.9\% and 0.0\%. We withdrew the observation, and the obvious reading of
+the withdrawal --- that load explained it --- is one we can now test rather than
+assert. E10 varies load deliberately, running the determinism check idle and
+under twelve busy-loop workers on twelve cores, six times per condition.
+
+Load does not explain it. Across six measurements per condition the idle arm
+spans 0.0\% to 21.74\% and the loaded arm 0.0\% to 25.22\%; the condition means
+differ by 1.16 points, which is an order of magnitude smaller than the spread
+within either condition. The distributions overlap almost completely, and the
+largest idle reading exceeds five of the six loaded ones. The useful result is
+the spread, not the comparison: repeating an identical job on an unchanged
+machine gives a verdict-instability rate anywhere between zero and a quarter of
+all obligations, so no single execution of this check --- the
+loaded one we withdrew, the idle one we replaced it with, or any of the twelve
+reported here --- carries information about the engine on its own. The E7 run
+shipped with this paper is itself one of the high draws: seed~1 disagrees with
+itself on 21.74\% of obligations there, which is why Table~\ref{tab:flink}
+reports a range per window rather than a figure per configuration.
+
+\textbf{What that does and does not undermine.} The volatility is confined to
+the repeat-to-repeat determinism check. The violation rates underlying
+Table~\ref{tab:frontier} are averages over 200 obligations rather than counts of
+disagreement between four repeats, and they hold across whole-experiment runs
+made days apart. The model-fidelity figures sit between the two: reported per
+seed from one execution, and E10's spread is a reason to read them as
+approximate. Where this paper quotes a determinism or fidelity number we mean
+\emph{this run gave this}, not \emph{the engine does this} --- so a reviewer who
+runs our determinism check once and gets a number unlike ours has reproduced us
+correctly.
 
 One thing E7 could not test at all. Flink's idleness timeout is measured in
 processing time, and a bounded file source is consumed in milliseconds, so no source is ever idle long enough for the setting to engage. That is why

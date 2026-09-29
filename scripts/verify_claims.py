@@ -36,6 +36,7 @@ def build_claims() -> list[tuple[str, object, object]]:
     e4, e5, e6 = load("e4_idleness.json"), load("e5_costs.json"), load("e6_sql_parity.json")
     e9 = load("e9_worked_instance.json")
     e8 = load("e8_defects.json")
+    e10 = load("e10_contention.json")
     c: list[tuple[str, object, object]] = []
 
     if e1:
@@ -148,17 +149,52 @@ def build_claims() -> list[tuple[str, object, object]]:
         def avg(key, field):
             rs = by[key]
             return sum(x[field] for x in rs) / len(rs)
-        c.append(("flink win80 no-idle violations %", 14.91, pct(avg((80, "None"), "inadmissible_rate"))))
-        c.append(("flink win160 violations %", 18.40, pct(avg((160, "None"), "inadmissible_rate"))))
-        c.append(("flink win320 violations %", 20.20, pct(avg((320, "None"), "inadmissible_rate"))))
-        c.append(("flink win80 idle=10 violations %", 14.48, pct(avg((80, "10"), "inadmissible_rate"))))
+        # The idleness timeout is inert on a bounded file source, so the table
+        # collapses it and each row averages the eight runs of one window.
+        # Pinning a single (window, idleness) cell would pin a draw: E10 shows
+        # the engine's own spread is larger than the differences between cells.
+        def win(w, field):
+            rs = [r for r in e7["runs"] if r["window"] == w]
+            return sum(x[field] for x in rs) / len(rs)
+        def winrange(w):
+            rs = [pct(r["inadmissible_rate"]) for r in e7["runs"] if r["window"] == w]
+            return min(rs), max(rs)
+        c.append(("flink win80 violations %", 14.91, pct(win(80, "inadmissible_rate"))))
+        c.append(("flink win160 violations %", 17.96, pct(win(160, "inadmissible_rate"))))
+        c.append(("flink win320 violations %", 20.20, pct(win(320, "inadmissible_rate"))))
+        c.append(("flink win80 range", (14.78, 15.04), winrange(80)))
+        c.append(("flink win160 range", (15.93, 20.87), winrange(160)))
+        c.append(("flink win320 range", (17.39, 23.01), winrange(320)))
+        c.append(("flink win80 false-break %", 18.28, pct(win(80, "false_break_rate"))))
+        c.append(("flink win160 false-break %", 15.45, pct(win(160, "false_break_rate"))))
+        c.append(("flink win320 false-break %", 14.91, pct(win(320, "false_break_rate"))))
         worst = max(pct(r["inadmissible_rate"]) for r in e7["runs"])
         best = min(pct(r["inadmissible_rate"]) for r in e7["runs"])
-        c.append(("flink min violation % over single runs", 13.91, best))
+        c.append(("flink min violation % over single runs", 14.78, best))
         c.append(("flink max violation % over single runs", 23.01, worst))
-        cfg = [pct(avg(k, "inadmissible_rate")) for k in by]
-        c.append(("flink min config-mean violation %", 14.48, min(cfg)))
-        c.append(("flink max config-mean violation %", 20.20, max(cfg)))
+        wm = [pct(win(w, "inadmissible_rate")) for w in (80, 160, 320)]
+        c.append(("flink min per-window mean violation %", 14.91, min(wm)))
+        c.append(("flink max per-window mean violation %", 20.20, max(wm)))
+        c.append(("flink violation rate rises with the window", True, wm == sorted(wm)))
+        # Windows 80 and 320 are identical across the four inert idleness
+        # settings within a seed; window 160 seed 1 is not. That asymmetry is
+        # the engine's nondeterminism, and the paper says so.
+        def spread_within_seed(w, s):
+            rs = [pct(r["inadmissible_rate"]) for r in e7["runs"]
+                  if r["window"] == w and r["seed"] == s]
+            return max(rs) - min(rs)
+        c.append(("flink win80 is idleness-invariant on both seeds", True,
+                  spread_within_seed(80, 1) == 0 and spread_within_seed(80, 2) == 0))
+        c.append(("flink win320 is idleness-invariant on both seeds", True,
+                  spread_within_seed(320, 1) == 0 and spread_within_seed(320, 2) == 0))
+        c.append(("flink win160 seed2 is idleness-invariant", True,
+                  spread_within_seed(160, 2) == 0))
+        c.append(("flink win160 seed1 low end %", 18.26,
+                  min(pct(r["inadmissible_rate"]) for r in e7["runs"]
+                      if r["window"] == 160 and r["seed"] == 1)))
+        c.append(("flink win160 seed1 high end %", 20.87,
+                  max(pct(r["inadmissible_rate"]) for r in e7["runs"]
+                      if r["window"] == 160 and r["seed"] == 1)))
         # Determinism on an idle machine. The loaded-machine observation in the
         # paper is explicitly labelled unreproduced and is not checked here,
         # because there is no results file that reproduces it -- which is the
@@ -170,8 +206,11 @@ def build_claims() -> list[tuple[str, object, object]]:
         det = {f["seed"]: f for f in e7["determinism"]}
         c.append(("flink seed1 is unstable across repeats", True,
                   det[1]["unstable"] > 0))
-        c.append(("flink seed1 instability stays under 5%", True,
-                  det[1]["unstable_rate"] < 0.05))
+        # E10 measured this rate six times per condition and found 0-25.22%.
+        # A bound is the only assertion that survives a re-run; the shipped
+        # run happens to sit near the top of that band, which the paper notes.
+        c.append(("flink seed1 instability lies in E10's measured band", True,
+                  0.0 <= det[1]["unstable_rate"] <= 0.2523))
         c.append(("flink seed2 is stable across repeats", 0.0,
                   pct(det[2]["unstable_rate"])))
         c.append(("flink seed2 break counts (idle)", [58, 58, 58, 58],
@@ -179,16 +218,39 @@ def build_claims() -> list[tuple[str, object, object]]:
         c.append(("flink seed1 break counts vary", True,
                   len(set(det[1]["break_counts"])) > 1))
         fid = {f["seed"]: f for f in e7["model_fidelity"]}
-        c.append(("flink fidelity seed1 is a range", False,
-                  fid[1]["stable_across_repeats"]))
+        # Whether fidelity is a single value or a range depends on whether the
+        # engine was stable on that run, so only the band is asserted.
         c.append(("flink fidelity seed1 stays near three quarters", True,
                   0.70 <= fid[1]["agreement_min"] <= fid[1]["agreement_max"] <= 0.80))
+        c.append(("flink fidelity seed1 mean %", 77.4, pct(fid[1]["agreement_mean"])))
         c.append(("flink fidelity seed2 %", 78.8, pct(fid[2]["agreement_mean"])))
         c.append(("flink fidelity seed2 is stable", True,
                   fid[2]["stable_across_repeats"]))
         dups = [r["duplicate_match_rows"] for r in e7["runs"]]
         c.append(("flink min duplicate match rows", 15, min(dups)))
-        c.append(("flink max duplicate match rows", 43, max(dups)))
+        c.append(("flink max duplicate match rows", 44, max(dups)))
+
+    if e10 and e10.get("status") == "ok":
+        # E10 measures a distribution, so what is asserted is the shape of it:
+        # the range of each arm, and that the gap between the conditions is
+        # small next to the spread inside one. Pinning individual rates here
+        # would be the same mistake the experiment exists to document.
+        h = e10["headline"]
+        idle, loaded = sorted(h["idle_rates"]), sorted(h["loaded_rates"])
+        c.append(("e10 measurements per condition", 6, h["measurements_per_condition"]))
+        c.append(("e10 load workers", 12, e10["config"]["load_workers"]))
+        c.append(("e10 idle arm low end %", 0.0, pct(min(idle))))
+        c.append(("e10 idle arm high end %", 21.74, pct(max(idle))))
+        c.append(("e10 loaded arm low end %", 0.0, pct(min(loaded))))
+        c.append(("e10 loaded arm high end %", 25.22, pct(max(loaded))))
+        c.append(("e10 gap between condition means, points", 1.16,
+                  pct(h["gap_between_conditions"])))
+        c.append(("e10 distributions overlap", True, h["distributions_overlap"]))
+        c.append(("e10 spread exceeds the gap", True, h["spread_exceeds_the_gap"]))
+        c.append(("e10 idle high end beats five of six loaded", 5,
+                  sum(1 for x in loaded if x < max(idle))))
+        c.append(("e10 gap is an order of magnitude under the spread", True,
+                  h["gap_between_conditions"] * 10 < (max(idle) - min(idle))))
 
     if e8:
         ff = e8["fault_families"]
