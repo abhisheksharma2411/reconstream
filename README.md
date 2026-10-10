@@ -56,7 +56,7 @@ finding.
 make reproduce
 ```
 
-Fetches FinalityBench, starts PostgreSQL and Flink in Docker, runs E1–E8,
+Fetches FinalityBench, starts PostgreSQL and Flink in Docker, runs E1–E10,
 regenerates every figure from `results/` and rebuilds the paper. No number in
 the paper is entered by hand.
 
