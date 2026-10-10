@@ -19,9 +19,14 @@ PAPER = ROOT / "paper" / "reconstream.tex"
 CFF = ROOT / "CITATION.cff"
 README = ROOT / "README.md"
 
-#: The paper ships saying the DOI is coming rather than showing a placeholder,
-#: because a literal ``ZENODO_DOI_PLACEHOLDER`` in a posted preprint is worse
-#: than an honest sentence. This is the sentence to replace when the DOI exists.
+#: The paper ships promising nothing: its Artifact Availability section names
+#: the repository and the tag, and says nothing about a DOI, because a literal
+#: placeholder or an unkept promise in a posted preprint is worse than silence.
+#: So there is nothing to *replace* -- the DOI sentence is appended after the
+#: tag sentence. This anchor is that sentence's ending.
+ANCHOR = "which is the revision this paper was built from."
+
+#: Older spellings, kept so the script still works on an unrevised checkout.
 FORTHCOMING = "An archival DOI is forthcoming."
 
 PLAIN = "ZENODO_DOI_PLACEHOLDER"
@@ -36,7 +41,17 @@ def main(doi: str) -> int:
     changed, missed = [], []
 
     text = PAPER.read_text()
-    if FORTHCOMING in text:
+    escaped_doi = doi.replace("_", r"\_")
+    if escaped_doi in text:
+        print(f"the paper already cites {doi}; nothing to do")
+        return 0
+    if ANCHOR in text:
+        PAPER.write_text(text.replace(
+            ANCHOR,
+            ANCHOR + f" The release is archived at DOI \\texttt{{{escaped_doi}}}.",
+            1))
+        changed.append(PAPER.name)
+    elif FORTHCOMING in text:
         escaped = doi.replace("_", r"\_")
         PAPER.write_text(text.replace(
             FORTHCOMING, f"It is archived at DOI \\texttt{{{escaped}}}."))
