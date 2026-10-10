@@ -12,8 +12,9 @@ authors:
     given-names: Abhishek
     email: abhicse24@gmail.com
     orcid: "https://orcid.org/0009-0007-1103-2103"
-version: 1.0.1
-date-released: 2026-10-09
+version: 1.0.2
+date-released: 2026-10-10
+doi: 10.5281/zenodo.23272623
 license: MIT
 repository-code: "https://github.com/abhisheksharma2411/reconstream"
 keywords:

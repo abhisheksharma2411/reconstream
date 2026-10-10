@@ -11,7 +11,7 @@ CROSS-LIST
 cs.SE, cs.DC
 
 COMMENTS
-9 pages, 4 figures, 6 tables, 2 propositions. Code, workload generator, Docker configuration and every raw results file are at https://github.com/abhisheksharma2411/reconstream (tag v1.0.1); `make reproduce` rebuilds every figure, table and number in the paper from the raw results.
+9 pages, 4 figures, 6 tables, 2 propositions. Code, workload generator, Docker configuration and every raw results file are at https://github.com/abhisheksharma2411/reconstream (tag v1.0.2); `make reproduce` rebuilds every figure, table and number in the paper from the raw results.
 
 REPORT NUMBER
 (leave blank -- no institutional report series)

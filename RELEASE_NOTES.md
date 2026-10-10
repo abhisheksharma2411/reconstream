@@ -1,8 +1,13 @@
-# ReconStream v1.0.1
+# ReconStream v1.0.2
 
 The revision the submitted preprint is built from. The Artifact Availability
-section of the paper names this tag, so this release is what makes that
-sentence true.
+section of the paper names this tag and the archival DOI, so this release is
+what makes that sentence true.
+
+Archived on Zenodo under concept DOI
+[10.5281/zenodo.23272623](https://doi.org/10.5281/zenodo.23272623), which
+resolves to the latest archived version. The paper cites the concept DOI, so it
+keeps pointing at the newest release without an edit.
 
 **Contract.** S1 (no premature break), S2 (no premature match), L1
 (decisiveness) and M1 (stability), stated against a declared per-source
@@ -31,6 +36,14 @@ every numeric literal in the prose to be backed by a results file.
 
 Consumes FinalityBench (arXiv:2609.04706, DOI 10.5281/zenodo.22262591) as a
 library.
+
+## What changed since v1.0.1
+
+v1.0.1 existed only to mint the DOI: Zenodo cannot assign one until a release
+exists, so the DOI could not be in the paper that the first release contained.
+This release closes that loop — the paper now cites the concept DOI, names
+v1.0.2 as its tag, and the archive, the results and the manuscript are one
+revision.
 
 ## What changed since v1.0.0
 
