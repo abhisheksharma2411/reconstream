@@ -11,22 +11,26 @@ CROSS-LIST
 cs.SE, cs.DC
 
 COMMENTS
-8 pages, 4 figures, 6 tables, 2 propositions. Artifact (code, workload
-generator, Docker configuration, all raw results) is archived at
-DOI 10.5281/zenodo.PLACEHOLDER and builds every figure and table from the raw
-results with `make reproduce`.
+9 pages, 4 figures, 6 tables, 2 propositions. Code, workload generator, Docker configuration and every raw results file are at https://github.com/abhisheksharma2411/reconstream (tag v1.0.1); `make reproduce` rebuilds every figure, table and number in the paper from the raw results.
 
 REPORT NUMBER
-(leave blank)
+(leave blank -- no institutional report series)
 
 JOURNAL REFERENCE
-(leave blank -- not yet published)
+(leave blank -- not published in a journal or proceedings)
 
 EXTERNAL DOI
-(leave blank until the Zenodo DOI is minted; then add it here)
+(leave blank. This field is for a DOI of THIS PAPER in a journal or
+proceedings. A Zenodo *software* DOI is not that, and asserting one here
+claims a published version that does not exist. If the artifact is archived,
+put its DOI in COMMENTS and in the paper's Artifact Availability section.)
 
 ACM CLASS
 H.2.4; D.2.4; H.2.8
 
 MSC CLASS
 (leave blank -- not a mathematics paper)
+
+UPLOAD
+paper/reconstream-arxiv.tar.gz -- one file. Do not upload the PDF; arXiv
+compiles the source. The abstract to paste is paper/arxiv_abstract.txt.

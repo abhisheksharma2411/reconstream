@@ -64,9 +64,12 @@ paper: figures ## build the PDF
 test: setup ## unit tests and sanity checks
 	$(PY) -m pytest tests/
 
-reproduce: distclean setup up flink-image experiments figures paper test verify ## clean-room end to end
+reproduce: distclean setup up flink-image experiments figures paper test arxiv verify ## clean-room end to end
 	@echo
 	@echo "reproduction complete -- results/ figures/ paper/reconstream.pdf"
+
+arxiv: paper ## build the submission tarball and compile it standalone
+	$(PY) scripts/make_arxiv.py
 
 verify: ## the gates that must pass before a release
 	$(PY) scripts/verify_claims.py

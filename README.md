@@ -34,7 +34,7 @@ finding.
   sound. Violations vanish at exactly the bank's posting period, as predicted
   before measurement.
 - **Under lateness shift, every reconciler was entitled to every verdict it got
-  wrong.** Spurious breaks reach 11.8–14.8% while contract violations stay
+  wrong.** Spurious breaks reach 18.3–23.0% while contract violations stay
   ≤1.01%; the checker attributes the loss to 240 bank-side and 413 ledger-side
   bound violations.
 - **One horizon per source halves the break-latency tail** at equal soundness
@@ -44,7 +44,7 @@ finding.
   mispairing 22.8% of verdicts on calm traffic.
 - **The contract runs as SQL.** The query and the reference implementation
   agree on all 4,395 verdicts compared.
-- **A real Flink interval join violates S1** on 14.5–20.2% of obligations in
+- **A real Flink interval join violates S1** on 14.9–20.1% of obligations in
   its ordinary configuration, reproducibly across two independent runs of the
   whole experiment. Our simulated watermark arm agrees with the engine on only
   77–79% of obligations, so the model's timing results are *not* Flink

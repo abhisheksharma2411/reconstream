@@ -5,10 +5,13 @@ what it would take to finish them.
 
 ## Zenodo DOI not minted
 
-No Zenodo API token is available on this machine and the GitHub–Zenodo webhook
-fires only for releases published *after* the repository is enabled in Zenodo.
-The paper therefore carries `ZENODO\_DOI\_PLACEHOLDER` in its Artifact
-Availability section.
+Zenodo archives only **public** repositories, and only on a GitHub release
+published *after* the repository is enabled in Zenodo's GitHub settings. This
+repository is not yet public, so no DOI can be minted.
+
+The paper does **not** promise one. Its Artifact Availability section names the
+repository and the tag the paper was built from, and nothing more — a DOI is
+not advertised unless it exists.
 
 **To finish:** enable `reconstream` in Zenodo's GitHub settings *before* cutting
 the release, then publish the release; the DOI is minted automatically. Insert

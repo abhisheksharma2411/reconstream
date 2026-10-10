@@ -21,6 +21,82 @@ PAPER = ROOT / "paper"
 OUT = PAPER / "arxiv"
 
 
+#: Fields a human chooses once. Everything else in the metadata file is counted
+#: from the source or read off the built PDF, because the hand-maintained
+#: version drifted: it claimed 8 pages for a 9-page paper and carried a literal
+#: "10.5281/zenodo.PLACEHOLDER" into the Comments field.
+TITLE = ("When Is a Reconciliation Break Real? A Temporal Correctness Contract "
+         "for Streaming Financial Reconciliation")
+AUTHORS = "Abhishek Sharma"
+PRIMARY_CLASS = "cs.DB"
+CROSS_LIST = "cs.SE, cs.DC"
+ACM_CLASS = "H.2.4; D.2.4; H.2.8"
+REPO_URL = "https://github.com/abhisheksharma2411/reconstream"
+
+
+def _counts(tex: str, pdf: Path) -> dict:
+    pages = ""
+    if pdf.exists():
+        out = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
+        for line in out.splitlines():
+            if line.startswith("Pages"):
+                pages = line.split()[-1]
+    return {
+        "pages": pages,
+        "figures": len(re.findall(r"\\includegraphics", tex)),
+        "tables": len(re.findall(r"\\begin\{table", tex)),
+        "propositions": len(re.findall(r"\\begin\{proposition", tex)),
+    }
+
+
+def _metadata(tex: str, pdf: Path, tag: str) -> str:
+    c = _counts(tex, pdf)
+    comments = (
+        f"{c['pages']} pages, {c['figures']} figures, {c['tables']} tables, "
+        f"{c['propositions']} propositions. Code, workload generator, Docker "
+        f"configuration and every raw results file are at {REPO_URL} "
+        f"(tag {tag}); `make reproduce` rebuilds every figure, table and number "
+        f"in the paper from the raw results."
+    )
+    return f"""TITLE
+{TITLE}
+
+AUTHORS
+{AUTHORS}
+
+PRIMARY CLASS
+{PRIMARY_CLASS}
+
+CROSS-LIST
+{CROSS_LIST}
+
+COMMENTS
+{comments}
+
+REPORT NUMBER
+(leave blank -- no institutional report series)
+
+JOURNAL REFERENCE
+(leave blank -- not published in a journal or proceedings)
+
+EXTERNAL DOI
+(leave blank. This field is for a DOI of THIS PAPER in a journal or
+proceedings. A Zenodo *software* DOI is not that, and asserting one here
+claims a published version that does not exist. If the artifact is archived,
+put its DOI in COMMENTS and in the paper's Artifact Availability section.)
+
+ACM CLASS
+{ACM_CLASS}
+
+MSC CLASS
+(leave blank -- not a mathematics paper)
+
+UPLOAD
+paper/reconstream-arxiv.tar.gz -- one file. Do not upload the PDF; arXiv
+compiles the source. The abstract to paste is paper/arxiv_abstract.txt.
+"""
+
+
 def main() -> int:
     tex = (PAPER / "reconstream.tex").read_text()
     flat = tex.replace("{../figures/", "{")
@@ -56,12 +132,21 @@ def main() -> int:
     abstract = _abstract("reconstream")
     (PAPER / "arxiv_abstract.txt").write_text(abstract + "\n")
 
+    # From CITATION.cff, not `git describe`: the metadata has to name the tag
+    # being cut, and at build time that tag does not exist yet.
+    cff = (ROOT / "CITATION.cff").read_text()
+    m = re.search(r"^version:\s*v?(\S+)", cff, re.M)
+    tag = f"v{m.group(1)}" if m else "untagged"
+    meta = _metadata(tex, PAPER / "reconstream-arxiv-verified.pdf", tag or "untagged")
+    (PAPER / "arxiv_metadata.txt").write_text(meta)
+
     print(f"arxiv package: {len(wanted)} referenced files + reconstream.tex")
     for f in sorted(OUT.iterdir()):
         print(f"  {f.name}")
     print(f"  tarball     {tarball.relative_to(ROOT)} ({tarball.stat().st_size/1024:.0f} KB)")
     print(f"  standalone  {"OK" if ok else "FAILED"}, {detail}")
     print(f"  abstract    {len(abstract)} chars (arXiv limit 1920)")
+    print(f"  metadata    paper/arxiv_metadata.txt (tag {tag or 'untagged'})")
     if len(abstract) > 1920:
         print("  WARNING: abstract exceeds the arXiv limit")
         return 1
